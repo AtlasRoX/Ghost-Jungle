@@ -3,215 +3,183 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ghost Jungle - Interactive GitHub README Element</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👻</text></svg>">
+  <title>Ghost Jungle — a living README for your GitHub profile</title>
+  <meta name="description" content="Your repositories become evolving spectral ghosts in an animated midnight jungle. One line of Markdown for your GitHub profile README.">
+  <meta name="theme-color" content="#05070d">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-32 -36 64 64'%3E%3Cpath d='M0 -28C22 -28 26 -8 24 12C22 24 16 28 12 22C8 16 2 28 -2 22C-6 16 -12 28 -16 22C-20 16 -24 24 -24 10C-26 -8 -22 -28 0 -28Z' fill='%23e0f2fe'/%3E%3Cellipse cx='-8' cy='-6' rx='3' ry='4' fill='%2305070d'/%3E%3Cellipse cx='8' cy='-6' rx='3' ry='4' fill='%2305070d'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Google+Sans+Code:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <canvas id="ambient-canvas" aria-hidden="true"></canvas>
+  <div class="page-glow" aria-hidden="true"></div>
 
-  <!-- Floating Ambient Particles Canvas -->
-  <canvas id="ambient-canvas"></canvas>
+  <header class="nav">
+    <a href="/" class="wordmark" aria-label="Ghost Jungle home">
+      <svg viewBox="-32 -36 64 64" width="26" height="26" aria-hidden="true">
+        <path d="M0 -28C22 -28 26 -8 24 12C22 24 16 28 12 22C8 16 2 28 -2 22C-6 16 -12 28 -16 22C-20 16 -24 24 -24 10C-26 -8 -22 -28 0 -28Z" fill="currentColor"/>
+        <ellipse cx="-8" cy="-6" rx="3" ry="4" fill="var(--bg)"/><ellipse cx="8" cy="-6" rx="3" ry="4" fill="var(--bg)"/>
+      </svg>
+      <span>Ghost Jungle</span>
+    </a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#stage">Preview</a>
+      <a href="#embed">Embed</a>
+      <a href="#rank">Rank</a>
+      <a href="/wiki.html">Wiki</a>
+    </nav>
+    <button id="btn-sound" class="chip-btn" type="button" aria-pressed="false" title="Toggle procedural soundscape">
+      <svg id="sound-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path id="sound-waves" d="M16 9.5a3.5 3.5 0 0 1 0 5M18.5 7a7 7 0 0 1 0 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity="0.25"/></svg>
+      <span id="sound-label">Sound off</span>
+    </button>
+  </header>
 
-  <div class="app-wrapper">
-    <!-- Navigation Header -->
-    <header class="nav-header">
-      <a href="/" class="brand-badge">
-        <div class="brand-icon">🌿</div>
-        <div>
-          <div class="brand-title">Ghost Jungle</div>
-          <div class="brand-subtitle">Interactive Living GitHub Ecosystem</div>
-        </div>
-      </a>
+  <main>
+    <section class="hero">
+      <p class="eyebrow">A living README for GitHub profiles</p>
+      <h1>Your repositories,<br><em>awakened.</em></h1>
+      <p class="lede">Every repository becomes a spectral ghost in a moonlit jungle. Commits make them evolve, from a shy wisp to an ancient titan. One line of Markdown, no scripts.</p>
 
-      <div class="nav-actions">
-        <button id="btn-sound" class="btn-icon" title="Toggle Spooky Forest Soundscape">
-          <span id="sound-icon">🔇</span>
-          <span id="sound-label">Sound: Off</span>
-        </button>
-
-        <a href="https://github.com/topics/github-readme" target="_blank" class="btn-icon">
-          <span>⭐ Star on GitHub</span>
-        </a>
-      </div>
-    </header>
-
-    <!-- Hero Summoner Section -->
-    <section class="hero-section">
-      <div class="hero-tag">✨ Dynamic GitHub README Element</div>
-      <h1 class="hero-title">Where Repositories Become <span>Living Spirits</span></h1>
-      <p class="hero-description">
-        Each ghost represents a repository in your enchanted canopy. Spirits evolve from timid wisps to ancient eldritch titans as commits rise. Universal embed for any GitHub README.
-      </p>
-
-      <!-- Summoner Bar -->
-      <form id="summon-form" class="summon-bar">
-        <div class="input-prefix">@</div>
-        <input type="text" id="username-input" class="summon-input" placeholder="Enter your GitHub username..." value="octocat" autocomplete="off" spellcheck="false" required>
-        <button type="submit" class="btn-summon">
-          <span>Summon Jungle</span>
-          <span>⚡</span>
-        </button>
+      <form id="summon-form" class="summon" autocomplete="off">
+        <label for="username-input" class="sr-only">GitHub username</label>
+        <span class="summon-at" aria-hidden="true">@</span>
+        <input type="text" id="username-input" placeholder="github username" value="octocat" spellcheck="false" required maxlength="39" pattern="[A-Za-z0-9](?:[A-Za-z0-9]|-(?=[A-Za-z0-9])){0,38}">
+        <button type="submit" class="summon-btn">Summon <span aria-hidden="true">→</span></button>
       </form>
-
-      <!-- Quick user tags -->
-      <div class="quick-users">
-        <span>Try spirits:</span>
-        <span class="user-tag" data-user="torvalds">@torvalds</span>
-        <span class="user-tag" data-user="shadcn">@shadcn</span>
-        <span class="user-tag" data-user="antfu">@antfu</span>
-        <span class="user-tag" data-user="octocat">@octocat</span>
+      <div class="try">
+        <span>Try</span>
+        <button type="button" class="try-user" data-user="torvalds">torvalds</button>
+        <button type="button" class="try-user" data-user="gaearon">gaearon</button>
+        <button type="button" class="try-user" data-user="sindresorhus">sindresorhus</button>
+        <button type="button" class="try-user" data-user="octocat">octocat</button>
       </div>
     </section>
 
-    <!-- Live Stage Section -->
-    <section class="stage-container">
-      <!-- Toolbar Controls -->
-      <div class="stage-toolbar">
-        <div class="toolbar-group">
-          <label class="toolbar-label" for="theme-select">Theme:</label>
-          <select id="theme-select" class="select-custom">
-            <option value="midnight" selected>Midnight Bayou (Default)</option>
-            <option value="emerald">Toxic Mangrove (Emerald)</option>
-            <option value="bloodmoon">Crimson Eclipse (Blood Moon)</option>
-            <option value="cyberpunk">Neon Undergrowth (Vapor)</option>
-            <option value="abyss">Sunken Leviathan (Abyss)</option>
-          </select>
-        </div>
-
-        <div class="toolbar-group">
-          <label class="toolbar-label" for="limit-select">Spirits Count:</label>
-          <select id="limit-select" class="select-custom">
-            <option value="4">4 Spirits</option>
-            <option value="6">6 Spirits</option>
-            <option value="8" selected>8 Spirits</option>
-            <option value="10">10 Spirits</option>
-          </select>
-        </div>
-
-        <div class="toolbar-group">
-          <label class="toolbar-label" for="sort-select">Sort By:</label>
-          <select id="sort-select" class="select-custom">
-            <option value="commits" selected>Commits (Ghost Power)</option>
-            <option value="stars">Stars (Popularity)</option>
-            <option value="updated">Recently Pushed</option>
-          </select>
-        </div>
-
-        <div class="toolbar-group">
-          <button id="btn-refresh" class="btn-icon" title="Refresh Live Render">
-            <span>🔄 Refresh</span>
-          </button>
+    <section id="stage" class="stage" aria-label="Live preview">
+      <div class="screen">
+        <div id="svg-host" class="screen-svg" aria-live="polite"></div>
+        <div id="stage-loader" class="screen-loader" role="status" aria-live="polite">
+          <div class="loader-bar" aria-hidden="true"><span></span></div>
+          <div class="loader-pill">
+            <svg class="loader-ghost" viewBox="-32 -36 64 64" width="16" height="16" aria-hidden="true">
+              <path d="M0 -28C22 -28 26 -8 24 12C22 24 16 28 12 22C8 16 2 28 -2 22C-6 16 -12 28 -16 22C-20 16 -24 24 -24 10C-26 -8 -22 -28 0 -28Z" fill="currentColor"/>
+              <ellipse cx="-8" cy="-6" rx="3" ry="4" fill="var(--bg)"/><ellipse cx="8" cy="-6" rx="3" ry="4" fill="var(--bg)"/>
+            </svg>
+            <span id="loader-text">Summoning spirits…</span>
+          </div>
         </div>
       </div>
 
-      <!-- SVG Viewport with interactive overlay -->
-      <div class="svg-viewport" id="viewport-container">
-        <div id="svg-host"></div>
-
-        <!-- Loading Spinner -->
-        <div id="stage-loader" class="stage-loading">
-          <div class="spirit-spinner"></div>
-          <p style="color: var(--accent-cyan); font-weight: 600; font-size: 0.95rem;">Channeling repository spirits from GitHub...</p>
+      <div class="controls">
+        <div class="control">
+          <span class="control-label" id="theme-label">Atmosphere</span>
+          <div id="theme-swatches" class="swatches" role="radiogroup" aria-labelledby="theme-label"></div>
+          <span id="theme-name" class="control-value"></span>
+        </div>
+        <div class="control">
+          <span class="control-label" id="limit-label">Spirits</span>
+          <div class="segmented" role="radiogroup" aria-labelledby="limit-label" data-control="limit">
+            <button type="button" role="radio" data-value="all">All</button>
+            <button type="button" role="radio" data-value="20">Top 20</button>
+            <button type="button" role="radio" data-value="10">Top 10</button>
+            <button type="button" role="radio" data-value="custom">Custom</button>
+          </div>
+          <label class="custom-limit" id="custom-limit" hidden>
+            <span class="sr-only">Number of spirits</span>
+            <input type="number" id="limit-input" min="1" max="36" step="1" value="5" inputmode="numeric">
+          </label>
+        </div>
+        <div class="control">
+          <span class="control-label" id="sort-label">Order</span>
+          <div class="segmented" role="radiogroup" aria-labelledby="sort-label" data-control="sort">
+            <button type="button" role="radio" data-value="commits">Power</button>
+            <button type="button" role="radio" data-value="stars">Stars</button>
+            <button type="button" role="radio" data-value="updated">Recent</button>
+          </div>
         </div>
       </div>
+      <p class="hint">Drag a spirit and throw it. Hover to inspect. Double-click to startle it. Small spirits shy away from your cursor; titans are curious.</p>
+      <p id="stage-error" class="stage-error" role="alert" hidden></p>
     </section>
 
-    <!-- Embed Code & Integration Center -->
-    <section class="integration-section">
-      <!-- Markdown Embed Box -->
-      <div class="card-panel">
-        <h3 class="panel-title"><span>📋</span> Markdown Embed Code</h3>
-        <p class="panel-desc">Paste this directly into your GitHub Profile <code>README.md</code>. When clicked, it opens your interactive jungle!</p>
-        
-        <div class="code-container">
-          <pre class="code-block" id="markdown-code"></pre>
-          <button class="btn-copy" id="btn-copy-md">Copy Markdown</button>
-        </div>
+    <section id="rank" class="section">
+      <div class="section-head">
+        <p class="eyebrow">Canopy rank</p>
+        <h2>How your jungle <em>compares</em></h2>
+        <p class="section-lede">A percentile estimate across commits, stars, followers and repositories. <a href="/wiki.html#ranks">How it is calculated</a></p>
       </div>
-
-      <!-- HTML & Direct Link Box -->
-      <div class="card-panel">
-        <h3 class="panel-title"><span>🌐</span> HTML Embed & Direct Link</h3>
-        <p class="panel-desc">Use with standard HTML tags or embed in website portfolios and blog posts.</p>
-        
-        <div class="code-container">
-          <pre class="code-block" id="html-code"></pre>
-          <button class="btn-copy" id="btn-copy-html">Copy HTML</button>
+      <div class="rank-card" id="rank-card">
+        <div class="rank-dial">
+          <svg viewBox="-60 -60 120 120" width="148" height="148" aria-hidden="true">
+            <circle r="50" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="6" />
+            <circle id="rank-arc" r="50" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-dasharray="0 400" transform="rotate(-90)" />
+          </svg>
+          <span id="rank-grade" class="rank-grade">–</span>
+        </div>
+        <div class="rank-body">
+          <div id="rank-title" class="rank-title">Summoning…</div>
+          <div id="rank-top" class="rank-top"></div>
+          <div id="rank-metrics" class="rank-metrics"></div>
+          <p id="rank-next" class="rank-next"></p>
         </div>
       </div>
     </section>
 
-    <!-- Ghost Evolution Codex (The 5 Tiers) -->
-    <section class="bestiary-section">
-      <h2 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 0.4rem; text-align: center;">Ghost Evolution Codex</h2>
-      <p style="color: var(--text-muted); font-size: 0.9rem; text-align: center; margin-bottom: 1.5rem;">Commits empower your repository spirits to break through their supernatural thresholds.</p>
+    <section id="embed" class="section">
+      <div class="section-head">
+        <p class="eyebrow">Embed</p>
+        <h2>Paste it into your profile <em>README</em></h2>
+      </div>
 
-      <div class="bestiary-grid">
-        <div class="tier-card">
-          <div class="tier-icon">🌱</div>
-          <div class="tier-name">Lesser Wisp</div>
-          <div class="tier-req">1 - 9 Commits</div>
-          <div class="tier-lore">A gentle, newly awakened forest spirit. Timid eyes with a soft single tail.</div>
+      <div class="embed-card">
+        <div class="tabs" role="tablist" aria-label="Embed format">
+          <button type="button" role="tab" class="tab" aria-selected="true" data-tab="markdown">Markdown</button>
+          <button type="button" role="tab" class="tab" aria-selected="false" data-tab="html">HTML</button>
+          <button type="button" role="tab" class="tab" aria-selected="false" data-tab="action">GitHub Action</button>
+          <button type="button" id="btn-copy" class="copy-btn">Copy</button>
         </div>
-
-        <div class="tier-card">
-          <div class="tier-icon">🌿</div>
-          <div class="tier-name">Forest Specter</div>
-          <div class="tier-req">10 - 49 Commits</div>
-          <div class="tier-lore">Wanders the jungle undergrowth. Features expressive almond eyes and wavy spirit skirts.</div>
-        </div>
-
-        <div class="tier-card">
-          <div class="tier-icon">🔮</div>
-          <div class="tier-name">Phantom Stalker</div>
-          <div class="tier-req">50 - 199 Commits</div>
-          <div class="tier-lore">Guards the ancient trees. Grown spectral horns, glowing forehead rune, and dual soul motes.</div>
-        </div>
-
-        <div class="tier-card">
-          <div class="tier-icon">👑</div>
-          <div class="tier-name">Wraith Archon</div>
-          <div class="tier-req">200 - 499 Commits</div>
-          <div class="tier-lore">Commander of the midnight canopy. Wears an ethereal flame crown and multi-tendril spectral wings.</div>
-        </div>
-
-        <div class="tier-card">
-          <div class="tier-icon">🌌</div>
-          <div class="tier-name">Ancient Titan</div>
-          <div class="tier-req">500+ Commits</div>
-          <div class="tier-lore">Eldritch jungle deity. Rings of rotating cosmic runes with orbiting wisp familiars.</div>
-        </div>
+        <pre class="code" id="embed-code" tabindex="0"></pre>
+        <p class="embed-note" id="embed-note"></p>
       </div>
     </section>
-  </div>
 
-  <!-- Floating Spirit Inspector Modal -->
-  <div id="inspector" class="inspector-card">
-    <div class="inspector-header">
-      <span id="inspect-tier" class="tier-badge">Tier 1 • Wisp</span>
-      <button id="btn-close-inspect" class="btn-close-inspect" title="Close">&times;</button>
+    <section id="codex" class="section">
+      <div class="section-head">
+        <p class="eyebrow">The Codex</p>
+        <h2>Five stages of <em>evolution</em></h2>
+        <p class="section-lede">Commits feed each spirit. Language colors its soul core. Cross a threshold and it transforms.</p>
+      </div>
+      <ol id="codex-grid" class="codex"></ol>
+      <p class="section-more"><a href="/wiki.html" class="more-link">Read the full Ghost &amp; Rank Wiki →</a></p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Ghost Jungle · Designed &amp; built by <a href="https://github.com/AtlasRoX" target="_blank" rel="noopener">@AtlasRoX</a> · MIT License · <a href="/wiki.html">Wiki</a></span>
+    <span>Pure SVG + CSS. Safe inside GitHub's image proxy.</span>
+  </footer>
+
+  <aside id="inspector" class="inspector" aria-live="polite" aria-hidden="true">
+    <div class="inspector-top">
+      <span id="inspect-tier" class="tier-pill">Tier I · Lesser Wisp</span>
+      <button id="btn-close-inspect" class="close" type="button" aria-label="Close inspector">×</button>
     </div>
-    <div id="inspect-title" class="inspector-title">repository-name</div>
-    <div id="inspect-desc" class="inspector-desc">Repository description</div>
-    <div class="inspector-meta">
-      <div class="meta-item">
-        <span id="inspect-lang-dot" class="lang-dot"></span>
-        <span id="inspect-lang">TypeScript</span>
-      </div>
-      <div class="meta-item">
-        <span>⚡</span>
-        <span id="inspect-commits">128</span>
-      </div>
-      <div class="meta-item">
-        <span>⭐</span>
-        <span id="inspect-stars">14</span>
-      </div>
-    </div>
-    <a id="inspect-link" href="#" target="_blank" class="btn-repo-link">Explore in GitHub &rarr;</a>
-  </div>
+    <h3 id="inspect-title">repository</h3>
+    <p id="inspect-desc"></p>
+    <dl class="inspector-stats">
+      <div><dt>Language</dt><dd><span id="inspect-lang-dot" class="dot"></span><span id="inspect-lang"></span></dd></div>
+      <div><dt>Commits</dt><dd id="inspect-commits"></dd></div>
+      <div><dt>Stars</dt><dd id="inspect-stars"></dd></div>
+      <div><dt>Forks</dt><dd id="inspect-forks"></dd></div>
+      <div><dt>Updated</dt><dd id="inspect-updated"></dd></div>
+      <div><dt>Count</dt><dd id="inspect-exact"></dd></div>
+    </dl>
+    <div class="progress" aria-hidden="true"><span id="inspect-progress"></span></div>
+    <p id="inspect-next" class="next"></p>
+    <a id="inspect-link" href="#" target="_blank" rel="noopener noreferrer" class="repo-link">Open repository →</a>
+  </aside>
 
   <script src="sound.js"></script>
   <script src="app.js"></script>

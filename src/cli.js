@@ -15,7 +15,7 @@ async function main() {
   const options = {
     username: 'octocat',
     theme: 'midnight',
-    limit: 8,
+    limit: 'all',
     sort: 'commits',
     output: 'ghost-jungle.svg'
   };
@@ -26,7 +26,7 @@ async function main() {
     } else if (args[i] === '--theme' && args[i + 1]) {
       options.theme = args[++i];
     } else if (args[i] === '--limit' && args[i + 1]) {
-      options.limit = parseInt(args[++i], 10);
+      options.limit = args[++i];
     } else if (args[i] === '--sort' && args[i + 1]) {
       options.sort = args[++i];
     } else if (args[i] === '--output' && args[i + 1]) {
@@ -37,14 +37,11 @@ async function main() {
   console.log(`🌿 Summoning Ghost Jungle for @${options.username} [Theme: ${options.theme}]...`);
 
   try {
-    const data = await getGhostJungleData(options.username, {
-      limit: options.limit,
-      sort: options.sort
-    });
+    const data = await getGhostJungleData(options.username, { sort: options.sort });
 
     const svg = renderJungleSvg(data, {
       theme: options.theme,
-      limit: options.limit
+      limit: options.limit === 'all' ? undefined : parseInt(options.limit, 10)
     });
 
     const outputPath = path.resolve(process.cwd(), options.output);
@@ -52,7 +49,7 @@ async function main() {
 
     console.log(`✨ Successfully generated Ghost Jungle SVG at: ${outputPath} (${svg.length} bytes)`);
   } catch (err) {
-    console.error('❌ Failed to generate Ghost Jungle:', err);
+    console.error('❌ Failed to generate Ghost Jungle:', err.message);
     process.exit(1);
   }
 }

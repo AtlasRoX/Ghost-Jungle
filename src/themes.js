@@ -128,3 +128,43 @@ module.exports = {
   getTheme,
   getLanguageColor
 };
+
+/* ---------- Color utilities (used by the cinematic renderer) ---------- */
+
+function hexToRgb(hex) {
+  let h = String(hex).replace('#', '');
+  if (h.length === 3) h = h.split('').map(c => c + c).join('');
+  const n = parseInt(h, 16);
+  return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+}
+
+function rgbToHex([r, g, b]) {
+  return '#' + [r, g, b].map(v => Math.round(Math.max(0, Math.min(255, v))).toString(16).padStart(2, '0')).join('');
+}
+
+/** Linear mix of two hex colors, t = 0 → a, t = 1 → b */
+function mix(a, b, t) {
+  const ca = hexToRgb(a);
+  const cb = hexToRgb(b);
+  return rgbToHex(ca.map((v, i) => v + (cb[i] - v) * t));
+}
+
+/** Relative luminance (0..1) */
+function luminance(hex) {
+  const [r, g, b] = hexToRgb(hex).map(v => {
+    const s = v / 255;
+    return s <= 0.03928 ? s / 12.92 : Math.pow((s + 0.055) / 1.055, 2.4);
+  });
+  return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+}
+
+/** Lift very dark language colors (C, Lua, Ruby...) so spirits still glow */
+function glowSafe(hex) {
+  let c = hex;
+  for (let i = 0; i < 6 && luminance(c) < 0.18; i++) c = mix(c, '#ffffff', 0.22);
+  return c;
+}
+
+module.exports.mix = mix;
+module.exports.luminance = luminance;
+module.exports.glowSafe = glowSafe;

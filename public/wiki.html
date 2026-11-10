@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ghost & Rank Wiki — Ghost Jungle</title>
+  <meta name="description" content="Everything about Ghost Jungle spirits and canopy ranks: the five evolution tiers, how ranks are calculated, and how commits and stars are counted.">
+  <meta name="theme-color" content="#05070d">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-32 -36 64 64'%3E%3Cpath d='M0 -28C22 -28 26 -8 24 12C22 24 16 28 12 22C8 16 2 28 -2 22C-6 16 -12 28 -16 22C-20 16 -24 24 -24 10C-26 -8 -22 -28 0 -28Z' fill='%23e0f2fe'/%3E%3Cellipse cx='-8' cy='-6' rx='3' ry='4' fill='%2305070d'/%3E%3Cellipse cx='8' cy='-6' rx='3' ry='4' fill='%2305070d'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Google+Sans+Code:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="wiki.css">
+</head>
+<body>
+  <div class="page-glow" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a href="/" class="wordmark" aria-label="Ghost Jungle home">
+      <svg viewBox="-32 -36 64 64" width="26" height="26" aria-hidden="true">
+        <path d="M0 -28C22 -28 26 -8 24 12C22 24 16 28 12 22C8 16 2 28 -2 22C-6 16 -12 28 -16 22C-20 16 -24 24 -24 10C-26 -8 -22 -28 0 -28Z" fill="currentColor"/>
+        <ellipse cx="-8" cy="-6" rx="3" ry="4" fill="var(--bg)"/><ellipse cx="8" cy="-6" rx="3" ry="4" fill="var(--bg)"/>
+      </svg>
+      <span>Ghost Jungle</span>
+    </a>
+    <nav class="nav-links" aria-label="Wiki sections">
+      <a href="#spirits">Spirits</a>
+      <a href="#ranks">Ranks</a>
+      <a href="#counting">Counting</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a href="/" class="chip-btn">← Playground</a>
+  </header>
+
+  <main class="wiki">
+    <section class="hero wiki-hero">
+      <p class="eyebrow">The Wiki</p>
+      <h1>Spirits &amp; <em>ranks</em></h1>
+      <p class="lede">Every public repository you own becomes a spirit. Commits make it evolve. Your whole jungle earns a canopy rank. Here is exactly how it all works.</p>
+    </section>
+
+    <!-- SPIRITS -->
+    <section id="spirits" class="section wiki-section">
+      <div class="section-head">
+        <p class="eyebrow">Spirits</p>
+        <h2>Five stages of <em>evolution</em></h2>
+        <p class="section-lede">A spirit's stage comes from the commit count on its repository's default branch. Its soul light, eyes and lantern flame take the repository's GitHub language color.</p>
+      </div>
+      <div id="wiki-tiers" class="wiki-tiers"></div>
+    </section>
+
+    <!-- RANKS -->
+    <section id="ranks" class="section wiki-section">
+      <div class="section-head">
+        <p class="eyebrow">Canopy rank</p>
+        <h2>Seven ranks of the <em>canopy</em></h2>
+        <p class="section-lede">Your rank estimates where your profile sits among GitHub users. It blends four signals from your public, non-fork repositories.</p>
+      </div>
+      <div id="wiki-ranks" class="wiki-ranks"></div>
+
+      <div class="wiki-card formula">
+        <h3>How the rank is calculated</h3>
+        <p>Each signal is turned into a value between 0 and 1 with a cumulative distribution centred on a typical (median) value. A profile exactly at the median scores 0.5 on that signal.</p>
+        <div class="table-wrap">
+          <table class="wiki-table" id="wiki-metrics">
+            <thead><tr><th>Signal</th><th>Median</th><th>Weight</th><th>Curve</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <pre class="code formula-code">exponential(x) = 1 − 2^(−x)
+log-normal(x)  = x / (1 + x)          where x = value ÷ median
+
+score  = Σ (weight × curve) ÷ Σ weight
+top %  = (1 − score) × 100</pre>
+        <p>Stars carry the most weight because they are the strongest public signal that other people value your work. Commits come next. Followers and the number of repositories add context. The grade is the first rank whose threshold contains your top&nbsp;%.</p>
+        <p class="muted">This is an estimate built from public data. It is not an official GitHub statistic.</p>
+      </div>
+
+      <div class="wiki-card calc">
+        <h3>Try it</h3>
+        <form id="calc" class="calc-grid">
+          <label>Commits <input type="number" min="0" name="commits" value="700"></label>
+          <label>Stars <input type="number" min="0" name="stars" value="40"></label>
+          <label>Followers <input type="number" min="0" name="followers" value="12"></label>
+          <label>Repositories <input type="number" min="0" name="repos" value="20"></label>
+        </form>
+        <div class="calc-result" id="calc-result"></div>
+      </div>
+    </section>
+
+    <!-- COUNTING -->
+    <section id="counting" class="section wiki-section">
+      <div class="section-head">
+        <p class="eyebrow">Counting</p>
+        <h2>Where the numbers <em>come from</em></h2>
+      </div>
+      <div class="wiki-grid">
+        <div class="wiki-card">
+          <h3>Spirits</h3>
+          <p>Every public repository you own, excluding forks. The README image shows all of them up to 36 at once, and the playground up to 60. Use <code>limit</code> to show the top N. <code>sort</code> decides which come first: <code>commits</code>, <code>stars</code> or <code>updated</code>.</p>
+        </div>
+        <div class="wiki-card">
+          <h3>Commits</h3>
+          <p>The exact number of commits in each repository's default-branch history, summed across your repositories. That includes commits by collaborators. With a server <code>GITHUB_TOKEN</code> this comes from one GraphQL query. Without one, each count is read from the GitHub REST API. If the anonymous rate limit runs out, the remaining counts are estimated and marked with <code>~</code>.</p>
+        </div>
+        <div class="wiki-card">
+          <h3>Stars &amp; forks</h3>
+          <p>Stargazers and forks summed across your public non-fork repositories. Very large accounts are read up to the 200 most-starred repositories, which covers nearly all of their stars.</p>
+        </div>
+        <div class="wiki-card">
+          <h3>Freshness</h3>
+          <p>Results are cached for 30 minutes on the server. GitHub's image proxy caches README images for about an hour, so new commits appear within roughly an hour.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section wiki-section">
+      <div class="section-head">
+        <p class="eyebrow">FAQ</p>
+        <h2>Questions from the <em>clearing</em></h2>
+      </div>
+      <div class="faq">
+        <details><summary>Why can't I drag spirits inside my README?</summary><p>GitHub shows README images through a proxy that strips all scripts. In the README the spirits wander on their own. Open the playground to drag, throw and startle them.</p></details>
+        <details><summary>Why did a spirit wander off the edge?</summary><p>Spirits roam beyond the frame on purpose, like animals leaving a clearing. They always come back.</p></details>
+        <details><summary>How do I show only my best repositories?</summary><p>Add <code>&amp;limit=10</code> (or any number) to the image link. Remove it to show every repository.</p></details>
+        <details><summary>Why does a spirit's commit count differ from my contribution graph?</summary><p>The graph counts your own contributions per day. Spirits count every commit in a repository's default branch, by anyone.</p></details>
+        <details><summary>Does my rank change?</summary><p>Yes. It is recalculated from live data every time the image refreshes.</p></details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Ghost Jungle · Designed &amp; built by <a href="https://github.com/AtlasRoX" target="_blank" rel="noopener">@AtlasRoX</a> · MIT License</span>
+    <span><a href="/">Back to the playground</a></span>
+  </footer>
+
+  <script src="wiki.js"></script>
+</body>
+</html>

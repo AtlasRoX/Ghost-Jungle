@@ -1,462 +1,756 @@
 /**
- * Ghost Jungle - Master SVG Jungle Renderer
- * 
- * Assembles the full enchanted jungle environment, canopy vines, ancient ruins,
- * fireflies, mist layers, glowing flora, and spectral repository ghosts.
+ * Ghost Jungle - Cinematic SVG Scene Renderer
+ *
+ * Layer stack (back to front):
+ *   sky → stars → moon corona → drifting clouds → volumetric moonlight
+ *   → far ridge → haze → mid canopy → trunks → fireflies → spirits
+ *   → forest floor → foreground mist → falling leaves → overhead canopy
+ *   → grade (vignette, letterbox, grain) → HUD (title, stats, rank dial)
+ *
+ * The scene is authored on a fixed 880×400 stage (2.2:1). `width`/`height`
+ * only scale the output, so the composition never breaks.
+ *
+ * Every repository is shown. Each spirit wanders its own random route
+ * (a closed Catmull-Rom spline through random waypoints, some beyond the
+ * frame edges), easing in and out of each waypoint, sometimes pausing to
+ * hover, growing as it drifts toward the viewer and receding as it drifts
+ * back. Pure SVG + CSS + SMIL: safe inside GitHub's Camo image proxy.
+ *
+ * mode 'interactive' omits the wander animation so the web playground can
+ * drive the spirits with its own physics (drag, throw, flee, wander).
  */
 
-const { getTheme } = require('./themes');
-const { renderGhost } = require('./ghost-sprites');
+const fs = require('fs');
+const path = require('path');
+const { getTheme, mix } = require('./themes');
+const { renderGhost, TIERS, escapeXml, textWidth, SHARED_DEFS, GHOST_CSS } = require('./ghost-sprites');
+const { computeRank } = require('./rank');
 
-/**
- * Calculate optimal ghost coordinates based on count
- */
-function calculateGhostPositions(count, width = 880, height = 500) {
-  const positions = [];
-  
-  if (count <= 4) {
-    // Single row / clearing
-    const stepX = width / (count + 1);
-    for (let i = 0; i < count; i++) {
-      positions.push({
-        x: Math.round(stepX * (i + 1)),
-        y: Math.round(height * 0.48 + (i % 2 === 0 ? -15 : 15))
-      });
-    }
-  } else if (count <= 6) {
-    // 2 rows: 3 top, 3 bottom staggered
-    const topCount = Math.ceil(count / 2);
-    const bottomCount = count - topCount;
-    const stepTop = width / (topCount + 1);
-    const stepBottom = width / (bottomCount + 1);
+const W = 880;
+const H = 400; // 2.2 : 1 cinematic frame
+const FONT = `'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif`;
 
-    for (let i = 0; i < topCount; i++) {
-      positions.push({
-        x: Math.round(stepTop * (i + 1)),
-        y: 190 + (i % 2 === 0 ? -12 : 12)
-      });
-    }
-    for (let i = 0; i < bottomCount; i++) {
-      positions.push({
-        x: Math.round(stepBottom * (i + 1)),
-        y: 345 + (i % 2 === 0 ? 10 : -10)
-      });
-    }
-  } else {
-    // 2 rows: 4 top, 4 bottom (up to 8)
-    const topCount = Math.ceil(count / 2);
-    const bottomCount = count - topCount;
-    const stepTop = width / (topCount + 1);
-    const stepBottom = width / (bottomCount + 1);
+/* Google Sans, embedded (Camo blocks external fonts). See assets/fonts/README.md */
+const FONT_FACES = [500, 700].map(w => {
+  try {
+    const b64 = fs.readFileSync(path.join(__dirname, '..', 'assets', 'fonts', `GoogleSans-${w}-subset.woff2`)).toString('base64');
+    return `@font-face { font-family: 'Google Sans'; font-weight: ${w}; font-style: normal; src: url(data:font/woff2;base64,${b64}) format('woff2'); }`;
+  } catch (e) {
+    return '';
+  }
+}).join('\n    ');
 
-    for (let i = 0; i < topCount; i++) {
-      positions.push({
-        x: Math.round(stepTop * (i + 1)),
-        y: 185 + (i % 2 === 0 ? -15 : 15)
-      });
-    }
-    for (let i = 0; i < bottomCount; i++) {
-      positions.push({
-        x: Math.round(stepBottom * (i + 1)),
-        y: 340 + (i % 2 === 0 ? 12 : -12)
-      });
+/* ------------------------------------------------------------------ */
+/* Deterministic randomness: every username gets its own jungle.       */
+/* ------------------------------------------------------------------ */
+
+function seededRandom(seed) {
+  let h = 1779033703 ^ seed.length;
+  for (let i = 0; i < seed.length; i++) {
+    h = Math.imul(h ^ seed.charCodeAt(i), 3432918353);
+    h = (h << 13) | (h >>> 19);
+  }
+  return function () {
+    h = Math.imul(h ^ (h >>> 16), 2246822507);
+    h = Math.imul(h ^ (h >>> 13), 3266489909);
+    h ^= h >>> 16;
+    return (h >>> 0) / 4294967296;
+  };
+}
+
+const r1 = n => Math.round(n * 10) / 10;
+const r3 = n => Math.round(n * 1000) / 1000;
+const fmt = n => Number(n || 0).toLocaleString('en-US');
+
+/* ------------------------------------------------------------------ */
+/* Procedural silhouettes                                              */
+/* ------------------------------------------------------------------ */
+
+/** Rolling canopy line: a chain of soft bumps closed down to the floor */
+function canopyPath(rand, baseY, minW, maxW, minH, maxH) {
+  let x = -40;
+  let y = baseY;
+  let d = `M ${x} ${H + 10} L ${x} ${y}`;
+  while (x < W + 40) {
+    const w = minW + rand() * (maxW - minW);
+    const h = minH + rand() * (maxH - minH);
+    const ny = baseY + (rand() - 0.5) * 14;
+    d += ` Q ${r1(x + w / 2)} ${r1(Math.min(y, ny) - h * 2)} ${r1(x + w)} ${r1(ny)}`;
+    x += w;
+    y = ny;
+  }
+  return `${d} L ${r1(x)} ${H + 10} Z`;
+}
+
+/** Palm frond: a drooping midrib with paired leaflets */
+function frondPath(ox, oy, angleDeg, len, leaf, droop = 0.35) {
+  const a = (angleDeg * Math.PI) / 180;
+  const dx = Math.cos(a);
+  const dy = Math.sin(a);
+  const pt = t => [ox + dx * len * t, oy + dy * len * t + len * droop * t * t];
+  let d = '';
+  const steps = 13;
+  for (let i = 1; i < steps; i++) {
+    const t = i / steps;
+    const [x0, y0] = pt(t);
+    const [x1, y1] = pt(t + 1 / steps);
+    let tx = x1 - x0;
+    let ty = y1 - y0;
+    const tl = Math.hypot(tx, ty) || 1;
+    tx /= tl; ty /= tl;
+    const nx = -ty;
+    const ny = tx;
+    const l = leaf * Math.sin(Math.PI * t) * (0.55 + 0.45 * (1 - t));
+    for (const s of [1, -1]) {
+      const tipX = x0 + nx * l * s + tx * l * 0.55;
+      const tipY = y0 + ny * l * s + ty * l * 0.55 + l * 0.35;
+      d += `M ${r1(x0)} ${r1(y0)} L ${r1(tipX)} ${r1(tipY)} L ${r1(x1)} ${r1(y1)} Z `;
     }
   }
+  const [ex, ey] = pt(1);
+  const [mx, my] = pt(0.5);
+  return { leaves: d, rib: `M ${ox} ${oy} Q ${r1(mx)} ${r1(my - len * droop * 0.12)} ${r1(ex)} ${r1(ey)}` };
+}
 
-  return positions;
+function frondGroup(fronds, fill, ribWidth = 1.6) {
+  return fronds.map(f => {
+    const { leaves, rib } = frondPath(...f);
+    return `<path d="${leaves}" fill="${fill}" /><path d="${rib}" fill="none" stroke="${fill}" stroke-width="${ribWidth}" stroke-linecap="round" />`;
+  }).join('');
+}
+
+/** Tapered, slightly bowed tree trunk spanning the frame */
+function trunkPath(x, topW, botW, bow) {
+  return `M ${x - topW / 2} -10 C ${x - topW / 2 + bow} ${H * 0.35}, ${x - botW / 2 - bow} ${H * 0.7}, ${x - botW / 2} ${H + 10}
+          L ${x + botW / 2} ${H + 10} C ${x + botW / 2 - bow} ${H * 0.7}, ${x + topW / 2 + bow} ${H * 0.35}, ${x + topW / 2} -10 Z`;
+}
+
+/** Soft cloud silhouette made of overlapping lobes */
+function cloudPath(cx, cy, w, h, rand) {
+  const lobes = 5;
+  let d = `M ${r1(cx - w / 2)} ${r1(cy)}`;
+  for (let i = 0; i < lobes; i++) {
+    const x0 = cx - w / 2 + (w / lobes) * i;
+    const x1 = x0 + w / lobes;
+    const lift = h * (0.55 + rand() * 0.6) * Math.sin(Math.PI * (i + 0.5) / lobes);
+    d += ` Q ${r1((x0 + x1) / 2)} ${r1(cy - lift * 2)} ${r1(x1)} ${r1(cy)}`;
+  }
+  d += ` Q ${r1(cx)} ${r1(cy + h * 0.5)} ${r1(cx - w / 2)} ${r1(cy)} Z`;
+  return d;
+}
+
+/* ------------------------------------------------------------------ */
+/* Wandering routes                                                    */
+/* ------------------------------------------------------------------ */
+
+const ROAM = { left: -70, right: W + 70, inLeft: 60, inRight: W - 60, speed: 22 };
+
+/** Closed Catmull-Rom spline through points → cubic Bézier segments */
+function splineSegments(pts) {
+  const n = pts.length;
+  const P = i => pts[((i % n) + n) % n];
+  return pts.map((_, i) => {
+    const p0 = P(i - 1), p1 = P(i), p2 = P(i + 1), p3 = P(i + 2);
+    return [p1,
+      [p1[0] + (p2[0] - p0[0]) / 6, p1[1] + (p2[1] - p0[1]) / 6],
+      [p2[0] - (p3[0] - p1[0]) / 6, p2[1] - (p3[1] - p1[1]) / 6],
+      p2];
+  });
+}
+
+function bezierLength([a, b, c, d]) {
+  let len = 0;
+  let prev = a;
+  for (let k = 1; k <= 24; k++) {
+    const t = k / 24, u = 1 - t;
+    const p = [
+      u * u * u * a[0] + 3 * u * u * t * b[0] + 3 * u * t * t * c[0] + t * t * t * d[0],
+      u * u * u * a[1] + 3 * u * u * t * b[1] + 3 * u * t * t * c[1] + t * t * t * d[1],
+    ];
+    len += Math.hypot(p[0] - prev[0], p[1] - prev[1]);
+    prev = p;
+  }
+  return len;
 }
 
 /**
- * Calculate canopy danger rank based on total commits
+ * A spirit's personal route. Waypoints wander the whole stage and sometimes
+ * beyond its edges; the spirit eases into each waypoint and occasionally
+ * lingers there, so motion reads as curious drifting rather than a loop.
  */
-function getCanopyRank(totalCommits) {
-  if (totalCommits >= 3000) return { rank: 'Mythic SSS', color: '#f59e0b' };
-  if (totalCommits >= 1500) return { rank: 'Elder S-Rank', color: '#ec4899' };
-  if (totalCommits >= 800) return { rank: 'Ancient A-Rank', color: '#a855f7' };
-  if (totalCommits >= 300) return { rank: 'Haunted B-Rank', color: '#38bdf8' };
-  if (totalCommits >= 100) return { rank: 'Awakened C-Rank', color: '#34d399' };
-  return { rank: 'Whispering D-Rank', color: '#94a3b8' };
+function wanderRoute(rand, s, tier, yTop, yBot, start) {
+  const count = 5 + Math.floor(rand() * 3);
+  const pts = [];
+  for (let i = 0; i < count; i++) {
+    const outside = rand() < 0.22;
+    const x = outside
+      ? (rand() < 0.5 ? ROAM.left + rand() * 40 : ROAM.right - rand() * 40)
+      : ROAM.inLeft + rand() * (ROAM.inRight - ROAM.inLeft);
+    const y = yTop + rand() * (yBot - yTop);
+    pts.push([x, y, !outside]);
+  }
+  if (start) pts[0] = [start[0], start[1], true];
+  else if (!pts.some(p => p[2])) pts[0] = [W / 2, (yTop + yBot) / 2, true];
+
+  const segs = splineSegments(pts.map(p => [p[0], p[1]]));
+  const lens = segs.map(bezierLength);
+  const total = lens.reduce((a, b) => a + b, 0);
+
+  // Bigger spirits move with more gravity
+  const speed = ROAM.speed * (1.25 - tier * 0.09) * (0.8 + rand() * 0.4);
+  const keyPoints = [0];
+  const times = [0];
+  const ys = [pts[0][1]];
+  const wpAt = [0];
+  const splines = [];
+  let dist = 0;
+  let t = 0;
+  for (let i = 0; i < segs.length; i++) {
+    dist += lens[i];
+    t += lens[i] / speed;
+    keyPoints.push(dist / total);
+    times.push(t);
+    ys.push(pts[(i + 1) % pts.length][1]);
+    wpAt.push((i + 1) % pts.length);
+    splines.push('0.45 0 0.55 1');
+    if (rand() < 0.4) {               // linger: hover in place for a moment
+      t += 1.2 + rand() * 2.4;
+      keyPoints.push(dist / total);
+      times.push(t);
+      ys.push(pts[(i + 1) % pts.length][1]);
+      wpAt.push((i + 1) % pts.length);
+      splines.push('0 0 1 1');
+    }
+  }
+  keyPoints[keyPoints.length - 1] = 1;
+  const dur = t;
+  const keyTimes = times.map(v => r3(v / dur));
+  keyTimes[keyTimes.length - 1] = 1;
+
+  const depthOf = y => s * (0.8 + 0.26 * (y - yTop) / Math.max(1, yBot - yTop));
+  const scales = ys.map(y => r3(depthOf(y)));
+  const opacities = ys.map(y => r3(0.62 + 0.38 * (y - yTop) / Math.max(1, yBot - yTop)));
+
+  // Start (static frame) on a waypoint inside the frame
+  const insideIdx = pts.map((p, i) => (p[2] ? i : -1)).filter(i => i >= 0);
+  const startWp = start ? 0 : insideIdx[Math.floor(rand() * insideIdx.length)];
+  const k0 = Math.max(0, wpAt.indexOf(startWp));
+  const [sx, sy] = [pts[startWp][0], pts[startWp][1]];
+
+  const rel = (x, y) => `${r1(x - sx)} ${r1(y - sy)}`;
+  let d = `M ${rel(...segs[0][0])}`;
+  for (const [, b, c, e] of segs) d += ` C ${rel(...b)} ${rel(...c)} ${rel(...e)}`;
+
+  return {
+    x: r1(sx),
+    y: r1(sy),
+    scale: scales[k0],
+    roam: {
+      path: d,
+      dur: r1(dur),
+      begin: r1(keyTimes[k0] * dur),
+      keyTimes,
+      keyPoints: keyPoints.map(r3),
+      keySplines: splines,
+      scales,
+      opacities,
+      opacity0: opacities[k0],
+    },
+  };
 }
 
-/**
- * Render complete Ghost Jungle SVG
- */
+/** Base spirit size for a crowd of n */
+const crowdScale = n => (n <= 8 ? 1 : Math.max(0.5, Math.sqrt(8 / n)));
+
+/** Vertical band the spirits roam in, so crowns clear the HUD and captions clear the floor */
+function roamBand(s) {
+  return { yTop: 80 + 62 * s * 0.8, yBot: 376 - (56 * s * 1.06 + 28) };
+}
+
+/* ------------------------------------------------------------------ */
+/* Scene                                                               */
+/* ------------------------------------------------------------------ */
+
+const SVG_MAX_SPIRITS = 36;
+const INTERACTIVE_MAX_SPIRITS = 60;
+
 function renderJungleSvg(userData, options = {}) {
-  const themeName = options.theme || 'midnight';
-  const theme = getTheme(themeName);
-  const width = parseInt(options.width, 10) || 880;
-  const height = parseInt(options.height, 10) || 500;
-  const limit = Math.min(Math.max(parseInt(options.limit, 10) || 8, 1), 10);
+  const theme = getTheme(options.theme || 'midnight');
+  const interactive = options.mode === 'interactive';
+  const cap = interactive ? INTERACTIVE_MAX_SPIRITS : SVG_MAX_SPIRITS;
+  const all = userData.repos || [];
+  const limitN = parseInt(options.limit, 10);
+  const limit = Math.min(Number.isFinite(limitN) && limitN > 0 ? limitN : all.length, cap);
 
-  const username = userData.username || 'Mystic Wanderer';
-  const repos = (userData.repos || []).slice(0, limit);
-  const totalCommits = userData.totalCommits || repos.reduce((sum, r) => sum + (r.commits || 1), 0);
-  const totalStars = userData.totalStars || repos.reduce((sum, r) => sum + (r.stars || 0), 0);
-  const canopyRank = getCanopyRank(totalCommits);
+  const outW = Math.min(Math.max(parseInt(options.width, 10) || W, 320), 2400);
+  const outH = parseInt(options.height, 10) ? Math.min(Math.max(parseInt(options.height, 10), 145), 1100) : Math.round(outW * H / W);
 
-  const positions = calculateGhostPositions(repos.length, width, height);
+  const username = String(userData.username || 'wanderer');
+  const repos = all.slice(0, limit);
+  const totalRepos = userData.totalRepos || all.length;
+  const totalCommits = userData.totalCommits ?? all.reduce((s, r) => s + (r.commits || 0), 0);
+  const totalStars = userData.totalStars ?? all.reduce((s, r) => s + (r.stars || 0), 0);
+  const followers = userData.followers || 0;
+  const rank = computeRank({ commits: totalCommits, stars: totalStars, followers, repos: totalRepos });
 
-  // Render ghosts
-  const ghostElements = repos.map((repo, i) => {
-    const pos = positions[i] || { x: 100 + i * 80, y: 240 };
-    return renderGhost(repo, i, pos.x, pos.y, theme);
-  }).join('\n');
+  const rand = seededRandom(`${username.toLowerCase()}::${options.theme || 'midnight'}`);
 
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}" width="${width}" height="${height}" role="img" aria-label="${username}'s GitHub Ghost Jungle">
+  // Palette derived from the theme (atmospheric perspective)
+  const [sky0, sky1, sky2] = theme.bgGradient;
+  const moon = theme.moonColor;
+  const farFill = mix(theme.foliageColor, theme.mistColor, 0.62);
+  const midFill = mix(theme.foliageColor, theme.mistColor, 0.28);
+  const nearFill = mix(theme.foliageColor, '#000000', 0.35);
+  const deepFill = mix(sky2, '#000000', 0.45);
+  const haze = mix(theme.mistColor, moon, 0.18);
+  const cloudFill = mix(sky1, theme.mistColor, 0.55);
+
+  const MX = 440;
+  const MY = 96;
+
+  /* ---------- Stars ---------- */
+  let stars = '';
+  for (let i = 0; i < 90; i++) {
+    const x = r1(rand() * W);
+    const y = r1(rand() * 210 * Math.pow(rand(), 0.6));
+    const r = r1(0.3 + rand() * 0.85);
+    const o = (0.2 + rand() * 0.6).toFixed(2);
+    const tw = i % 6 === 0 ? ` class="twinkle" style="animation-delay:-${r1(rand() * 6)}s"` : '';
+    stars += `<circle cx="${x}" cy="${y}" r="${r}" fill="#ffffff" opacity="${o}"${tw} />`;
+  }
+
+  /* ---------- Volumetric moonlight ----------
+     Wide, heavily blurred shafts that start below the moon and dissolve into
+     the haze; they breathe slowly and shift as clouds pass. */
+  const shafts = [-1.15, -0.5, 0.15, 0.75, 1.3].map((dir, i) => {
+    const topW = 18 + rand() * 16;
+    const botW = 70 + rand() * 70;
+    const bx = MX + dir * 210 + (rand() - 0.5) * 40;
+    const y0 = MY + 26;
+    return `<polygon class="shaft shaft-${i % 3}" points="${r1(MX + dir * 14 - topW / 2)},${y0} ${r1(MX + dir * 14 + topW / 2)},${y0} ${r1(bx + botW / 2)},${H - 40} ${r1(bx - botW / 2)},${H - 40}" fill="url(#shaft-grad)" />`;
+  }).join('');
+
+  /* ---------- Silhouette layers ---------- */
+  const farRidge = canopyPath(rand, 240, 26, 64, 10, 24);
+  const midRidge = canopyPath(rand, 304, 44, 96, 12, 28);
+  const groundLine = canopyPath(rand, 376, 18, 46, 3, 8);
+
+  const farPalms = [
+    [140, 240, -100, 34, 8, 0.5], [140, 240, -60, 36, 8, 0.5], [140, 240, -140, 32, 8, 0.5],
+    [760, 244, -80, 36, 8, 0.5], [760, 244, -40, 34, 8, 0.5], [760, 244, -125, 34, 8, 0.5],
+  ];
+
+  const trunks = `
+    <g fill="${midFill}">
+      <path d="${trunkPath(66, 9, 16, 8)}" />
+      <path d="${trunkPath(818, 8, 15, -7)}" />
+    </g>
+    <g fill="${nearFill}" stroke="${moon}" stroke-opacity="0.12" stroke-width="1">
+      <path d="${trunkPath(14, 24, 44, 10)}" />
+      <path d="${trunkPath(868, 22, 40, -12)}" />
+    </g>`;
+
+  const overheadFar = frondGroup([
+    [-20, -24, 12, 170, 18, 0.28], [-20, -24, 34, 135, 16, 0.3], [40, -30, 62, 95, 13, 0.3],
+    [900, -24, 168, 170, 18, 0.28], [900, -24, 146, 135, 16, 0.3], [840, -30, 118, 95, 13, 0.3],
+  ], mix(theme.foliageColor, theme.mistColor, 0.15));
+  const overheadNear = frondGroup([
+    [-30, -30, 24, 120, 16, 0.32], [-30, -30, 52, 95, 14, 0.32], [-30, 30, 4, 95, 13, 0.4],
+    [910, -30, 156, 120, 16, 0.32], [910, -30, 128, 95, 14, 0.32], [910, 30, 176, 95, 13, 0.4],
+  ], nearFill, 2.2);
+
+  const ferns = frondGroup([
+    [-20, 420, -38, 130, 14, 0.42], [-20, 420, -62, 112, 12, 0.4], [40, 430, -80, 92, 11, 0.35],
+    [900, 420, -142, 130, 14, 0.42], [900, 420, -118, 112, 12, 0.4], [840, 430, -100, 92, 11, 0.35],
+  ], deepFill, 1.8);
+
+  /* ---------- Hanging vines (pivot at their anchor) ---------- */
+  const vineSpecs = [
+    { x: 92, len: 112, sway: 'a' }, { x: 138, len: 74, sway: 'b' }, { x: 196, len: 44, sway: 'a' },
+    { x: 788, len: 104, sway: 'b' }, { x: 742, len: 66, sway: 'a' }, { x: 690, len: 40, sway: 'b' },
+  ];
+  const vines = vineSpecs.map((v, i) => {
+    const bend = (i % 2 ? -1 : 1) * (6 + rand() * 6);
+    const leaves = [0.35, 0.6, 0.82].map((t, k) => {
+      const ly = r1(v.len * t);
+      const lx = r1(bend * Math.sin(Math.PI * t));
+      const s = k % 2 ? -1 : 1;
+      return `<path d="M ${lx} ${ly} q ${s * 6} -4 ${s * 9} 1 q ${s * -4} 4 ${s * -9} -1 Z" fill="${nearFill}" />`;
+    }).join('');
+    return `<g transform="translate(${v.x}, 0)"><g class="vine vine-${v.sway}" style="animation-delay:-${r1(rand() * 6)}s">
+      <path d="M 0 -5 Q ${r1(bend * 2)} ${r1(v.len / 2)} 0 ${v.len}" fill="none" stroke="${nearFill}" stroke-width="1.6" stroke-linecap="round" />
+      ${leaves}
+      <circle cx="0" cy="${v.len + 2}" r="7" fill="url(#bud-glow)" />
+      <circle cx="0" cy="${v.len + 2}" r="1.7" fill="${theme.floraGlow}" />
+    </g></g>`;
+  }).join('');
+
+  /* ---------- Mushrooms ---------- */
+  const shroom = (x, y, s, flip = 1) => `
+    <g transform="translate(${x}, ${y}) scale(${s * flip}, ${s})">
+      <ellipse cx="0" cy="0" rx="34" ry="7" fill="url(#pool-glow)" />
+      <path d="M -1.6 0 Q -1 -10 0 -14 Q 1 -10 1.6 0 Z" fill="${theme.mushroomStem}" />
+      <path d="M -10 -13 C -10 -22 10 -22 10 -13 C 6 -11.5 -6 -11.5 -10 -13 Z" fill="${theme.mushroomCap}" />
+      <path d="M -8 -15 C -6 -19 4 -20 7 -16" fill="none" stroke="#ffffff" stroke-width="0.8" opacity="0.5" />
+      <path d="M 8 0 Q 9 -5 10 -8" fill="none" stroke="${theme.mushroomStem}" stroke-width="1.4" stroke-linecap="round" />
+      <path d="M 5.5 -7.5 C 5.5 -12 14.5 -12 14.5 -7.5 Z" fill="${theme.mushroomCap}" opacity="0.9" />
+    </g>`;
+  const mushrooms = shroom(54, 382, 1.3) + shroom(826, 380, 1.4, -1);
+
+  /* ---------- Fireflies ---------- */
+  let fireflies = '';
+  for (let i = 0; i < 18; i++) {
+    const x = r1(40 + rand() * (W - 80));
+    const y = r1(96 + rand() * 270);
+    const dur = r1(5 + rand() * 6);
+    fireflies += `<g class="ff ff-${i % 3}" style="animation-duration:${dur}s;animation-delay:-${r1(rand() * dur)}s">
+      <circle cx="${x}" cy="${y}" r="7" fill="url(#ff-glow)" />
+      <circle cx="${x}" cy="${y}" r="1.1" fill="#ffffff" />
+    </g>`;
+  }
+
+  /* ---------- Falling leaves ---------- */
+  const leafFill = mix(midFill, theme.floraGlow, 0.18);
+  let leaves = '';
+  for (let i = 0; i < 4; i++) {
+    const x = r1(120 + rand() * (W - 240));
+    const dur = r1(18 + rand() * 10);
+    leaves += `<g transform="translate(${x}, -16)"><g class="leaf" style="animation-duration:${dur}s;animation-delay:-${r1(rand() * dur)}s">
+      <path d="M 0 -5 C 4 -3 4 3 0 5 C -4 3 -4 -3 0 -5 Z M 0 -5 L 0 5" fill="${leafFill}" stroke="${leafFill}" stroke-width="0.4" /></g></g>`;
+  }
+
+  const puff = (cx, cy, rx, ry, op) => `<ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}" fill="url(#puff)" opacity="${op}" />`;
+
+  /* ---------- Spirits ---------- */
+  const s0 = crowdScale(repos.length);
+  const band = roamBand(s0);
+  // Crowds: caption the 12 strongest spirits; the rest keep hover titles
+  const captioned = new Set(repos.map((r, i) => [r.commits || 0, i]).sort((a, b) => b[0] - a[0]).slice(0, interactive ? 0 : 10).map(x => x[1]));
+  // Opening frame: spirits start from evenly spread, staggered slots, then wander off
+  const rows = repos.length <= 5 ? 1 : repos.length <= 16 ? 2 : 3;
+  const perRow = Math.ceil(repos.length / rows);
+  const slots = repos.map((_, i) => {
+    const row = i % rows;
+    const col = Math.floor(i / rows);
+    const step = (W - 160) / perRow;
+    const x = 80 + step * (col + 0.5) + (row % 2 ? step * 0.35 : -step * 0.15) + (rand() - 0.5) * step * 0.2;
+    const y = rows === 1 ? (band.yTop + band.yBot) / 2 : band.yTop + (band.yBot - band.yTop) * (row / (rows - 1));
+    return [Math.max(70, Math.min(W - 70, x)), y];
+  });
+  const placed = repos.map((repo, i) => {
+    const tier = TIERS.slice().reverse().find(t => Math.max(1, repo.commits || 1) >= t.min) || TIERS[0];
+    const route = wanderRoute(rand, s0, tier.tier, band.yTop, band.yBot, slots[i]);
+    return { repo, i, route };
+  });
+  // Static depth order: farther (higher) spirits first
+  placed.sort((a, b) => a.route.y - b.route.y);
+  const ghosts = placed.map(({ repo, i, route }) => renderGhost(repo, i, route.x, route.y, theme, {
+    scale: route.scale,
+    roam: interactive ? null : route.roam,
+    caption: interactive || captioned.has(i) ? 'full' : false,
+  })).join('');
+
+  /* ---------- HUD ---------- */
+  const DX = W - 56;     // rank dial center
+  const DY = 44;
+  const DR = 21;
+  const circ = 2 * Math.PI * DR;
+  const arc = Math.max(0.04, Math.min(1, rank.score));
+  const commitsLabel = `${userData.commitsExact === false ? '~' : ''}${fmt(totalCommits)}`;
+
+  const rankTitleX = DX - DR - 14;
+  const titleW = Math.max(textWidth(rank.title, 12.5), rank.topLabel.length * 7.5 * 0.72 + (rank.topLabel.length - 1) * 1.6);
+  const stats = [
+    { label: 'FOLLOWERS', value: fmt(followers) },
+    { label: 'STARS', value: fmt(totalStars) },
+    { label: 'COMMITS', value: commitsLabel },
+    { label: 'SPIRITS', value: fmt(totalRepos) },
+  ];
+  let sx = rankTitleX - titleW - 28;
+  const statEls = stats.map(s => {
+    const w = Math.max(textWidth(s.value, 15), s.label.length * 7.5 * 0.72 + (s.label.length - 1) * 1.6);
+    const el = `
+      <text x="${r1(sx)}" y="36" text-anchor="end" class="t-label">${s.label}</text>
+      <text x="${r1(sx)}" y="56" text-anchor="end" class="t-stat">${escapeXml(s.value)}</text>
+      <line x1="${r1(sx + 14)}" y1="28" x2="${r1(sx + 14)}" y2="57" stroke="${theme.textColor}" stroke-opacity="0.14" />`;
+    sx -= w + 28;
+    return el;
+  }).join('');
+
+  const displayName = username.length > 20 ? username.slice(0, 19) + '…' : username;
+  const desc = repos.map(r => `${r.name} (${r.commits} commits)`).join(', ');
+  const shown = repos.length < totalRepos ? ` Showing ${repos.length} of ${totalRepos}.` : '';
+
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${outW}" height="${outH}" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="gj-title gj-desc">
+  <title id="gj-title">${escapeXml(username)}'s Ghost Jungle</title>
+  <desc id="gj-desc">${escapeXml(`${totalRepos} repository spirits: ${desc}.${shown} ${fmt(totalCommits)} commits, ${fmt(totalStars)} stars, ${fmt(followers)} followers. Canopy rank ${rank.grade} ${rank.title}, ${rank.topLabel.toLowerCase()}.`)}</desc>
   <defs>
-    <!-- Jungle Base Gradients -->
-    <linearGradient id="sky-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="${theme.bgGradient[0]}" />
-      <stop offset="45%" stop-color="${theme.bgGradient[1]}" />
-      <stop offset="100%" stop-color="${theme.bgGradient[2]}" />
-    </linearGradient>
+    <clipPath id="frame"><rect width="${W}" height="${H}" rx="18" /></clipPath>
 
-    <linearGradient id="moon-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="${mix(sky0, '#000000', 0.3)}" />
+      <stop offset="40%" stop-color="${sky1}" />
+      <stop offset="64%" stop-color="${mix(sky1, theme.mistColor, 0.35)}" />
+      <stop offset="100%" stop-color="${sky2}" />
+    </linearGradient>
+    <radialGradient id="moon-halo">
+      <stop offset="0%" stop-color="${moon}" stop-opacity="0.38" />
+      <stop offset="12%" stop-color="${moon}" stop-opacity="0.2" />
+      <stop offset="35%" stop-color="${moon}" stop-opacity="0.07" />
+      <stop offset="100%" stop-color="${moon}" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="moon-disc" cx="40%" cy="36%" r="68%">
       <stop offset="0%" stop-color="#ffffff" />
-      <stop offset="60%" stop-color="${theme.moonColor}" />
-      <stop offset="100%" stop-color="${theme.moonColor}" stop-opacity="0.6" />
+      <stop offset="55%" stop-color="${mix('#ffffff', moon, 0.28)}" />
+      <stop offset="100%" stop-color="${mix(moon, sky1, 0.2)}" />
+    </radialGradient>
+    <radialGradient id="moon-wash" cx="50%" cy="0%" r="90%">
+      <stop offset="0%" stop-color="${moon}" stop-opacity="0.16" />
+      <stop offset="100%" stop-color="${moon}" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="shaft-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="${mix(moon, '#ffffff', 0.4)}" stop-opacity="0.2" />
+      <stop offset="45%" stop-color="${moon}" stop-opacity="0.07" />
+      <stop offset="100%" stop-color="${moon}" stop-opacity="0" />
     </linearGradient>
-
-    <linearGradient id="mist-grad-1" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="${theme.mistColor}" stop-opacity="0" />
-      <stop offset="30%" stop-color="${theme.mistColor}" stop-opacity="0.45" />
-      <stop offset="70%" stop-color="${theme.mistColor}" stop-opacity="0.35" />
-      <stop offset="100%" stop-color="${theme.mistColor}" stop-opacity="0" />
+    <linearGradient id="cloud-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="${mix(cloudFill, moon, 0.35)}" />
+      <stop offset="60%" stop-color="${cloudFill}" />
     </linearGradient>
-
-    <linearGradient id="mist-grad-2" x1="100%" y1="0%" x2="0%" y2="0%">
-      <stop offset="0%" stop-color="${theme.mistColor}" stop-opacity="0" />
-      <stop offset="40%" stop-color="${theme.mistColor}" stop-opacity="0.5" />
-      <stop offset="80%" stop-color="${theme.mistColor}" stop-opacity="0.3" />
-      <stop offset="100%" stop-color="${theme.mistColor}" stop-opacity="0" />
+    <linearGradient id="haze-band" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="${haze}" stop-opacity="0" />
+      <stop offset="50%" stop-color="${haze}" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="${haze}" stop-opacity="0" />
     </linearGradient>
-
-    <linearGradient id="pedestal-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="${theme.vinesColor}" />
-      <stop offset="100%" stop-color="${theme.bgGradient[2]}" />
+    <radialGradient id="puff">
+      <stop offset="0%" stop-color="${haze}" stop-opacity="0.55" />
+      <stop offset="100%" stop-color="${haze}" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="ff-glow">
+      <stop offset="0%" stop-color="${theme.fireflyColor}" stop-opacity="0.9" />
+      <stop offset="35%" stop-color="${theme.fireflyColor}" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="${theme.fireflyColor}" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="bud-glow">
+      <stop offset="0%" stop-color="${theme.floraGlow}" stop-opacity="0.75" />
+      <stop offset="100%" stop-color="${theme.floraGlow}" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="pool-glow">
+      <stop offset="0%" stop-color="${theme.mushroomCap}" stop-opacity="0.55" />
+      <stop offset="100%" stop-color="${theme.mushroomCap}" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="vignette" cx="50%" cy="46%" r="72%">
+      <stop offset="52%" stop-color="#000000" stop-opacity="0" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.78" />
+    </radialGradient>
+    <linearGradient id="letterbox" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.66" />
+      <stop offset="19%" stop-color="#000000" stop-opacity="0" />
+      <stop offset="86%" stop-color="#000000" stop-opacity="0" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.7" />
     </linearGradient>
-
-    <!-- Filters -->
-    <filter id="core-glow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="3.5" result="coloredBlur"/>
-      <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+${SHARED_DEFS}
+    <linearGradient id="streak" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.95" />
+    </linearGradient>
+    <filter id="volumetric" x="-30%" y="-10%" width="160%" height="120%">
+      <feGaussianBlur stdDeviation="11" />
     </filter>
-
-    <filter id="moon-soft-glow" x="-60%" y="-60%" width="220%" height="220%">
-      <feGaussianBlur stdDeviation="16" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+    <filter id="soften" x="-20%" y="-50%" width="140%" height="200%">
+      <feGaussianBlur stdDeviation="3" />
     </filter>
-
-    <filter id="jungle-blur" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="4" />
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="7" stitchTiles="stitch" />
+      <feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.9 0" />
     </filter>
   </defs>
 
   <style>
-    /* GitHub README Safe CSS Animations */
-    @keyframes float-0 {
-      0%, 100% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-10px) rotate(-1.5deg); }
-    }
-    @keyframes float-1 {
-      0%, 100% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-13px) rotate(1.8deg); }
-    }
-    @keyframes float-2 {
-      0%, 100% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-8px) rotate(-1.2deg); }
-    }
-    @keyframes float-3 {
-      0%, 100% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-12px) rotate(1.5deg); }
-    }
+    ${FONT_FACES}
+    text { font-family: ${FONT}; }
+    .t-name    { font-size: 11px; font-weight: 500; fill: ${theme.textColor}; paint-order: stroke; stroke: ${deepFill}; stroke-width: 3px; stroke-linejoin: round; }
+    .t-meta    { font-size: 8px; font-weight: 700; letter-spacing: 1px; paint-order: stroke; stroke: ${deepFill}; stroke-width: 2.5px; stroke-linejoin: round; }
+    .t-eyebrow { font-size: 8px; font-weight: 700; letter-spacing: 3px; fill: ${theme.textDim}; }
+    .t-title   { font-size: 22px; font-weight: 700; letter-spacing: -0.3px; fill: ${theme.textColor}; }
+    .t-label   { font-size: 7.5px; font-weight: 700; letter-spacing: 1.6px; fill: ${theme.textDim}; opacity: 0.85; }
+    .t-stat    { font-size: 15px; font-weight: 500; fill: ${theme.textColor}; font-variant-numeric: tabular-nums; }
+    .t-rank    { font-size: 12.5px; font-weight: 700; }
+    .t-grade   { font-size: 14px; font-weight: 700; letter-spacing: -0.4px; }
+    .t-mark    { font-size: 7.5px; font-weight: 500; letter-spacing: 0.6px; fill: #ffffff; opacity: 0.16; }
+${GHOST_CSS}
+    @keyframes cam-far  { 0%,100% { transform: translateX(-5px) } 50% { transform: translateX(5px) } }
+    @keyframes cam-mid  { 0%,100% { transform: translateX(-3px) } 50% { transform: translateX(3px) } }
+    @keyframes cam-near { 0%,100% { transform: translateX(8px) } 50% { transform: translateX(-8px) } }
+    @keyframes cam-top  { 0%,100% { transform: translateX(12px) } 50% { transform: translateX(-12px) } }
+    @keyframes star     { 0%,90% { opacity: 0; transform: translate(0,0) } 91% { opacity: 1 } 96%,100% { opacity: 0; transform: translate(-220px,88px) } }
+    @keyframes leaf     { 0% { opacity: 0; transform: translate(0,0) rotate(0deg) } 8% { opacity: .9 } 25% { transform: translate(18px,105px) rotate(140deg) } 50% { transform: translate(-14px,210px) rotate(260deg) } 75% { transform: translate(16px,315px) rotate(400deg) } 92% { opacity: .8 } 100% { opacity: 0; transform: translate(-6px,430px) rotate(520deg) } }
+    @keyframes twinkle  { 0%,100% { opacity: .9 } 50% { opacity: .15 } }
+    @keyframes shaft    { 0%,100% { opacity: .55 } 40% { opacity: 1 } 70% { opacity: .7 } }
+    @keyframes moonlight{ 0%,100% { opacity: 1 } 45% { opacity: .82 } 55% { opacity: .78 } }
+    @keyframes cloud-a  { 0% { transform: translateX(-260px) } 100% { transform: translateX(260px) } }
+    @keyframes cloud-b  { 0% { transform: translateX(240px) } 100% { transform: translateX(-240px) } }
+    @keyframes drift-l  { 0%,100% { transform: translateX(0) } 50% { transform: translateX(-60px) } }
+    @keyframes drift-r  { 0%,100% { transform: translateX(0) } 50% { transform: translateX(60px) } }
+    @keyframes sway-a   { 0%,100% { transform: rotate(-1.6deg) } 50% { transform: rotate(1.8deg) } }
+    @keyframes sway-b   { 0%,100% { transform: rotate(1.4deg) } 50% { transform: rotate(-1.8deg) } }
+    @keyframes ff-0     { 0%,100% { transform: translate(0,0); opacity: 0 } 20%,80% { opacity: 1 } 50% { transform: translate(18px,-22px) } }
+    @keyframes ff-1     { 0%,100% { transform: translate(0,0); opacity: 0 } 25%,75% { opacity: .9 } 50% { transform: translate(-20px,-14px) } }
+    @keyframes ff-2     { 0%,100% { transform: translate(0,0); opacity: 0 } 30%,70% { opacity: 1 } 50% { transform: translate(10px,-28px) } }
+    @keyframes dial     { from { stroke-dashoffset: ${r1(circ)} } }
 
-    @keyframes pulse-moon {
-      0%, 100% { transform: scale(1); opacity: 0.85; }
-      50% { transform: scale(1.04); opacity: 1; }
-    }
-
-    @keyframes mist-drift-left {
-      0% { transform: translateX(0); }
-      50% { transform: translateX(-40px); }
-      100% { transform: translateX(0); }
-    }
-
-    @keyframes mist-drift-right {
-      0% { transform: translateX(0); }
-      50% { transform: translateX(45px); }
-      100% { transform: translateX(0); }
-    }
-
-    @keyframes firefly-twinkle {
-      0%, 100% { opacity: 0.2; transform: translateY(0) scale(0.8); }
-      50% { opacity: 0.95; transform: translateY(-14px) scale(1.2); }
-    }
-
-    @keyframes vine-sway-left {
-      0%, 100% { transform: rotate(0deg); }
-      50% { transform: rotate(2.5deg); }
-    }
-
-    @keyframes vine-sway-right {
-      0%, 100% { transform: rotate(0deg); }
-      50% { transform: rotate(-2.8deg); }
-    }
-
-    @keyframes eye-blink {
-      0%, 94%, 100% { transform: scaleY(1); }
-      96%, 98% { transform: scaleY(0.08); }
-    }
-
-    .ghost-entity {
-      cursor: pointer;
-      transition: transform 0.25s ease;
-    }
-    .ghost-entity:hover {
-      filter: brightness(1.25);
-    }
+    .cam-far { animation: cam-far 26s ease-in-out infinite } .cam-mid { animation: cam-mid 26s ease-in-out infinite }
+    .cam-near { animation: cam-near 26s ease-in-out infinite } .cam-top { animation: cam-top 26s ease-in-out infinite }
+    .shooting { animation: star 13s linear infinite; opacity: 0 }
+    .leaf { animation: leaf 22s linear infinite; opacity: 0 }
+    .twinkle { animation: twinkle 4.5s ease-in-out infinite }
+    .shaft { animation: shaft 11s ease-in-out infinite } .shaft-1 { animation-delay: -4s } .shaft-2 { animation-delay: -7.5s }
+    .moonlight { animation: moonlight 34s ease-in-out infinite }
+    .cloud-a { animation: cloud-a 70s linear infinite } .cloud-b { animation: cloud-b 95s linear infinite }
+    .drift-l { animation: drift-l 22s ease-in-out infinite } .drift-r { animation: drift-r 28s ease-in-out infinite }
+    .vine-a { animation: sway-a 7s ease-in-out infinite } .vine-b { animation: sway-b 8.5s ease-in-out infinite }
+    .ff-0 { animation-name: ff-0 } .ff-1 { animation-name: ff-1 } .ff-2 { animation-name: ff-2 }
+    .ff { animation-timing-function: ease-in-out; animation-iteration-count: infinite; opacity: 0 }
+    .ghost { cursor: pointer }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important } .ff { opacity: .8 } }
   </style>
 
-  <!-- BACKGROUND: Deep Jungle Night -->
-  <rect width="${width}" height="${height}" rx="16" fill="url(#sky-grad)" stroke="${theme.accentBorder}" stroke-width="1.5" />
-
-  <!-- CELESTIAL MOON / ECLIPSE -->
-  <g transform="translate(${Math.round(width * 0.76)}, 85)">
-    <!-- Outer Halo -->
-    <circle cx="0" cy="0" r="70" fill="${theme.moonGlow}" filter="url(#moon-soft-glow)" />
-    <!-- Secondary Halo Ring -->
-    <circle cx="0" cy="0" r="50" fill="none" stroke="${theme.moonColor}" stroke-width="1" stroke-dasharray="4 6" opacity="0.4" />
-    <!-- Core Moon -->
-    <circle cx="0" cy="0" r="34" fill="url(#moon-grad)" filter="url(#core-glow)" style="animation: pulse-moon 7s ease-in-out infinite;" />
-    <!-- Moon Craters / Eclipse Shading -->
-    <circle cx="8" cy="-6" r="6" fill="${theme.bgGradient[1]}" opacity="0.25" />
-    <circle cx="-10" cy="8" r="9" fill="${theme.bgGradient[1]}" opacity="0.2" />
-    <circle cx="5" cy="14" r="5" fill="${theme.bgGradient[1]}" opacity="0.18" />
-  </g>
-
-  <!-- DISTANT JUNGLE CANOPY SILHOUETTES -->
-  <g fill="${theme.foliageColor}" opacity="0.6">
-    <path d="M 0 160 Q 90 120 180 150 Q 280 110 380 145 Q 490 100 600 140 Q 720 115 880 160 L 880 320 L 0 320 Z" />
-    <path d="M 0 200 Q 140 170 260 210 Q 420 160 580 205 Q 740 175 880 220 L 880 400 L 0 400 Z" opacity="0.7" />
-  </g>
-
-  <!-- DRIFTING JUNGLE MIST (LAYER 1) -->
-  <g style="animation: mist-drift-left 14s ease-in-out infinite;">
-    <path d="M -50 240 C 150 200, 300 270, 520 220 C 720 180, 850 250, 950 230 L 950 340 C 800 370, 600 320, 400 360 C 200 400, 50 330, -50 350 Z"
-          fill="url(#mist-grad-1)" />
-  </g>
-
-  <!-- TOP CANOPY OVERHANGING BRANCHES & VINES -->
-  <!-- Top Left Massive Branch -->
-  <g style="transform-origin: 0 0; animation: vine-sway-left 8s ease-in-out infinite;">
-    <path d="M 0 0 L 260 0 C 240 25, 200 45, 150 55 C 100 65, 40 70, 0 85 Z" fill="${theme.vinesColor}" />
-    <!-- Vines hanging down from branch -->
-    <path d="M 45 65 Q 40 120 48 165 Q 52 195 44 215" fill="none" stroke="${theme.vinesColor}" stroke-width="2.5" stroke-linecap="round" />
-    <circle cx="44" cy="217" r="3" fill="${theme.floraGlow}" opacity="0.8" filter="url(#core-glow)" />
-
-    <path d="M 95 60 Q 110 130 92 180 Q 82 220 90 250" fill="none" stroke="${theme.vinesColor}" stroke-width="2" stroke-linecap="round" />
-    <circle cx="90" cy="252" r="3.5" fill="${theme.floraGlow}" opacity="0.9" filter="url(#core-glow)" />
-
-    <path d="M 165 48 Q 155 95 168 140" fill="none" stroke="${theme.vinesColor}" stroke-width="2.2" stroke-linecap="round" />
-    
-    <!-- Leaves on branch -->
-    <path d="M 60 70 C 50 85, 52 105, 68 100 C 78 95, 75 75, 60 70 Z" fill="${theme.foliageColor}" />
-    <path d="M 125 55 C 135 70, 148 85, 142 98 C 130 102, 120 85, 125 55 Z" fill="${theme.foliageColor}" />
-    <path d="M 190 35 C 205 50, 218 62, 210 75 C 198 78, 185 60, 190 35 Z" fill="${theme.foliageColor}" />
-  </g>
-
-  <!-- Top Right Canopy Branch -->
-  <g style="transform-origin: ${width}px 0; animation: vine-sway-right 9s ease-in-out infinite;">
-    <path d="M ${width} 0 L ${width - 240} 0 C ${width - 200} 30, ${width - 150} 50, ${width - 90} 65 C ${width - 40} 75, ${width - 10} 80, ${width} 90 Z" fill="${theme.vinesColor}" />
-    <!-- Vines hanging down -->
-    <path d="M ${width - 70} 68 Q ${width - 80} 130 ${width - 65} 185 Q ${width - 55} 230 ${width - 68} 260" fill="none" stroke="${theme.vinesColor}" stroke-width="2.8" stroke-linecap="round" />
-    <circle cx="${width - 68}" cy="262" r="3.5" fill="${theme.floraGlow}" opacity="0.85" filter="url(#core-glow)" />
-
-    <path d="M ${width - 145} 52 Q ${width - 135} 105 ${width - 148} 150" fill="none" stroke="${theme.vinesColor}" stroke-width="2" stroke-linecap="round" />
-    <circle cx="${width - 148}" cy="152" r="2.8" fill="${theme.mushroomCap}" opacity="0.9" filter="url(#core-glow)" />
-
-    <!-- Jungle leaves -->
-    <path d="M ${width - 110} 60 C ${width - 120} 78, ${width - 115} 95, ${width - 98} 90 C ${width - 90} 82, ${width - 95} 68, ${width - 110} 60 Z" fill="${theme.foliageColor}" />
-    <path d="M ${width - 180} 40 C ${width - 195} 55, ${width - 190} 72, ${width - 175} 68 C ${width - 165} 62, ${width - 170} 48, ${width - 180} 40 Z" fill="${theme.foliageColor}" />
-  </g>
-
-  <!-- TREE HOLLOW WITH BLINKING SPOOKY EYES -->
-  <g transform="translate(38, 105)">
-    <!-- Dark hollow -->
-    <ellipse cx="0" cy="0" rx="9" ry="14" fill="#010408" />
-    <!-- Eyes blinking -->
-    <g style="animation: eye-blink 5.5s infinite; transform-origin: 0 0;">
-      <circle cx="-3" cy="0" r="1.8" fill="${theme.fireflyColor}" filter="url(#core-glow)" />
-      <circle cx="3" cy="0" r="1.8" fill="${theme.fireflyColor}" filter="url(#core-glow)" />
-      <circle cx="-3" cy="0" r="0.7" fill="#ffffff" />
-      <circle cx="3" cy="0" r="0.7" fill="#ffffff" />
-    </g>
-  </g>
-
-  <!-- JUNGLE RUINS / ANCIENT PEDESTALS & BASE MOSS -->
-  <!-- Left Ancient Pillar Pedestal -->
-  <g transform="translate(55, 415)">
-    <polygon points="-24,0 24,0 18,65 -18,65" fill="url(#pedestal-grad)" stroke="${theme.vinesColor}" stroke-width="1.2" />
-    <rect x="-28" y="-6" width="56" height="8" rx="2" fill="${theme.vinesColor}" />
-    <!-- Runic carved glyph -->
-    <path d="M -8 18 L 0 10 L 8 18 L 0 26 Z M 0 26 L 0 38" fill="none" stroke="${theme.floraGlow}" stroke-width="1.2" opacity="0.6" filter="url(#core-glow)" />
-  </g>
-
-  <!-- Right Ancient Pillar Pedestal -->
-  <g transform="translate(${width - 65}, 420)">
-    <polygon points="-22,0 22,0 16,60 -16,60" fill="url(#pedestal-grad)" stroke="${theme.vinesColor}" stroke-width="1.2" />
-    <rect x="-26" y="-6" width="52" height="8" rx="2" fill="${theme.vinesColor}" />
-    <!-- Runic glyph -->
-    <circle cx="0" cy="22" r="6" fill="none" stroke="${theme.floraGlow}" stroke-width="1" opacity="0.55" filter="url(#core-glow)" />
-    <path d="M -4 22 L 4 22 M 0 18 L 0 26" stroke="${theme.floraGlow}" stroke-width="1" opacity="0.6" />
-  </g>
-
-  <!-- FOREST FLOOR & ROOTS -->
-  <path d="M 0 ${height - 40} 
-           Q 120 ${height - 65} 240 ${height - 42} 
-           Q 380 ${height - 25} 510 ${height - 48} 
-           Q 670 ${height - 70} 800 ${height - 40} 
-           L ${width} ${height - 45} L ${width} ${height} L 0 ${height} Z" 
-        fill="${theme.foliageColor}" />
-
-  <path d="M 0 ${height - 25} 
-           Q 180 ${height - 45} 360 ${height - 22} 
-           Q 560 ${height - 50} 740 ${height - 28} 
-           L ${width} ${height - 30} L ${width} ${height} L 0 ${height} Z" 
-        fill="${theme.bgGradient[2]}" opacity="0.9" />
-
-  <!-- BIOLUMINESCENT MUSHROOMS ON ROOTS -->
-  <!-- Mushroom cluster 1 (Left) -->
-  <g transform="translate(130, ${height - 42})">
-    <!-- Big shroom -->
-    <path d="M -3 0 Q -2 -14 0 -18 Q 2 -14 3 0" fill="${theme.mushroomStem}" />
-    <path d="M -12 -18 C -12 -28 12 -28 12 -18 C 8 -16 -8 -16 -12 -18 Z" fill="${theme.mushroomCap}" filter="url(#core-glow)" />
-    <circle cx="-4" cy="-22" r="1.2" fill="#ffffff" opacity="0.8" />
-    <circle cx="4" cy="-21" r="1.5" fill="#ffffff" opacity="0.8" />
-    <!-- Small shroom -->
-    <path d="M 10 0 Q 11 -8 13 -12" stroke="${theme.mushroomStem}" stroke-width="2.2" stroke-linecap="round" />
-    <path d="M 7 -12 C 7 -18 19 -18 19 -12 Z" fill="${theme.mushroomCap}" opacity="0.9" filter="url(#core-glow)" />
-  </g>
-
-  <!-- Mushroom cluster 2 (Center) -->
-  <g transform="translate(${Math.round(width * 0.48)}, ${height - 38})">
-    <path d="M -2 0 Q -1 -12 0 -15" stroke="${theme.mushroomStem}" stroke-width="2.5" stroke-linecap="round" />
-    <path d="M -10 -15 C -10 -24 10 -24 10 -15 Z" fill="${theme.mushroomCap}" filter="url(#core-glow)" />
-    <circle cx="0" cy="-19" r="1.5" fill="#ffffff" opacity="0.85" />
-    <!-- Mini shroom -->
-    <path d="M -12 0 Q -11 -6 -13 -9" stroke="${theme.mushroomStem}" stroke-width="2" stroke-linecap="round" />
-    <path d="M -17 -9 C -17 -14 -9 -14 -9 -9 Z" fill="${theme.mushroomCap}" opacity="0.8" />
-  </g>
-
-  <!-- Mushroom cluster 3 (Right) -->
-  <g transform="translate(${width - 150}, ${height - 44})">
-    <path d="M 0 0 Q 2 -14 0 -20" stroke="${theme.mushroomStem}" stroke-width="3" stroke-linecap="round" />
-    <path d="M -14 -20 C -14 -32 14 -32 14 -20 Z" fill="${theme.mushroomCap}" filter="url(#core-glow)" />
-    <circle cx="-5" cy="-25" r="1.6" fill="#ffffff" opacity="0.85" />
-    <circle cx="5" cy="-24" r="1.3" fill="#ffffff" opacity="0.85" />
-  </g>
-
-  <!-- DRIFTING JUNGLE MIST (LAYER 2 - FOREGROUND) -->
-  <g style="animation: mist-drift-right 18s ease-in-out infinite;">
-    <path d="M -40 ${height - 90} C 160 ${height - 130}, 340 ${height - 70}, 560 ${height - 110} C 740 ${height - 140}, 880 ${height - 80}, 980 ${height - 100} L 980 ${height} L -40 ${height} Z"
-          fill="url(#mist-grad-2)" />
-  </g>
-
-  <!-- FLOATING FIREFLIES / SPECTRAL MOTES -->
-  <g>
-    <circle cx="95" cy="280" r="2.2" fill="${theme.fireflyColor}" filter="url(#core-glow)" style="animation: firefly-twinkle 3.2s ease-in-out infinite;" />
-    <circle cx="210" cy="140" r="1.8" fill="${theme.fireflyColor}" filter="url(#core-glow)" style="animation: firefly-twinkle 4.1s ease-in-out infinite 0.7s;" />
-    <circle cx="320" cy="260" r="2.5" fill="${theme.fireflyColor}" filter="url(#core-glow)" style="animation: firefly-twinkle 3.7s ease-in-out infinite 1.4s;" />
-    <circle cx="430" cy="160" r="2.0" fill="${theme.fireflyColor}" filter="url(#core-glow)" style="animation: firefly-twinkle 4.5s ease-in-out infinite 0.3s;" />
-    <circle cx="560" cy="240" r="2.4" fill="${theme.fireflyColor}" filter="url(#core-glow)" style="animation: firefly-twinkle 3.9s ease-in-out infinite 2.1s;" />
-    <circle cx="680" cy="170" r="1.9" fill="${theme.fireflyColor}" filter="url(#core-glow)" style="animation: firefly-twinkle 4.8s ease-in-out infinite 1.1s;" />
-    <circle cx="790" cy="270" r="2.3" fill="${theme.fireflyColor}" filter="url(#core-glow)" style="animation: firefly-twinkle 3.5s ease-in-out infinite 1.8s;" />
-    <circle cx="160" cy="380" r="2.0" fill="${theme.fireflyColor}" filter="url(#core-glow)" style="animation: firefly-twinkle 4.3s ease-in-out infinite 2.5s;" />
-    <circle cx="720" cy="390" r="2.2" fill="${theme.fireflyColor}" filter="url(#core-glow)" style="animation: firefly-twinkle 3.8s ease-in-out infinite 0.9s;" />
-  </g>
-
-  <!-- ==================== GHOST REPOSITORIES ==================== -->
-  <g id="ghost-sanctuary">
-    ${ghostElements}
-  </g>
-
-  <!-- ==================== HEADER HUD BAR ==================== -->
-  <g transform="translate(24, 20)">
-    <!-- Header Pill Background -->
-    <rect x="0" y="0" width="${width - 48}" height="42" rx="21" fill="${theme.cardBg}" stroke="${theme.accentBorder}" stroke-width="1.2" backdrop-filter="blur(8px)" />
-
-    <!-- Ghost Jungle Icon -->
-    <g transform="translate(22, 21)">
-      <circle cx="0" cy="0" r="12" fill="${theme.floraGlow}" fill-opacity="0.2" stroke="${theme.floraGlow}" stroke-width="1.2" />
-      <path d="M -5 -4 C -5 -9, 5 -9, 5 -4 C 5 4, 3 6, 0 4 C -3 6, -5 4, -5 -4 Z" fill="${theme.floraGlow}" filter="url(#core-glow)" />
-      <circle cx="-2" cy="-4" r="0.9" fill="#000000" />
-      <circle cx="2" cy="-4" r="0.9" fill="#000000" />
+  <g clip-path="url(#frame)">
+    <!-- SKY -->
+    <rect width="${W}" height="${H}" fill="url(#sky)" />
+    <g>${stars}</g>
+    <g transform="translate(${r1(560 + rand() * 200)}, ${r1(26 + rand() * 36)}) rotate(-22)">
+      <g class="shooting" style="animation-delay:-${r1(rand() * 6)}s"><rect x="-70" y="-0.6" width="70" height="1.2" rx="0.6" fill="url(#streak)" /></g>
     </g>
 
-    <!-- Title & Username -->
-    <text x="44" y="22" font-family="'Segoe UI', Roboto, -apple-system, sans-serif" font-size="14" font-weight="700" fill="${theme.textColor}">
-      ${username}'s Haunted Jungle
-    </text>
-    <text x="44" y="33" font-family="'Segoe UI', Roboto, -apple-system, sans-serif" font-size="9" font-weight="500" fill="${theme.textDim}">
-      Living Spirit Ecosystem • Evolving by Commits
-    </text>
-
-    <!-- Stats Badges (Right Side) -->
-    <g transform="translate(${width - 48 - 18}, 21)">
-      <!-- Rank Badge -->
-      <g transform="translate(-5, 0)">
-        <rect x="-85" y="-12" width="85" height="24" rx="12" fill="${canopyRank.color}" fill-opacity="0.18" stroke="${canopyRank.color}" stroke-width="1" />
-        <text x="-42" y="4" text-anchor="middle" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="700" fill="${canopyRank.color}">
-          ${canopyRank.rank}
-        </text>
-      </g>
-
-      <!-- Commits Badge -->
-      <g transform="translate(-100, 0)">
-        <rect x="-95" y="-12" width="90" height="24" rx="12" fill="${theme.bgGradient[1]}" stroke="${theme.accentBorder}" stroke-width="1" />
-        <text x="-50" y="4" text-anchor="middle" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="${theme.textColor}">
-          ⚡ ${totalCommits.toLocaleString()} commits
-        </text>
-      </g>
-
-      <!-- Spirits Count Badge -->
-      <g transform="translate(-200, 0)">
-        <rect x="-85" y="-12" width="80" height="24" rx="12" fill="${theme.bgGradient[1]}" stroke="${theme.accentBorder}" stroke-width="1" />
-        <text x="-45" y="4" text-anchor="middle" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="${theme.textColor}">
-          👻 ${repos.length} spirits
-        </text>
+    <!-- MOON -->
+    <g class="moonlight">
+      <rect width="${W}" height="${H}" fill="url(#moon-wash)" />
+      <circle cx="${MX}" cy="${MY}" r="240" fill="url(#moon-halo)" />
+      <circle cx="${MX}" cy="${MY}" r="33" fill="url(#moon-disc)" />
+      <g fill="${mix(moon, sky1, 0.55)}">
+        <circle cx="${MX + 9}" cy="${MY - 8}" r="5.5" opacity="0.2" />
+        <circle cx="${MX - 10}" cy="${MY + 6}" r="8" opacity="0.16" />
+        <circle cx="${MX + 6}" cy="${MY + 14}" r="4" opacity="0.14" />
+        <circle cx="${MX - 4}" cy="${MY - 14}" r="3" opacity="0.12" />
       </g>
     </g>
+
+    <!-- CLOUDS crossing the moon -->
+    <g filter="url(#soften)">
+      <g class="cloud-a" style="animation-delay:-${r1(rand() * 40)}s">
+        <path d="${cloudPath(MX, MY + 12, 190, 14, rand)}" fill="url(#cloud-grad)" opacity="0.85" />
+      </g>
+      <g class="cloud-b" style="animation-delay:-${r1(rand() * 60)}s">
+        <path d="${cloudPath(MX, MY - 18, 150, 10, rand)}" fill="url(#cloud-grad)" opacity="0.6" />
+      </g>
+    </g>
+
+    <!-- VOLUMETRIC MOONLIGHT -->
+    <g filter="url(#volumetric)" style="mix-blend-mode:screen">${shafts}</g>
+
+    <!-- FAR RIDGE -->
+    <g class="cam-far">
+      <path d="${farRidge}" fill="${farFill}" />
+      <g>${frondGroup(farPalms, farFill, 1.2)}</g>
+      <rect x="-20" y="196" width="${W + 40}" height="110" fill="url(#haze-band)" />
+      <g class="drift-l">
+        ${puff(200, 256, 230, 22, 0.9)}
+        ${puff(690, 266, 260, 20, 0.8)}
+      </g>
+    </g>
+
+    <!-- MID CANOPY -->
+    <g class="cam-mid">
+      <path d="${midRidge}" fill="${midFill}" />
+      ${trunks}
+      <rect x="-20" y="292" width="${W + 40}" height="76" fill="url(#haze-band)" opacity="0.55" />
+    </g>
+
+    <!-- FIREFLIES -->
+    <g style="mix-blend-mode:screen">${fireflies}</g>
+
+    <!-- SPIRITS -->
+    <g id="ghost-sanctuary" data-s0="${r3(s0)}" data-ytop="${r1(band.yTop)}" data-ybot="${r1(band.yBot)}">${ghosts}
+    </g>
+
+    <!-- FOREST FLOOR -->
+    <g class="cam-near">
+      <path d="${groundLine}" fill="${deepFill}" />
+      ${mushrooms}
+      <g>${ferns}</g>
+      <g class="drift-r">
+        ${puff(160, 378, 260, 26, 0.75)}
+        ${puff(640, 384, 300, 24, 0.7)}
+      </g>
+    </g>
+
+    <!-- FALLING LEAVES -->
+    <g>${leaves}</g>
+
+    <!-- OVERHEAD CANOPY -->
+    <g class="cam-top">
+      <g>${overheadFar}</g>
+      <g>${vines}</g>
+      <g>${overheadNear}</g>
+    </g>
+
+    <!-- COLOR GRADE -->
+    <rect width="${W}" height="${H}" fill="url(#vignette)" />
+    <rect width="${W}" height="${H}" fill="url(#letterbox)" />
+    <rect width="${W}" height="${H}" filter="url(#grain)" opacity="0.045" />
+
+    <!-- HUD -->
+    <g transform="translate(34, 0)">
+      <text x="0" y="36" class="t-eyebrow">THE GHOST JUNGLE</text>
+      <text x="0" y="60" class="t-title">${escapeXml(displayName)}</text>
+    </g>
+    <g>${statEls}</g>
+
+    <!-- RANK -->
+    <g>
+      <text x="${r1(rankTitleX)}" y="40" text-anchor="end" class="t-rank" fill="${rank.color}">${escapeXml(rank.title)}</text>
+      <text x="${r1(rankTitleX)}" y="55" text-anchor="end" class="t-label">${rank.topLabel}</text>
+      <g transform="translate(${DX}, ${DY})">
+        <circle r="${DR + 6}" fill="${rank.color}" opacity="0.08" />
+        <circle r="${DR}" fill="none" stroke="${theme.textColor}" stroke-opacity="0.12" stroke-width="2.5" />
+        <circle r="${DR}" fill="none" stroke="${rank.color}" stroke-width="2.5" stroke-linecap="round"
+                stroke-dasharray="${r1(circ * arc)} ${r1(circ)}" transform="rotate(-90)" filter="url(#core-glow)"
+                style="animation: dial 2.4s cubic-bezier(.16,1,.3,1) both" />
+        <text x="0" y="5" text-anchor="middle" class="t-grade" fill="${rank.color}">${rank.grade}</text>
+      </g>
+    </g>
+
+    <!-- CREDIT -->
+    <text x="${W - 16}" y="${H - 11}" text-anchor="end" class="t-mark">@AtlasRoX</text>
   </g>
 
-  <!-- ==================== FOOTER / TIER LEGEND ==================== -->
-  <g transform="translate(24, ${height - 24})">
-    <!-- Footer Pill -->
-    <rect x="0" y="-10" width="${width - 48}" height="20" rx="10" fill="${theme.cardBg}" opacity="0.85" />
-    
-    <!-- Legend text -->
-    <text x="${(width - 48) / 2}" y="4" text-anchor="middle" font-family="'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="500" fill="${theme.textDim}">
-      <tspan fill="#38bdf8">🌱 Wisp (&lt;10)</tspan>
-      <tspan fill="${theme.textDim}"> • </tspan>
-      <tspan fill="#34d399">🌿 Specter (10+)</tspan>
-      <tspan fill="${theme.textDim}"> • </tspan>
-      <tspan fill="#a855f7">🔮 Phantom (50+)</tspan>
-      <tspan fill="${theme.textDim}"> • </tspan>
-      <tspan fill="#ec4899">👑 Wraith (200+)</tspan>
-      <tspan fill="${theme.textDim}"> • </tspan>
-      <tspan fill="#fbbf24">🌌 Ancient Titan (500+)</tspan>
-    </text>
-  </g>
+  <rect x="0.5" y="0.5" width="${W - 1}" height="${H - 1}" rx="17.5" fill="none" stroke="${theme.textColor}" stroke-opacity="0.12" />
+</svg>`;
+}
+
+/**
+ * A single transparent ghost portrait (used by the playground and wiki).
+ */
+function renderGhostPortrait(tierNumber, options = {}) {
+  const tier = TIERS[Math.min(Math.max(parseInt(tierNumber, 10) || 1, 1), 5) - 1];
+  const theme = getTheme(options.theme || 'midnight');
+  const repo = { name: tier.title, language: options.language || 'TypeScript', commits: Math.max(tier.min, 1), stars: 0 };
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="-75 -78 150 150" width="150" height="150" role="img" aria-label="${tier.title}">
+  <defs>${SHARED_DEFS}
+  </defs>
+  <style>${GHOST_CSS}
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important } }
+  </style>
+  ${renderGhost(repo, tier.tier - 1, 0, 0, theme, { caption: false, link: false })}
 </svg>`;
 }
 
 module.exports = {
   renderJungleSvg,
-  getCanopyRank
+  renderGhostPortrait,
+  SVG_MAX_SPIRITS,
+  INTERACTIVE_MAX_SPIRITS,
+  W,
+  H
 };

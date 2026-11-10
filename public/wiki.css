@@ -1,0 +1,92 @@
+/* Ghost Jungle — wiki */
+
+.wiki-hero { padding-bottom: 8px; }
+.wiki-section .section-head { margin-bottom: 2rem; }
+.muted { color: var(--faint); }
+
+code {
+  font: 500 .86em var(--mono); color: var(--text);
+  background: rgba(255, 255, 255, .06); border: 1px solid var(--line); border-radius: 6px; padding: .05em .4em;
+}
+
+/* Spirits */
+.wiki-tiers { display: grid; gap: 1rem; max-width: 960px; margin: 0 auto; }
+.wiki-tier {
+  --c: #7dd3fc;
+  display: grid; grid-template-columns: 150px 1fr; gap: 1.8rem; align-items: center;
+  padding: 1.3rem 1.8rem 1.3rem 1.2rem; border-radius: var(--radius); border: 1px solid var(--line);
+  background: radial-gradient(ellipse 40% 90% at 0% 50%, color-mix(in srgb, var(--c) 10%, transparent), transparent 70%), var(--bg-raised);
+}
+.wiki-tier img { width: 150px; height: 150px; display: block; }
+.wiki-tier-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: .4rem 1rem; margin-bottom: .5rem; }
+.wiki-tier h3 { font: 500 1.4rem var(--display); letter-spacing: -.02em; }
+.wiki-tier .numeral { font: 700 .72rem var(--sans); letter-spacing: .18em; color: var(--c); }
+.wiki-tier .req { font: 500 .8rem var(--mono); color: var(--c); }
+.wiki-tier p { color: var(--muted); margin-bottom: .7rem; }
+.traits { display: flex; flex-wrap: wrap; gap: .4rem; list-style: none; }
+.traits li { font-size: .76rem; color: var(--text); padding: .22rem .6rem; border-radius: 999px; border: 1px solid color-mix(in srgb, var(--c) 30%, transparent); background: color-mix(in srgb, var(--c) 7%, transparent); }
+
+/* Ranks */
+.wiki-ranks { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1rem; max-width: 960px; margin: 0 auto 1.6rem; }
+.wiki-rank {
+  --c: #7dd3fc;
+  padding: 1.3rem 1.3rem 1.4rem; border-radius: var(--radius); border: 1px solid var(--line); background: var(--bg-raised);
+  display: grid; grid-template-columns: auto 1fr; gap: .4rem 1rem; align-items: center;
+}
+.wiki-rank .grade {
+  grid-row: span 2; width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center;
+  font: 700 1.25rem var(--display); color: var(--c); border: 2px solid var(--c);
+  box-shadow: 0 0 22px color-mix(in srgb, var(--c) 35%, transparent);
+}
+.wiki-rank .title { font-weight: 500; color: var(--c); }
+.wiki-rank .top { font: 700 .68rem var(--sans); letter-spacing: .16em; color: var(--muted); }
+.wiki-rank p { grid-column: 1 / -1; color: var(--muted); font-size: .84rem; margin-top: .5rem; }
+
+.wiki-card {
+  max-width: 960px; margin: 0 auto 1rem; padding: 1.6rem 1.8rem; border-radius: var(--radius);
+  background: var(--bg-raised); border: 1px solid var(--line);
+}
+.wiki-card h3 { font: 500 1.15rem var(--display); margin-bottom: .6rem; }
+.wiki-card p { color: var(--muted); margin-bottom: .8rem; }
+.wiki-card p:last-child { margin-bottom: 0; }
+.formula-code { background: #03050a; border: 1px solid var(--line); border-radius: 12px; margin: 1rem 0; white-space: pre; overflow-x: auto; word-break: normal; }
+
+.table-wrap { overflow-x: auto; margin: 1rem 0; }
+.wiki-table { width: 100%; border-collapse: collapse; font-size: .88rem; }
+.wiki-table th { text-align: left; font: 700 .68rem var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--faint); padding: .5rem .8rem; border-bottom: 1px solid var(--line); }
+.wiki-table td { padding: .6rem .8rem; border-bottom: 1px solid var(--line); font-variant-numeric: tabular-nums; }
+
+/* Calculator */
+.calc-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: .8rem; margin-bottom: 1.2rem; }
+.calc-grid label { display: grid; gap: .35rem; font-size: .8rem; color: var(--muted); }
+.calc-grid input {
+  padding: .55rem .7rem; border-radius: 10px; border: 1px solid var(--line-strong); background: rgba(255, 255, 255, .03);
+  color: var(--text); font: 500 .95rem var(--sans); font-variant-numeric: tabular-nums;
+}
+.calc-grid input:focus { outline: none; border-color: var(--accent); }
+.calc-result { --c: #7dd3fc; display: flex; align-items: center; gap: 1rem; }
+.calc-result .grade { width: 58px; height: 58px; border-radius: 50%; display: grid; place-items: center; font: 700 1.3rem var(--display); color: var(--c); border: 2px solid var(--c); box-shadow: 0 0 22px color-mix(in srgb, var(--c) 35%, transparent); }
+.calc-result .title { font: 500 1.2rem var(--display); color: var(--c); }
+.calc-result .top { font: 700 .7rem var(--sans); letter-spacing: .16em; color: var(--muted); }
+
+/* Counting */
+.wiki-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; max-width: 960px; margin: 0 auto; }
+.wiki-grid .wiki-card { margin: 0; }
+
+/* FAQ */
+.faq { max-width: 760px; margin: 0 auto; display: grid; gap: .6rem; }
+.faq details { border: 1px solid var(--line); border-radius: 14px; background: var(--bg-raised); padding: 1rem 1.3rem; }
+.faq summary { cursor: pointer; font-weight: 500; list-style: none; display: flex; justify-content: space-between; gap: 1rem; }
+.faq summary::after { content: '+'; color: var(--accent); font-size: 1.2rem; line-height: 1; }
+.faq details[open] summary::after { content: '−'; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq p { color: var(--muted); margin-top: .7rem; }
+
+@media (max-width: 760px) {
+  .wiki-tier { grid-template-columns: 1fr; justify-items: center; text-align: center; padding: 1.2rem; }
+  .wiki-tier-head, .traits { justify-content: center; }
+  .wiki-grid, .calc-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .wiki-grid { grid-template-columns: 1fr; }
+}
