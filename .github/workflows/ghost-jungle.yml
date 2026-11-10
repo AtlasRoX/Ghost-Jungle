@@ -1,0 +1,39 @@
+name: Generate Ghost Jungle SVG
+
+on:
+  schedule:
+    # Run once every 24 hours at midnight UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Generate Ghost Jungle SVG
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          node src/cli.js --username ${{ github.repository_owner }} --theme midnight --output ghost-jungle.svg
+
+      - name: Commit & Push Changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "Ghost Jungle Bot"
+          git add ghost-jungle.svg
+          git diff-index --quiet HEAD || git commit -m "🌿 Update Ghost Jungle spectral canopy [skip ci]"
+          git push

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ghost Jungle - Interactive GitHub README Element</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👻</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Floating Ambient Particles Canvas -->
+  <canvas id="ambient-canvas"></canvas>
+
+  <div class="app-wrapper">
+    <!-- Navigation Header -->
+    <header class="nav-header">
+      <a href="/" class="brand-badge">
+        <div class="brand-icon">🌿</div>
+        <div>
+          <div class="brand-title">Ghost Jungle</div>
+          <div class="brand-subtitle">Interactive Living GitHub Ecosystem</div>
+        </div>
+      </a>
+
+      <div class="nav-actions">
+        <button id="btn-sound" class="btn-icon" title="Toggle Spooky Forest Soundscape">
+          <span id="sound-icon">🔇</span>
+          <span id="sound-label">Sound: Off</span>
+        </button>
+
+        <a href="https://github.com/topics/github-readme" target="_blank" class="btn-icon">
+          <span>⭐ Star on GitHub</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Hero Summoner Section -->
+    <section class="hero-section">
+      <div class="hero-tag">✨ Dynamic GitHub README Element</div>
+      <h1 class="hero-title">Where Repositories Become <span>Living Spirits</span></h1>
+      <p class="hero-description">
+        Each ghost represents a repository in your enchanted canopy. Spirits evolve from timid wisps to ancient eldritch titans as commits rise. Universal embed for any GitHub README.
+      </p>
+
+      <!-- Summoner Bar -->
+      <form id="summon-form" class="summon-bar">
+        <div class="input-prefix">@</div>
+        <input type="text" id="username-input" class="summon-input" placeholder="Enter your GitHub username..." value="octocat" autocomplete="off" spellcheck="false" required>
+        <button type="submit" class="btn-summon">
+          <span>Summon Jungle</span>
+          <span>⚡</span>
+        </button>
+      </form>
+
+      <!-- Quick user tags -->
+      <div class="quick-users">
+        <span>Try spirits:</span>
+        <span class="user-tag" data-user="torvalds">@torvalds</span>
+        <span class="user-tag" data-user="shadcn">@shadcn</span>
+        <span class="user-tag" data-user="antfu">@antfu</span>
+        <span class="user-tag" data-user="octocat">@octocat</span>
+      </div>
+    </section>
+
+    <!-- Live Stage Section -->
+    <section class="stage-container">
+      <!-- Toolbar Controls -->
+      <div class="stage-toolbar">
+        <div class="toolbar-group">
+          <label class="toolbar-label" for="theme-select">Theme:</label>
+          <select id="theme-select" class="select-custom">
+            <option value="midnight" selected>Midnight Bayou (Default)</option>
+            <option value="emerald">Toxic Mangrove (Emerald)</option>
+            <option value="bloodmoon">Crimson Eclipse (Blood Moon)</option>
+            <option value="cyberpunk">Neon Undergrowth (Vapor)</option>
+            <option value="abyss">Sunken Leviathan (Abyss)</option>
+          </select>
+        </div>
+
+        <div class="toolbar-group">
+          <label class="toolbar-label" for="limit-select">Spirits Count:</label>
+          <select id="limit-select" class="select-custom">
+            <option value="4">4 Spirits</option>
+            <option value="6">6 Spirits</option>
+            <option value="8" selected>8 Spirits</option>
+            <option value="10">10 Spirits</option>
+          </select>
+        </div>
+
+        <div class="toolbar-group">
+          <label class="toolbar-label" for="sort-select">Sort By:</label>
+          <select id="sort-select" class="select-custom">
+            <option value="commits" selected>Commits (Ghost Power)</option>
+            <option value="stars">Stars (Popularity)</option>
+            <option value="updated">Recently Pushed</option>
+          </select>
+        </div>
+
+        <div class="toolbar-group">
+          <button id="btn-refresh" class="btn-icon" title="Refresh Live Render">
+            <span>🔄 Refresh</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- SVG Viewport with interactive overlay -->
+      <div class="svg-viewport" id="viewport-container">
+        <div id="svg-host"></div>
+
+        <!-- Loading Spinner -->
+        <div id="stage-loader" class="stage-loading">
+          <div class="spirit-spinner"></div>
+          <p style="color: var(--accent-cyan); font-weight: 600; font-size: 0.95rem;">Channeling repository spirits from GitHub...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Embed Code & Integration Center -->
+    <section class="integration-section">
+      <!-- Markdown Embed Box -->
+      <div class="card-panel">
+        <h3 class="panel-title"><span>📋</span> Markdown Embed Code</h3>
+        <p class="panel-desc">Paste this directly into your GitHub Profile <code>README.md</code>. When clicked, it opens your interactive jungle!</p>
+        
+        <div class="code-container">
+          <pre class="code-block" id="markdown-code"></pre>
+          <button class="btn-copy" id="btn-copy-md">Copy Markdown</button>
+        </div>
+      </div>
+
+      <!-- HTML & Direct Link Box -->
+      <div class="card-panel">
+        <h3 class="panel-title"><span>🌐</span> HTML Embed & Direct Link</h3>
+        <p class="panel-desc">Use with standard HTML tags or embed in website portfolios and blog posts.</p>
+        
+        <div class="code-container">
+          <pre class="code-block" id="html-code"></pre>
+          <button class="btn-copy" id="btn-copy-html">Copy HTML</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ghost Evolution Codex (The 5 Tiers) -->
+    <section class="bestiary-section">
+      <h2 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 0.4rem; text-align: center;">Ghost Evolution Codex</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem; text-align: center; margin-bottom: 1.5rem;">Commits empower your repository spirits to break through their supernatural thresholds.</p>
+
+      <div class="bestiary-grid">
+        <div class="tier-card">
+          <div class="tier-icon">🌱</div>
+          <div class="tier-name">Lesser Wisp</div>
+          <div class="tier-req">1 - 9 Commits</div>
+          <div class="tier-lore">A gentle, newly awakened forest spirit. Timid eyes with a soft single tail.</div>
+        </div>
+
+        <div class="tier-card">
+          <div class="tier-icon">🌿</div>
+          <div class="tier-name">Forest Specter</div>
+          <div class="tier-req">10 - 49 Commits</div>
+          <div class="tier-lore">Wanders the jungle undergrowth. Features expressive almond eyes and wavy spirit skirts.</div>
+        </div>
+
+        <div class="tier-card">
+          <div class="tier-icon">🔮</div>
+          <div class="tier-name">Phantom Stalker</div>
+          <div class="tier-req">50 - 199 Commits</div>
+          <div class="tier-lore">Guards the ancient trees. Grown spectral horns, glowing forehead rune, and dual soul motes.</div>
+        </div>
+
+        <div class="tier-card">
+          <div class="tier-icon">👑</div>
+          <div class="tier-name">Wraith Archon</div>
+          <div class="tier-req">200 - 499 Commits</div>
+          <div class="tier-lore">Commander of the midnight canopy. Wears an ethereal flame crown and multi-tendril spectral wings.</div>
+        </div>
+
+        <div class="tier-card">
+          <div class="tier-icon">🌌</div>
+          <div class="tier-name">Ancient Titan</div>
+          <div class="tier-req">500+ Commits</div>
+          <div class="tier-lore">Eldritch jungle deity. Rings of rotating cosmic runes with orbiting wisp familiars.</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Floating Spirit Inspector Modal -->
+  <div id="inspector" class="inspector-card">
+    <div class="inspector-header">
+      <span id="inspect-tier" class="tier-badge">Tier 1 • Wisp</span>
+      <button id="btn-close-inspect" class="btn-close-inspect" title="Close">&times;</button>
+    </div>
+    <div id="inspect-title" class="inspector-title">repository-name</div>
+    <div id="inspect-desc" class="inspector-desc">Repository description</div>
+    <div class="inspector-meta">
+      <div class="meta-item">
+        <span id="inspect-lang-dot" class="lang-dot"></span>
+        <span id="inspect-lang">TypeScript</span>
+      </div>
+      <div class="meta-item">
+        <span>⚡</span>
+        <span id="inspect-commits">128</span>
+      </div>
+      <div class="meta-item">
+        <span>⭐</span>
+        <span id="inspect-stars">14</span>
+      </div>
+    </div>
+    <a id="inspect-link" href="#" target="_blank" class="btn-repo-link">Explore in GitHub &rarr;</a>
+  </div>
+
+  <script src="sound.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

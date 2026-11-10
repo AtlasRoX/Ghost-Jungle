@@ -1,0 +1,27 @@
+{
+  "name": "github-ghost-jungle",
+  "version": "1.0.0",
+  "description": "An interactive GitHub README element where repositories materialize as evolving spectral ghosts inside an enchanted animated jungle.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "cli": "node src/cli.js",
+    "test": "node test/test-render.js"
+  },
+  "keywords": [
+    "github-readme",
+    "github-profile",
+    "interactive",
+    "svg",
+    "ghost",
+    "jungle",
+    "animated-svg",
+    "gamification"
+  ],
+  "author": "Antigravity",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
