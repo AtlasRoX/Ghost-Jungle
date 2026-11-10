@@ -5,7 +5,7 @@
 
 **Designed & built by [@AtlasRoX](https://github.com/AtlasRoX)**
 
-[![Ghost Jungle Preview](assets/ghost-jungle-midnight.svg)](https://github.com/topics/github-readme)
+[![Ghost Jungle Preview](assets/ghost-jungle-midnight.svg)](https://ghost-jungle.vercel.app)
 
 <br/>
 
@@ -19,7 +19,7 @@
   Repositories awaken as floating spectral ghosts that organically evolve based on commit count, language, and stars.
 </p>
 
-[Summon Your Jungle](#-quick-start) • [Ghost Evolution Codex](#-ghost-evolution-codex) • [Themes](#-enchanted-themes) • [GitHub Action (Serverless)](#-zero-server-mode-github-actions) • [API Parameters](#-customization-parameters)
+[Live Demo](https://ghost-jungle.vercel.app) • [Summon Your Jungle](#-quick-start) • [Ghost Evolution Codex](#-ghost-evolution-codex) • [Themes](#-enchanted-themes) • [GitHub Action (Serverless)](#-zero-server-mode-github-actions) • [API Parameters](#-customization-parameters)
 
 </div>
 
@@ -45,18 +45,18 @@ Paste this into your profile `README.md` (replace `YOUR_USERNAME` with your GitH
 
 ### Markdown
 ```markdown
-[![Ghost Jungle](https://your-domain.com/api/ghost-jungle?username=YOUR_USERNAME&theme=midnight)](https://your-domain.com/?username=YOUR_USERNAME)
+[![Ghost Jungle](https://ghost-jungle.vercel.app/api/ghost-jungle?username=YOUR_USERNAME)](https://ghost-jungle.vercel.app/?username=YOUR_USERNAME)
 ```
 
 ### HTML
 ```html
-<a href="https://your-domain.com/?username=YOUR_USERNAME">
-  <img src="https://your-domain.com/api/ghost-jungle?username=YOUR_USERNAME&theme=midnight" alt="My Ghost Jungle" width="880" />
+<a href="https://ghost-jungle.vercel.app/?username=YOUR_USERNAME">
+  <img src="https://ghost-jungle.vercel.app/api/ghost-jungle?username=YOUR_USERNAME" alt="My Ghost Jungle" width="100%" />
 </a>
 ```
 
 > [!TIP]
-> Replace `your-domain.com` with your deployed URL (e.g. on Vercel) or run locally using `npm start`.
+> Live at **[ghost-jungle.vercel.app](https://ghost-jungle.vercel.app)**: try it, pick a theme and how many spirits to show, then copy your embed. Self-hosting? Replace the domain with your own deployment.
 
 ---
 
@@ -186,8 +186,8 @@ jobs:
 ### Installation
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/github-ghost-jungle.git
-cd github-ghost-jungle
+git clone https://github.com/AtlasRoX/Ghost-Jungle.git
+cd Ghost-Jungle
 
 # Install dependencies
 npm install
@@ -220,6 +220,9 @@ This project includes `vercel.json` and `api/ghost-jungle.js` serverless handler
 2. Import the repository into [Vercel](https://vercel.com).
 3. (Optional) Add `GITHUB_TOKEN` to Environment Variables in Vercel settings.
 4. Deploy! Your API is instantly live at `https://your-project.vercel.app/api/ghost-jungle?username=...`.
+
+> [!IMPORTANT]
+> Set `GITHUB_TOKEN` (a fine-grained token with read-only access to public repositories). Without it GitHub allows only 60 anonymous requests per hour, which a single large profile can use up.
 
 ---
 
