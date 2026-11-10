@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /api/user-data
+
+Sitemap: https://ghost-jungle.vercel.app/sitemap.xml

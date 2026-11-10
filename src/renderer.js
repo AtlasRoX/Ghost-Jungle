@@ -277,6 +277,7 @@ const INTERACTIVE_MAX_SPIRITS = 60;
 function renderJungleSvg(userData, options = {}) {
   const theme = getTheme(options.theme || 'midnight');
   const interactive = options.mode === 'interactive';
+  const bare = options.bare === true; // scene only (no HUD/frame), used for social cards
   const cap = interactive ? INTERACTIVE_MAX_SPIRITS : SVG_MAX_SPIRITS;
   const all = userData.repos || [];
   const limitN = parseInt(options.limit, 10);
@@ -701,6 +702,7 @@ ${GHOST_CSS}
     <rect width="${W}" height="${H}" filter="url(#grain)" opacity="0.045" />
 
     <!-- HUD -->
+    <g display="${bare ? 'none' : 'inline'}">
     <g transform="translate(34, 0)">
       <text x="0" y="36" class="t-eyebrow">THE GHOST JUNGLE</text>
       <text x="0" y="60" class="t-title">${escapeXml(displayName)}</text>
@@ -723,9 +725,10 @@ ${GHOST_CSS}
 
     <!-- CREDIT -->
     <text x="${W - 16}" y="${H - 11}" text-anchor="end" class="t-mark">@AtlasRoX</text>
+    </g>
   </g>
 
-  <rect x="0.5" y="0.5" width="${W - 1}" height="${H - 1}" rx="17.5" fill="none" stroke="${theme.textColor}" stroke-opacity="0.12" />
+  <rect x="0.5" y="0.5" width="${W - 1}" height="${H - 1}" rx="17.5" fill="none" stroke="${theme.textColor}" stroke-opacity="${bare ? 0 : 0.12}" />
 </svg>`;
 }
 
