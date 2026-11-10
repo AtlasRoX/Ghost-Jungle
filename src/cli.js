@@ -15,7 +15,7 @@ async function main() {
   const options = {
     username: 'octocat',
     theme: 'midnight',
-    limit: 'all',
+    limit: '10',
     sort: 'commits',
     output: 'ghost-jungle.svg'
   };

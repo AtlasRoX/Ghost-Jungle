@@ -114,7 +114,7 @@ GET /api/ghost-jungle?username=:username&theme=:theme&limit=:limit&sort=:sort
 | :--- | :---: | :---: | :--- |
 | `username` | `string` | `octocat` | GitHub username whose repositories are summoned |
 | `theme` | `string` | `midnight` | `midnight`, `emerald`, `bloodmoon`, `cyberpunk`, `abyss` |
-| `limit` | `number` | all | Show the top N spirits (`limit=10`, `limit=20`, any number). Omit for all repositories (up to 36 in the image) |
+| `limit` | `number` \| `all` | `10` | How many spirits: the top 10 by default, any number (`limit=20`), or `limit=all` for every repository (up to 36 in the image) |
 | `sort` | `string` | `commits` | Which spirits come first: `commits`, `stars`, or `updated` |
 | `width` | `number` | `880` | Output width. The 880×400 (2.2:1) scene scales; layout never reflows |
 | `height` | `number` | auto | Output height (defaults to width ÷ 2.2) |
@@ -123,13 +123,6 @@ GET /api/ghost-jungle?username=:username&theme=:theme&limit=:limit&sort=:sort
 
 **Canopy rank** (`C` → `SS`) is a percentile estimate blending commits, stars, followers and repositories. The full formula, every tier and every rank are documented in the in-app **Wiki** at `/wiki.html`.
 
---- | :---: | :---: | :--- |
-| `username` | `string` | `octocat` | GitHub username whose repositories are summoned |
-| `theme` | `string` | `midnight` | Color palette (`midnight`, `emerald`, `bloodmoon`, `cyberpunk`, `abyss`) |
-| `limit` | `number` | `8` | Number of ghost repositories summoned (`1` to `10`) |
-| `sort` | `string` | `commits` | Sort criteria: `commits` (highest tier first), `stars`, or `updated` |
-| `width` | `number` | `880` | Output width. The 880×400 (2.2:1) scene scales; layout never reflows |
-| `height` | `number` | auto | Output height (defaults to width ÷ 2.2) |
 
 ---
 

@@ -19,7 +19,8 @@ function cleanUsername(raw) {
 }
 
 const cleanSort = s => (SORTS.has(s) ? s : 'commits');
-const cleanLimit = l => (l === undefined || l === '' || l === 'all' ? 'all' : Math.max(1, parseInt(l, 10) || 1));
+const DEFAULT_LIMIT = 10;
+const cleanLimit = l => (l === 'all' ? 'all' : l === undefined || l === '' ? DEFAULT_LIMIT : Math.max(1, parseInt(l, 10) || DEFAULT_LIMIT));
 
 function errorSvg(title, detail) {
   const f = `font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif"`;

@@ -98,7 +98,7 @@ top %  = (1 − score) × 100</pre>
       <div class="wiki-grid">
         <div class="wiki-card">
           <h3>Spirits</h3>
-          <p>Every public repository you own, excluding forks. The README image shows all of them up to 36 at once, and the playground up to 60. Use <code>limit</code> to show the top N. <code>sort</code> decides which come first: <code>commits</code>, <code>stars</code> or <code>updated</code>.</p>
+          <p>Every public repository you own, excluding forks. The README image shows the top 10 by default. Use <code>limit=20</code> (any number) or <code>limit=all</code> for every repository, up to 36 in the image and 60 in the playground. <code>sort</code> decides which come first: <code>commits</code>, <code>stars</code> or <code>updated</code>.</p>
         </div>
         <div class="wiki-card">
           <h3>Commits</h3>
@@ -124,7 +124,7 @@ top %  = (1 − score) × 100</pre>
       <div class="faq">
         <details><summary>Why can't I drag spirits inside my README?</summary><p>GitHub shows README images through a proxy that strips all scripts. In the README the spirits wander on their own. Open the playground to drag, throw and startle them.</p></details>
         <details><summary>Why did a spirit wander off the edge?</summary><p>Spirits roam beyond the frame on purpose, like animals leaving a clearing. They always come back.</p></details>
-        <details><summary>How do I show only my best repositories?</summary><p>Add <code>&amp;limit=10</code> (or any number) to the image link. Remove it to show every repository.</p></details>
+        <details><summary>How do I choose how many spirits appear?</summary><p>The top 10 show by default. Add <code>&amp;limit=20</code> (or any number) to the image link, or <code>&amp;limit=all</code> to show every repository.</p></details>
         <details><summary>Why does a spirit's commit count differ from my contribution graph?</summary><p>The graph counts your own contributions per day. Spirits count every commit in a repository's default branch, by anyone.</p></details>
         <details><summary>Does my rank change?</summary><p>Yes. It is recalculated from live data every time the image refreshes.</p></details>
       </div>

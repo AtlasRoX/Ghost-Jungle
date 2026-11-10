@@ -27,7 +27,7 @@
 
   const state = {
     username: 'octocat', theme: 'midnight', sort: 'commits', tab: 'markdown',
-    limitMode: 'all', limit: 'all',
+    limitMode: '10', limit: 10,
     data: null, repos: [], meta: null,
   };
   let requestId = 0;
@@ -48,7 +48,10 @@
   if (params.get('username')) state.username = params.get('username').replace(/^@/, '');
   if (params.get('theme')) state.theme = params.get('theme');
   if (params.get('sort')) state.sort = params.get('sort');
-  if (params.get('limit')) {
+  if (params.get('limit') === 'all') {
+    state.limit = 'all';
+    state.limitMode = 'all';
+  } else if (params.get('limit')) {
     const l = parseInt(params.get('limit'), 10);
     if (l > 0) {
       state.limit = l;
@@ -61,7 +64,7 @@
   function syncUrl() {
     const p = new URLSearchParams({ username: state.username });
     if (state.theme !== 'midnight') p.set('theme', state.theme);
-    if (state.limit !== 'all') p.set('limit', state.limit);
+    if (state.limit !== 10) p.set('limit', state.limit);
     if (state.sort !== 'commits') p.set('sort', state.sort);
     history.replaceState(null, '', `?${p}`);
   }
@@ -214,7 +217,7 @@
   }
 
   const sceneUrl = () => {
-    const limitQ = state.limit === 'all' ? '' : `&limit=${state.limit}`;
+    const limitQ = `&limit=${state.limit}`;
     return `/api/ghost-jungle?username=${encodeURIComponent(state.username)}&theme=${state.theme}&sort=${state.sort}${limitQ}&mode=interactive`;
   };
 
@@ -613,19 +616,19 @@
     const u = encodeURIComponent(state.username);
     const q = [`username=${u}`];
     if (state.theme !== 'midnight') q.push(`theme=${state.theme}`);
-    if (state.limit !== 'all') q.push(`limit=${state.limit}`);
+    if (state.limit !== 10) q.push(`limit=${state.limit}`);
     if (state.sort !== 'commits') q.push(`sort=${state.sort}`);
     const api = `${origin}/api/ghost-jungle?${q.join('&')}`;
     const page = `${origin}/?${q.join('&')}`;
     const alt = `${state.username}'s Ghost Jungle`;
     const cap = state.meta.limits.svg;
     const howMany = state.limit === 'all' ? `all repositories (up to ${cap})` : `the top ${state.limit} by ${state.sort === 'commits' ? 'commits' : state.sort === 'stars' ? 'stars' : 'recent activity'}`;
-    const cliLimit = state.limit === 'all' ? '' : ` --limit ${state.limit}`;
+    const cliLimit = state.limit === 10 ? '' : ` --limit ${state.limit}`;
 
     const snippets = {
       markdown: {
         code: `[![${alt}](${api})](${page})`,
-        note: `Shows ${howMany}. Change limit=… in the link to any number, or remove it for all. GitHub caches images for about an hour.`,
+        note: `Shows ${howMany}. Top 10 is the default; add limit=20 (any number) or limit=all to the link. GitHub caches images for about an hour.`,
       },
       html: {
         code: `<a href="${page}">\n  <img src="${api}" alt="${alt}" width="100%" />\n</a>`,
