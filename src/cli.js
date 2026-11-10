@@ -1,8 +1,10 @@
+#!/usr/bin/env node
 /**
  * Ghost Jungle - CLI Generator for GitHub Actions & Local Scripts
  * 
  * Usage:
- *   node src/cli.js --username octocat --theme midnight --output ghost-jungle.svg
+ *   npx --yes github:AtlasRoX/Ghost-Jungle --username octocat --theme midnight --output ghost-jungle.svg
+ *   node src/cli.js --username octocat --limit 20 --sort stars --output ghost-jungle.svg
  */
 
 const fs = require('fs');

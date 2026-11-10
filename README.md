@@ -1,25 +1,25 @@
 <div align="center">
 
-# 🌿 The Ghost Jungle
-### An Interactive Living Ecosystem for GitHub Profile READMEs
+<a href="https://ghost-jungle.vercel.app">
+  <img src="assets/ghost-jungle-midnight.svg" alt="Ghost Jungle: glowing ghost spirits wandering a moonlit jungle, one for each GitHub repository" width="100%" />
+</a>
 
-**Designed & built by [@AtlasRoX](https://github.com/AtlasRoX)**
+# 👻 Ghost Jungle
 
-[![Ghost Jungle Preview](assets/ghost-jungle-midnight.svg)](https://ghost-jungle.vercel.app)
+**Your repositories, awakened.**
 
-<br/>
+An animated GitHub profile README where every repository becomes a living ghost<br/>
+that evolves with its commits and wanders a cinematic moonlit jungle.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-38bdf8.svg?style=flat-square)](LICENSE)
-[![GitHub Camo Compatible](https://img.shields.io/badge/GitHub%20Camo-100%25%20Compatible-34d399.svg?style=flat-square)](#)
-[![Zero Client JS in Readme](https://img.shields.io/badge/Zero%20Client%20JS-Pure%20Animated%20SVG-c084fc.svg?style=flat-square)](#)
-[![Web Audio Powered](https://img.shields.io/badge/Web%20Audio-Procedural%20Soundscape-fbbf24.svg?style=flat-square)](#)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-ghost--jungle.vercel.app-00f2fe?style=for-the-badge&labelColor=05070d)](https://ghost-jungle.vercel.app)
+[![Wiki](https://img.shields.io/badge/Wiki-Spirits%20%26%20Ranks-c4b5fd?style=for-the-badge&labelColor=05070d)](https://ghost-jungle.vercel.app/wiki.html)
 
-<p align="center">
-  <b>Turn your GitHub profile into a mystical midnight canopy.</b><br/>
-  Repositories awaken as floating spectral ghosts that organically evolve based on commit count, language, and stars.
-</p>
+[![License: MIT](https://img.shields.io/badge/License-MIT-7dd3fc?style=flat-square&labelColor=05070d)](LICENSE)
+[![Pure SVG](https://img.shields.io/badge/README-Pure%20SVG%20%2B%20CSS-6ee7b7?style=flat-square&labelColor=05070d)](#-how-it-works)
+[![GitHub Camo safe](https://img.shields.io/badge/GitHub%20Camo-safe-f9a8d4?style=flat-square&labelColor=05070d)](#-how-it-works)
+[![Made by AtlasRoX](https://img.shields.io/badge/made%20by-%40AtlasRoX-fcd34d?style=flat-square&labelColor=05070d)](https://github.com/AtlasRoX)
 
-[Live Demo](https://ghost-jungle.vercel.app) • [Summon Your Jungle](#-quick-start) • [Ghost Evolution Codex](#-ghost-evolution-codex) • [Themes](#-enchanted-themes) • [GitHub Action (Serverless)](#-zero-server-mode-github-actions) • [API Parameters](#-customization-parameters)
+[Quick start](#-quick-start) · [Parameters](#%EF%B8%8F-parameters) · [Spirits](#-the-five-spirits) · [Ranks](#-canopy-ranks) · [Themes](#-themes) · [GitHub Action](#-zero-server-github-action) · [Self-hosting](#%EF%B8%8F-self-hosting)
 
 </div>
 
@@ -27,28 +27,31 @@
 
 ## ✨ Features
 
-- 👻 **Living Repository Spirits**: Every public repository materializes as a floating supernatural ghost in the jungle canopy.
-- ⚡ **Commit Evolution Engine**: Spirits evolve through 5 distinct supernatural tiers as commits increase—from timid round wisps to towering celestial titans.
-- 🎨 **Language Soul Light**: Each spirit's inner glow, eyes and lantern flame take the repository's GitHub language color.
-- 🎬 **Cinematic Scene**: Moonlight god rays, parallax camera drift across layered jungle silhouettes, volumetric mist, falling leaves, shooting stars, fireflies, vignette and film grain. Each username gets its own seeded star field and canopy.
-- 🛡️ **100% GitHub Camo Safe**: Pure SVG with CSS keyframes and SMIL. No scripts, no external assets. Respects `prefers-reduced-motion`.
-- 🎵 **Interactive Playground**: Drag and throw spirits, startle them with a double-click, watch small ones flee your cursor while titans come closer. Live inspector, canopy rank breakdown, embed generator, and a Ghost & Rank Wiki.
-- 🚀 **Two Ways to Run**:
-  1. **Dynamic URL**: Add a single markdown line to your profile README.
-  2. **Zero-Server GitHub Action**: Daily scheduled workflow that generates and commits the SVG directly to your repo.
+- 👻 **A spirit for every repository.** Each public, non-fork repo becomes a ghost. Commits make it evolve through five stages, from a shy wisp to an antlered forest titan.
+- 🎬 **Cinematic scene.** Volumetric moonlight, clouds crossing the moon, layered parallax jungle, drifting mist, fireflies, falling leaves, shooting stars, vignette and film grain.
+- 🌫️ **Natural motion.** Every spirit wanders its own random route, lingers, drifts beyond the frame and returns, and grows as it comes toward you. Cloth ripples, eyes blink and glance, lanterns swing.
+- 🎨 **Language soul light.** Each spirit glows in its repository's official GitHub language color.
+- 📊 **Exact numbers.** Real default-branch commit counts, stars, forks and followers from the GitHub API. No estimates when a token is set.
+- 🏆 **Canopy rank.** A percentile rank from `C` to `SS` with a dial in the scene and a full breakdown on the site.
+- 🕹️ **Interactive playground.** Drag and throw spirits, double-click to startle them, watch small ones flee your cursor while titans come closer. Live inspector, rank card and embed builder.
+- 📚 **Wiki.** Every tier, every rank, the exact formula, a rank calculator and how each number is counted.
+- 🛡️ **Safe anywhere.** Pure SVG with CSS and SMIL animation, no scripts, embedded font. Works inside GitHub's image proxy and respects `prefers-reduced-motion`.
 
 ---
 
-## ⚡ Quick Start
+## ⚡ Quick start
 
-Paste this into your profile `README.md` (replace `YOUR_USERNAME` with your GitHub username):
+1. Open **[ghost-jungle.vercel.app](https://ghost-jungle.vercel.app)**, type your username, pick a theme and how many spirits to show.
+2. Copy the embed and paste it into your profile `README.md` (the repository named `username/username`).
 
-### Markdown
+Or paste this directly, replacing `YOUR_USERNAME`:
+
 ```markdown
 [![Ghost Jungle](https://ghost-jungle.vercel.app/api/ghost-jungle?username=YOUR_USERNAME)](https://ghost-jungle.vercel.app/?username=YOUR_USERNAME)
 ```
 
-### HTML
+HTML version, if you want it to fill the column:
+
 ```html
 <a href="https://ghost-jungle.vercel.app/?username=YOUR_USERNAME">
   <img src="https://ghost-jungle.vercel.app/api/ghost-jungle?username=YOUR_USERNAME" alt="My Ghost Jungle" width="100%" />
@@ -56,88 +59,119 @@ Paste this into your profile `README.md` (replace `YOUR_USERNAME` with your GitH
 ```
 
 > [!TIP]
-> Live at **[ghost-jungle.vercel.app](https://ghost-jungle.vercel.app)**: try it, pick a theme and how many spirits to show, then copy your embed. Self-hosting? Replace the domain with your own deployment.
+> GitHub caches README images for about an hour, so new commits show up within roughly an hour.
 
 ---
 
-## 🔮 Ghost Evolution Codex
+## ⚙️ Parameters
 
-Commits channel spiritual energy into your repositories, allowing them to break through evolution barriers:
+```
+GET https://ghost-jungle.vercel.app/api/ghost-jungle?username=…&theme=…&limit=…&sort=…
+```
 
-| Tier | Name | Commits | Form & Motion |
+| Parameter | Values | Default | Description |
+| :--- | :--- | :---: | :--- |
+| `username` | GitHub username | `octocat` | Whose repositories are summoned |
+| `theme` | `midnight` · `emerald` · `bloodmoon` · `cyberpunk` · `abyss` | `midnight` | Atmosphere and color palette |
+| `limit` | any number, or `all` | `10` | How many spirits: top 10 by default, `limit=20` for 20, `limit=all` for every repository (up to 36 in the image) |
+| `sort` | `commits` · `stars` · `updated` | `commits` | Which repositories count as the top ones |
+| `width` | number | `880` | Output width. The 880×400 (2.2:1) scene scales without reflowing |
+| `height` | number | width ÷ 2.2 | Output height |
+
+Examples:
+
+```markdown
+<!-- top 20 by stars, crimson theme -->
+![Ghost Jungle](https://ghost-jungle.vercel.app/api/ghost-jungle?username=YOUR_USERNAME&limit=20&sort=stars&theme=bloodmoon)
+
+<!-- every repository -->
+![Ghost Jungle](https://ghost-jungle.vercel.app/api/ghost-jungle?username=YOUR_USERNAME&limit=all)
+```
+
+---
+
+## 👻 The five spirits
+
+A spirit's stage comes from the commit count on its repository's default branch.
+
+| Tier | Spirit | Commits | Form and motion |
 | :---: | :--- | :---: | :--- |
-| **I** | **Lesser Wisp** | `1 – 9` | Round newborn light, big curious eyes, blush, rippling hem |
-| **II** | **Forest Specter** | `10 – 49` | Grows sleeves of mist that wave with follow-through |
-| **III** | **Phantom Stalker** | `50 – 199` | Hood of shadow, only language-lit eyes glowing inside |
-| **IV** | **Wraith Archon** | `200 – 499` | Tattered cloak strands, swinging lantern with a flickering soul flame |
-| **V** | **Ancient Titan** | `500+` | Living glowing antlers, gem sigil, a court of orbiting wisps |
+| **I** | **Lesser Wisp** | 1 – 9 | Round newborn light, big curious eyes, blushing cheeks. Fast, darting, shy |
+| **II** | **Forest Specter** | 10 – 49 | Grows sleeves of mist that wave as it drifts |
+| **III** | **Phantom Stalker** | 50 – 199 | A shadow hood; only its language-lit eyes glow inside |
+| **IV** | **Wraith Archon** | 200 – 499 | Tattered cloak strands and a swinging lantern holding its soul flame |
+| **V** | **Ancient Titan** | 500+ | Living glowing antlers, a gem sigil and a court of orbiting wisps |
 
-Every spirit breathes (float with squash and stretch), blinks, glances around, and sheds ectoplasm motes. Hems and sleeves are morphing cloth. Spirits materialize one by one when the image loads.
-
----: | :--- | :---: | :--- |
-| **1** | **Lesser Wisp** | `1 - 9` commits | Cute round spirit orb, shy eyes, blushing cheeks, gentle float, single tail trail |
-| **2** | **Forest Specter** | `10 - 49` commits | Wavy flowing ectoplasm skirt, almond eyes, spirit hand tendrils, inner flame core |
-| **3** | **Phantom Stalker** | `50 - 199` commits | Spectral horns/ears, forehead rune, dual hovering shoulder wisps, dual undulating tails |
-| **4** | **Wraith Archon** | `200 - 499` commits | Floating ethereal flame crown, multi-branching wing mantles, orbiting celestial fire motes |
-| **5** | **Ancient Titan** | `500+` commits | Runic cosmic halo ring, imperial golden crown, 3 orbiting wisp familiars, colossal astral robe |
+Every spirit breathes with squash and stretch, blinks, glances around and sheds ectoplasm. In the playground, wisps, specters and phantoms flee your cursor; wraiths and titans are curious and come closer.
 
 ---
 
-## 🎨 Enchanted Themes
+## 🏆 Canopy ranks
 
-Choose an environmental atmosphere that matches your profile aesthetic:
+Your rank estimates where your profile sits among GitHub users. It blends four signals from your public, non-fork repositories.
 
-| Theme Name | Parameter | Atmosphere Preview |
+| Rank | Title | Range |
+| :---: | :--- | :--- |
+| **SS** | Mythic Sovereign | top 1% |
+| **S** | Ancient Elder | top 5% |
+| **A+** | Wraith Lord | top 12.5% |
+| **A** | Haunted Keeper | top 25% |
+| **B+** | Awakened Seer | top 37.5% |
+| **B** | Wandering Soul | top 50% |
+| **C** | Whispering Sprout | everyone else |
+
+| Signal | Median | Weight | Curve |
+| :--- | :---: | :---: | :--- |
+| Commits | 250 | 2 | exponential `1 − 2^(−x)` |
+| Stars | 50 | 4 | log-normal `x / (1 + x)` |
+| Followers | 10 | 1 | log-normal `x / (1 + x)` |
+| Repositories | 12 | 1 | exponential `1 − 2^(−x)` |
+
+`x = value ÷ median`, `score = Σ(weight × curve) ÷ Σ weight`, `top % = (1 − score) × 100`.
+Try your own numbers in the [Wiki calculator](https://ghost-jungle.vercel.app/wiki.html#ranks). This is an estimate from public data, not an official GitHub statistic.
+
+---
+
+## 🎨 Themes
+
+| Theme | `theme=` | Atmosphere |
 | :--- | :--- | :--- |
-| **Midnight Bayou** | `theme=midnight` | *(Default)* Deep obsidian night, cyan moonlight, bioluminescent cyan/blue flora |
-| **Toxic Mangrove** | `theme=emerald` | Deep emerald marshland, toxic jade fog, glowing lime mushrooms |
-| **Crimson Eclipse** | `theme=bloodmoon` | Blood moon sky, crimson eclipse aura, fiery ruby spirit flames |
-| **Neon Undergrowth** | `theme=cyberpunk` | Synthwave purple canopy, hot pink eclipse, cyan/magenta electric fog |
-| **Sunken Leviathan** | `theme=abyss` | Deep ocean trench, teal glowing tendrils, phosphorescent marine mist |
+| **Midnight Bayou** | `midnight` | Deep blue night, cyan moonlight *(default)* |
+| **Toxic Mangrove** | `emerald` | Emerald marsh, jade fog, lime mushrooms |
+| **Crimson Eclipse** | `bloodmoon` | Blood moon, ruby mist |
+| **Neon Undergrowth** | `cyberpunk` | Synthwave purple, hot pink moon, electric fog |
+| **Sunken Leviathan** | `abyss` | Ocean trench, teal glow, phosphorescent mist |
 
-### Theme Preview: Neon Undergrowth (`cyberpunk`)
 <div align="center">
-  <img src="assets/ghost-jungle-cyberpunk.svg" alt="Cyberpunk Theme Preview" width="800" />
+  <img src="assets/ghost-jungle-cyberpunk.svg" alt="Ghost Jungle in the Neon Undergrowth theme" width="100%" />
+  <sub><code>theme=cyberpunk</code></sub>
 </div>
 
 ---
 
-## ⚙️ Customization Parameters
+## 📊 How the numbers are counted
 
-Customize the dynamic SVG endpoint with URL query parameters:
+- **Spirits:** every public repository you own, excluding forks.
+- **Commits:** the exact number of commits in each repository's default-branch history, summed. That includes commits by collaborators, so it can differ from your contribution graph.
+- **Stars and forks:** summed across your public non-fork repositories. Very large accounts are read up to their 200 most-starred repositories, which covers nearly all of their stars.
+- **Freshness:** data is cached for 30 minutes on the server and about an hour by GitHub's image proxy.
 
-```
-GET /api/ghost-jungle?username=:username&theme=:theme&limit=:limit&sort=:sort
-```
-
-| Parameter | Type | Default | Description |
-| :--- | :---: | :---: | :--- |
-| `username` | `string` | `octocat` | GitHub username whose repositories are summoned |
-| `theme` | `string` | `midnight` | `midnight`, `emerald`, `bloodmoon`, `cyberpunk`, `abyss` |
-| `limit` | `number` \| `all` | `10` | How many spirits: the top 10 by default, any number (`limit=20`), or `limit=all` for every repository (up to 36 in the image) |
-| `sort` | `string` | `commits` | Which spirits come first: `commits`, `stars`, or `updated` |
-| `width` | `number` | `880` | Output width. The 880×400 (2.2:1) scene scales; layout never reflows |
-| `height` | `number` | auto | Output height (defaults to width ÷ 2.2) |
-
-**Numbers are exact.** Commits are the real default-branch commit count of every public, non-fork repository, read from the GitHub API. Set `GITHUB_TOKEN` on the server for one fast GraphQL query and higher rate limits. Without a token, counts come from the REST API and anything past the anonymous rate limit is marked `~` (estimated).
-
-**Canopy rank** (`C` → `SS`) is a percentile estimate blending commits, stars, followers and repositories. The full formula, every tier and every rank are documented in the in-app **Wiki** at `/wiki.html`.
-
+With a `GITHUB_TOKEN` on the server, everything comes from one GraphQL query per 100 repositories. Without one, the REST API is used and anything past the anonymous limit of 60 requests per hour is estimated and marked with `~`.
 
 ---
 
-## 🤖 Zero-Server Mode (GitHub Actions)
+## 🤖 Zero-server GitHub Action
 
-If you prefer **not** to host an API server, you can generate your jungle statically inside your GitHub Profile repository (`username/username`) using GitHub Actions!
+Prefer not to depend on a hosted API? Generate the SVG inside your profile repository every day.
 
-1. Create a file at `.github/workflows/ghost-jungle.yml` in your profile repository:
+Create `.github/workflows/ghost-jungle.yml` in `YOUR_USERNAME/YOUR_USERNAME`:
 
 ```yaml
-name: Update Ghost Jungle
+name: Ghost Jungle
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Every midnight
+    - cron: '0 0 * * *'
   workflow_dispatch:
 
 permissions:
@@ -147,78 +181,107 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Generate Jungle SVG
-        run: |
-          npx --yes github-ghost-jungle --username ${{ github.repository_owner }} --output ghost-jungle.svg
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
 
-      - name: Commit & Push
+      - name: Summon the jungle
+        run: npx --yes github:AtlasRoX/Ghost-Jungle --username ${{ github.repository_owner }} --theme midnight --limit 10 --output ghost-jungle.svg
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "Ghost Jungle Bot"
+          git config user.name "ghost-jungle[bot]"
+          git config user.email "actions@users.noreply.github.com"
           git add ghost-jungle.svg
-          git diff-index --quiet HEAD || git commit -m "🌿 Update Ghost Jungle [skip ci]"
+          git diff --cached --quiet || git commit -m "Update Ghost Jungle"
           git push
 ```
 
-2. Reference your local SVG in your profile `README.md`:
+Then reference it in your README:
+
 ```markdown
 ![My Ghost Jungle](./ghost-jungle.svg)
 ```
 
----
-
-## 💻 Local Development & Self-Hosting
-
-### Prerequisites
-- Node.js 18+ (tested on Node 20 & 24)
-- npm
-
-### Installation
-```bash
-# Clone the repository
-git clone https://github.com/AtlasRoX/Ghost-Jungle.git
-cd Ghost-Jungle
-
-# Install dependencies
-npm install
-
-# (Optional) Set your GitHub Personal Access Token for higher rate limits
-export GITHUB_TOKEN="ghp_your_token_here"
-
-# Start the interactive server
-npm start
-```
-
-Visit `http://localhost:3000` in your browser to explore the interactive playground with procedural sound and live preview.
-
-### Testing SVG Generation
-```bash
-# Test all themes and tiers
-npm test
-
-# Generate a standalone SVG via CLI
-node src/cli.js --username octocat --theme cyberpunk --output my-jungle.svg
-```
+CLI options: `--username`, `--theme`, `--limit` (number or `all`), `--sort`, `--output`.
 
 ---
 
-## ☁️ 1-Click Vercel Deployment
+## 🛠️ Self-hosting
 
-This project includes `vercel.json` and `api/ghost-jungle.js` serverless handlers:
+### Deploy to Vercel
 
-1. Fork or push this repository to GitHub.
-2. Import the repository into [Vercel](https://vercel.com).
-3. (Optional) Add `GITHUB_TOKEN` to Environment Variables in Vercel settings.
-4. Deploy! Your API is instantly live at `https://your-project.vercel.app/api/ghost-jungle?username=...`.
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FAtlasRoX%2FGhost-Jungle&env=GITHUB_TOKEN&envDescription=Fine-grained%20GitHub%20token%20with%20read-only%20access%20to%20public%20repositories&project-name=ghost-jungle)
+
+1. Click the button, or import this repository in Vercel.
+2. Add `GITHUB_TOKEN`: a [fine-grained token](https://github.com/settings/personal-access-tokens/new) with **Public repositories (read-only)** access. No other permissions are needed.
+3. Deploy. Your API is live at `https://your-project.vercel.app/api/ghost-jungle?username=…`.
 
 > [!IMPORTANT]
-> Set `GITHUB_TOKEN` (a fine-grained token with read-only access to public repositories). Without it GitHub allows only 60 anonymous requests per hour, which a single large profile can use up.
+> Without `GITHUB_TOKEN`, GitHub allows only 60 anonymous requests per hour, and a single large profile can use all of them.
+
+### Run locally
+
+Requires Node.js 18+.
+
+```bash
+git clone https://github.com/AtlasRoX/Ghost-Jungle.git
+cd Ghost-Jungle
+npm install
+
+export GITHUB_TOKEN="github_pat_..."   # optional, recommended
+npm start                              # http://localhost:3000
+```
+
+| Script | What it does |
+| :--- | :--- |
+| `npm start` | Playground and API on port 3000 (`PORT` to change) |
+| `npm run dev` | Same, restarting on file changes |
+| `npm test` | Renders every theme with sample data into `test/output/` |
+| `npm run cli -- --username octocat` | Writes `ghost-jungle.svg` |
+| `npm run og` | Rebuilds the social cards and icons (needs Chrome) |
+
+### API
+
+| Endpoint | Returns |
+| :--- | :--- |
+| `/api/ghost-jungle` | The animated SVG scene (parameters above) |
+| `/api/user-data?username=…` | Repositories, totals and rank as JSON |
+| `/api/portrait?tier=1..5` | A single spirit portrait (SVG) |
+| `/api/meta` | Themes, tiers, ranks and limits |
+
+---
+
+## 🧬 How it works
+
+- **Scene:** authored on a fixed 880×400 stage and rendered on the server as one self-contained SVG. Layers are procedurally generated from a seed of your username, so every jungle is unique.
+- **Spirits:** each hem and sleeve is a SMIL path morph across one seamless cycle. Each spirit wanders a closed Catmull-Rom spline through random waypoints, with eased stops and depth scaling.
+- **Typography:** Google Sans is subset and embedded as a data URI, because GitHub's Camo proxy blocks external fonts.
+- **Playground:** loads the same scene without wandering animation and drives the spirits with a steering simulation (wander, separation, cursor reactions, drag and throw).
+
+```
+src/
+  renderer.js       scene, wandering routes, HUD
+  ghost-sprites.js  the five spirit characters and their motion
+  github.js         GitHub GraphQL / REST data with exact commit counts
+  rank.js           canopy rank formula
+  themes.js         palettes and color utilities
+  handlers.js       shared request handlers (Express and Vercel)
+api/                Vercel functions
+public/             playground, wiki, social cards, icons
+scripts/build-og.js social card and icon builder
+```
 
 ---
 
 ## 📜 License
 
-Distributed under the **MIT License**. Designed & built by [@AtlasRoX](https://github.com/AtlasRoX) with 🖤 for the GitHub community.
+[MIT](LICENSE) © 2026 [AtlasRoX](https://github.com/AtlasRoX). Google Sans is used under the SIL Open Font License 1.1 (see [`assets/fonts`](assets/fonts/README.md)).
+
+<div align="center">
+<sub>Designed &amp; built by <a href="https://github.com/AtlasRoX">@AtlasRoX</a> with 🖤 for the GitHub community.</sub>
+</div>

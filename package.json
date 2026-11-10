@@ -1,7 +1,7 @@
 {
   "name": "github-ghost-jungle",
   "version": "1.0.0",
-  "description": "An interactive GitHub README element where repositories materialize as evolving spectral ghosts inside an enchanted animated jungle.",
+  "description": "An animated GitHub profile README where every repository becomes an evolving ghost spirit in a cinematic moonlit jungle.",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -13,12 +13,13 @@
   "keywords": [
     "github-readme",
     "github-profile",
-    "interactive",
+    "profile-readme",
+    "readme-widget",
+    "animated-svg",
+    "github-stats",
     "svg",
     "ghost",
-    "jungle",
-    "animated-svg",
-    "gamification"
+    "interactive"
   ],
   "author": "AtlasRoX",
   "license": "MIT",
@@ -29,5 +30,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/AtlasRoX/Ghost-Jungle.git"
+  },
+  "bin": {
+    "ghost-jungle": "src/cli.js"
   }
 }
