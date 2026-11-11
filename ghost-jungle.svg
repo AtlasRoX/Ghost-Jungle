@@ -1,0 +1,1240 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="gj-title gj-desc">
+  <title id="gj-title">AtlasRoX's Ghost Jungle</title>
+  <desc id="gj-desc">63 repository spirits: kairos (229 commits), TribosAI (113 commits), super-fiesta (57 commits), DarkFlags (30 commits), Drafo (26 commits), everything101 (22 commits), Bookstore-JAVA (17 commits), ovijaan (13 commits), verbose-octo-system (13 commits), BUP-GridWise (12 commits). Showing 10 of 63. 705 commits, 0 stars, 6 followers. Canopy rank C Whispering Sprout, top 62%.</desc>
+  <defs>
+    <clipPath id="frame"><rect width="880" height="400" rx="18" /></clipPath>
+
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#03070d" />
+      <stop offset="40%" stop-color="#081726" />
+      <stop offset="64%" stop-color="#0d2235" />
+      <stop offset="100%" stop-color="#02070c" />
+    </linearGradient>
+    <radialGradient id="moon-halo">
+      <stop offset="0%" stop-color="#4facfe" stop-opacity="0.38" />
+      <stop offset="12%" stop-color="#4facfe" stop-opacity="0.2" />
+      <stop offset="35%" stop-color="#4facfe" stop-opacity="0.07" />
+      <stop offset="100%" stop-color="#4facfe" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="moon-disc" cx="40%" cy="36%" r="68%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="55%" stop-color="#cee8ff" />
+      <stop offset="100%" stop-color="#418ed3" />
+    </radialGradient>
+    <radialGradient id="moon-wash" cx="50%" cy="0%" r="90%">
+      <stop offset="0%" stop-color="#4facfe" stop-opacity="0.16" />
+      <stop offset="100%" stop-color="#4facfe" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="shaft-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#95cdfe" stop-opacity="0.2" />
+      <stop offset="45%" stop-color="#4facfe" stop-opacity="0.07" />
+      <stop offset="100%" stop-color="#4facfe" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="cloud-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#265681" />
+      <stop offset="60%" stop-color="#10283e" />
+    </linearGradient>
+    <linearGradient id="haze-band" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#214b71" stop-opacity="0" />
+      <stop offset="50%" stop-color="#214b71" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#214b71" stop-opacity="0" />
+    </linearGradient>
+    <radialGradient id="puff">
+      <stop offset="0%" stop-color="#214b71" stop-opacity="0.55" />
+      <stop offset="100%" stop-color="#214b71" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="ff-glow">
+      <stop offset="0%" stop-color="#53fdd7" stop-opacity="0.9" />
+      <stop offset="35%" stop-color="#53fdd7" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#53fdd7" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="bud-glow">
+      <stop offset="0%" stop-color="#00f2fe" stop-opacity="0.75" />
+      <stop offset="100%" stop-color="#00f2fe" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="pool-glow">
+      <stop offset="0%" stop-color="#00f2fe" stop-opacity="0.55" />
+      <stop offset="100%" stop-color="#00f2fe" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="vignette" cx="50%" cy="46%" r="72%">
+      <stop offset="52%" stop-color="#000000" stop-opacity="0" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.78" />
+    </radialGradient>
+    <linearGradient id="letterbox" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.66" />
+      <stop offset="19%" stop-color="#000000" stop-opacity="0" />
+      <stop offset="86%" stop-color="#000000" stop-opacity="0" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.7" />
+    </linearGradient>
+
+    <filter id="ghost-soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="1.8" result="b" />
+      <feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge>
+    </filter>
+    <filter id="core-glow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="2.2" result="b" />
+      <feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge>
+    </filter>
+    <linearGradient id="rim" x1="1" y1="0" x2="0.2" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
+      <stop offset="35%" stop-color="#ffffff" stop-opacity="0.25" />
+      <stop offset="60%" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
+    <radialGradient id="shade">
+      <stop offset="0%" stop-color="#0b1020" stop-opacity="0.28" />
+      <stop offset="100%" stop-color="#0b1020" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="lamp-glow">
+      <stop offset="0%" stop-color="#fff7d6" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#fff7d6" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="streak" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.95" />
+    </linearGradient>
+    <filter id="volumetric" x="-30%" y="-10%" width="160%" height="120%">
+      <feGaussianBlur stdDeviation="11" />
+    </filter>
+    <filter id="soften" x="-20%" y="-50%" width="140%" height="200%">
+      <feGaussianBlur stdDeviation="3" />
+    </filter>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="7" stitchTiles="stitch" />
+      <feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.9 0" />
+    </filter>
+  </defs>
+
+  <style>
+    @font-face { font-family: 'Google Sans'; font-weight: 500; font-style: normal; src: url(data:font/woff2;base64,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) format('woff2'); }
+    @font-face { font-family: 'Google Sans'; font-weight: 700; font-style: normal; src: url(data:font/woff2;base64,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) format('woff2'); }
+    text { font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; }
+    .t-name    { font-size: 11px; font-weight: 500; fill: #e0f2fe; paint-order: stroke; stroke: #010407; stroke-width: 3px; stroke-linejoin: round; }
+    .t-meta    { font-size: 8px; font-weight: 700; letter-spacing: 1px; paint-order: stroke; stroke: #010407; stroke-width: 2.5px; stroke-linejoin: round; }
+    .t-eyebrow { font-size: 8px; font-weight: 700; letter-spacing: 3px; fill: #7dd3fc; }
+    .t-title   { font-size: 22px; font-weight: 700; letter-spacing: -0.3px; fill: #e0f2fe; }
+    .t-label   { font-size: 7.5px; font-weight: 700; letter-spacing: 1.6px; fill: #7dd3fc; opacity: 0.85; }
+    .t-stat    { font-size: 15px; font-weight: 500; fill: #e0f2fe; font-variant-numeric: tabular-nums; }
+    .t-rank    { font-size: 12.5px; font-weight: 700; }
+    .t-grade   { font-size: 14px; font-weight: 700; letter-spacing: -0.4px; }
+    .t-mark    { font-size: 7.5px; font-weight: 500; letter-spacing: 0.6px; fill: #ffffff; opacity: 0.16; }
+
+    @keyframes float    { 0%,100% { transform: translate(0,0) scale(1.025,.975) } 50% { transform: translate(0,-9px) scale(.98,1.025) } }
+    @keyframes tilt     { 0%,100% { transform: rotate(-2.2deg) } 50% { transform: rotate(2.2deg) } }
+    @keyframes blink    { 0%,44%,48%,52%,86%,90%,100% { transform: scaleY(1) } 46%,50%,88% { transform: scaleY(.08) } }
+    @keyframes look     { 0%,30%,100% { transform: translate(0,0) } 36%,58% { transform: translate(-1.6px,.3px) } 64%,84% { transform: translate(1.4px,-.2px) } }
+    @keyframes soul     { 0%,100% { opacity: .7 } 50% { opacity: 1 } }
+    @keyframes ecto     { 0% { opacity: 0; transform: translate(0,0) scale(1) } 15% { opacity: .9 } 100% { opacity: 0; transform: translate(var(--dx),-34px) scale(.2) } }
+    @keyframes pendulum { 0%,100% { transform: rotate(9deg) } 50% { transform: rotate(-7deg) } }
+    @keyframes flame    { 0%,100% { transform: scale(1,1) } 20% { transform: scale(.9,1.12) } 45% { transform: scale(1.06,.94) } 70% { transform: scale(.94,1.08) } }
+    @keyframes flicker  { 0%,100% { opacity: .85 } 30% { opacity: .6 } 55% { opacity: 1 } 80% { opacity: .7 } }
+    @keyframes bud      { 0%,100% { opacity: .35 } 50% { opacity: 1 } }
+    @keyframes antlers  { 0%,100% { opacity: .75 } 50% { opacity: 1 } }
+
+    .float    { animation: float 5s ease-in-out infinite }
+    .tilt     { animation: tilt 7s ease-in-out infinite }
+    .blink    { transform-box: fill-box; transform-origin: center; animation: blink 7s linear infinite }
+    .look     { animation: look 9s ease-in-out infinite }
+    .soul     { animation: soul 3.2s ease-in-out infinite }
+    .ecto     { transform-box: fill-box; transform-origin: center; animation: ecto 3.6s ease-out infinite; opacity: 0 }
+    .pendulum { animation: pendulum 3.4s ease-in-out infinite }
+    .flame    { transform-box: fill-box; transform-origin: 50% 100%; animation: flame .9s ease-in-out infinite }
+    .flicker-soft { animation: flicker 1.3s ease-in-out infinite }
+    .bud      { animation: bud 2.8s ease-in-out infinite }
+    .antlers  { animation: antlers 4s ease-in-out infinite }
+    @keyframes cam-far  { 0%,100% { transform: translateX(-5px) } 50% { transform: translateX(5px) } }
+    @keyframes cam-mid  { 0%,100% { transform: translateX(-3px) } 50% { transform: translateX(3px) } }
+    @keyframes cam-near { 0%,100% { transform: translateX(8px) } 50% { transform: translateX(-8px) } }
+    @keyframes cam-top  { 0%,100% { transform: translateX(12px) } 50% { transform: translateX(-12px) } }
+    @keyframes star     { 0%,90% { opacity: 0; transform: translate(0,0) } 91% { opacity: 1 } 96%,100% { opacity: 0; transform: translate(-220px,88px) } }
+    @keyframes leaf     { 0% { opacity: 0; transform: translate(0,0) rotate(0deg) } 8% { opacity: .9 } 25% { transform: translate(18px,105px) rotate(140deg) } 50% { transform: translate(-14px,210px) rotate(260deg) } 75% { transform: translate(16px,315px) rotate(400deg) } 92% { opacity: .8 } 100% { opacity: 0; transform: translate(-6px,430px) rotate(520deg) } }
+    @keyframes twinkle  { 0%,100% { opacity: .9 } 50% { opacity: .15 } }
+    @keyframes shaft    { 0%,100% { opacity: .55 } 40% { opacity: 1 } 70% { opacity: .7 } }
+    @keyframes moonlight{ 0%,100% { opacity: 1 } 45% { opacity: .82 } 55% { opacity: .78 } }
+    @keyframes cloud-a  { 0% { transform: translateX(-260px) } 100% { transform: translateX(260px) } }
+    @keyframes cloud-b  { 0% { transform: translateX(240px) } 100% { transform: translateX(-240px) } }
+    @keyframes drift-l  { 0%,100% { transform: translateX(0) } 50% { transform: translateX(-60px) } }
+    @keyframes drift-r  { 0%,100% { transform: translateX(0) } 50% { transform: translateX(60px) } }
+    @keyframes sway-a   { 0%,100% { transform: rotate(-1.6deg) } 50% { transform: rotate(1.8deg) } }
+    @keyframes sway-b   { 0%,100% { transform: rotate(1.4deg) } 50% { transform: rotate(-1.8deg) } }
+    @keyframes ff-0     { 0%,100% { transform: translate(0,0); opacity: 0 } 20%,80% { opacity: 1 } 50% { transform: translate(18px,-22px) } }
+    @keyframes ff-1     { 0%,100% { transform: translate(0,0); opacity: 0 } 25%,75% { opacity: .9 } 50% { transform: translate(-20px,-14px) } }
+    @keyframes ff-2     { 0%,100% { transform: translate(0,0); opacity: 0 } 30%,70% { opacity: 1 } 50% { transform: translate(10px,-28px) } }
+    @keyframes dial     { from { stroke-dashoffset: 131.9 } }
+
+    .cam-far { animation: cam-far 26s ease-in-out infinite } .cam-mid { animation: cam-mid 26s ease-in-out infinite }
+    .cam-near { animation: cam-near 26s ease-in-out infinite } .cam-top { animation: cam-top 26s ease-in-out infinite }
+    .shooting { animation: star 13s linear infinite; opacity: 0 }
+    .leaf { animation: leaf 22s linear infinite; opacity: 0 }
+    .twinkle { animation: twinkle 4.5s ease-in-out infinite }
+    .shaft { animation: shaft 11s ease-in-out infinite } .shaft-1 { animation-delay: -4s } .shaft-2 { animation-delay: -7.5s }
+    .moonlight { animation: moonlight 34s ease-in-out infinite }
+    .cloud-a { animation: cloud-a 70s linear infinite } .cloud-b { animation: cloud-b 95s linear infinite }
+    .drift-l { animation: drift-l 22s ease-in-out infinite } .drift-r { animation: drift-r 28s ease-in-out infinite }
+    .vine-a { animation: sway-a 7s ease-in-out infinite } .vine-b { animation: sway-b 8.5s ease-in-out infinite }
+    .ff-0 { animation-name: ff-0 } .ff-1 { animation-name: ff-1 } .ff-2 { animation-name: ff-2 }
+    .ff { animation-timing-function: ease-in-out; animation-iteration-count: infinite; opacity: 0 }
+    .ghost { cursor: pointer }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important } .ff { opacity: .8 } }
+  </style>
+
+  <g clip-path="url(#frame)">
+    <!-- SKY -->
+    <rect width="880" height="400" fill="url(#sky)" />
+    <g><circle cx="752.5" cy="23" r="1" fill="#ffffff" opacity="0.43" class="twinkle" style="animation-delay:-0.3s" /><circle cx="319.5" cy="5.7" r="0.4" fill="#ffffff" opacity="0.71" /><circle cx="524.9" cy="131.6" r="0.7" fill="#ffffff" opacity="0.80" /><circle cx="766" cy="157.5" r="0.7" fill="#ffffff" opacity="0.59" /><circle cx="615" cy="97.9" r="0.5" fill="#ffffff" opacity="0.45" /><circle cx="323.1" cy="146.5" r="1" fill="#ffffff" opacity="0.46" /><circle cx="849.8" cy="23.3" r="0.8" fill="#ffffff" opacity="0.75" class="twinkle" style="animation-delay:-3.5s" /><circle cx="831" cy="184.3" r="0.8" fill="#ffffff" opacity="0.53" /><circle cx="862" cy="46.5" r="0.7" fill="#ffffff" opacity="0.26" /><circle cx="873.5" cy="111.2" r="0.5" fill="#ffffff" opacity="0.77" /><circle cx="449.3" cy="115.9" r="0.5" fill="#ffffff" opacity="0.69" /><circle cx="101.9" cy="24.7" r="1" fill="#ffffff" opacity="0.54" /><circle cx="597.8" cy="142.2" r="0.6" fill="#ffffff" opacity="0.62" class="twinkle" style="animation-delay:-4.4s" /><circle cx="485.7" cy="44" r="0.5" fill="#ffffff" opacity="0.21" /><circle cx="422.1" cy="9" r="0.7" fill="#ffffff" opacity="0.71" /><circle cx="705.9" cy="71.5" r="0.5" fill="#ffffff" opacity="0.28" /><circle cx="145.9" cy="48.7" r="0.7" fill="#ffffff" opacity="0.26" /><circle cx="179.4" cy="90.1" r="0.4" fill="#ffffff" opacity="0.43" /><circle cx="79.4" cy="136.5" r="1.1" fill="#ffffff" opacity="0.32" class="twinkle" style="animation-delay:-0.6s" /><circle cx="705.5" cy="132.1" r="0.9" fill="#ffffff" opacity="0.32" /><circle cx="298.5" cy="50.4" r="1.1" fill="#ffffff" opacity="0.61" /><circle cx="766.7" cy="8.7" r="0.4" fill="#ffffff" opacity="0.41" /><circle cx="10.7" cy="51.1" r="0.5" fill="#ffffff" opacity="0.32" /><circle cx="652.5" cy="142.1" r="0.7" fill="#ffffff" opacity="0.71" /><circle cx="34.8" cy="50.3" r="0.9" fill="#ffffff" opacity="0.24" class="twinkle" style="animation-delay:-5.1s" /><circle cx="104.7" cy="16.4" r="0.5" fill="#ffffff" opacity="0.56" /><circle cx="674.6" cy="82.8" r="0.8" fill="#ffffff" opacity="0.72" /><circle cx="32.1" cy="71.2" r="1" fill="#ffffff" opacity="0.42" /><circle cx="607.4" cy="35.6" r="1.1" fill="#ffffff" opacity="0.52" /><circle cx="267.6" cy="21.4" r="0.5" fill="#ffffff" opacity="0.53" /><circle cx="220" cy="22.6" r="0.7" fill="#ffffff" opacity="0.43" class="twinkle" style="animation-delay:-1.4s" /><circle cx="864.7" cy="142.9" r="0.8" fill="#ffffff" opacity="0.35" /><circle cx="450.1" cy="15.7" r="0.5" fill="#ffffff" opacity="0.53" /><circle cx="454.5" cy="65.9" r="0.5" fill="#ffffff" opacity="0.57" /><circle cx="623.2" cy="5.2" r="0.8" fill="#ffffff" opacity="0.37" /><circle cx="629.4" cy="121.5" r="0.3" fill="#ffffff" opacity="0.24" /><circle cx="867.4" cy="110.7" r="0.9" fill="#ffffff" opacity="0.31" class="twinkle" style="animation-delay:-2.8s" /><circle cx="133.2" cy="25.9" r="0.9" fill="#ffffff" opacity="0.37" /><circle cx="834.4" cy="69.4" r="0.5" fill="#ffffff" opacity="0.41" /><circle cx="638" cy="22.4" r="0.7" fill="#ffffff" opacity="0.47" /><circle cx="269" cy="3.9" r="0.5" fill="#ffffff" opacity="0.32" /><circle cx="418.2" cy="140.7" r="0.9" fill="#ffffff" opacity="0.37" /><circle cx="256.7" cy="38.2" r="0.8" fill="#ffffff" opacity="0.66" class="twinkle" style="animation-delay:-2.2s" /><circle cx="774" cy="41.5" r="0.9" fill="#ffffff" opacity="0.59" /><circle cx="628.4" cy="4.7" r="1" fill="#ffffff" opacity="0.66" /><circle cx="51" cy="123.6" r="0.3" fill="#ffffff" opacity="0.64" /><circle cx="447.5" cy="175.1" r="0.6" fill="#ffffff" opacity="0.53" /><circle cx="698.1" cy="50" r="0.7" fill="#ffffff" opacity="0.24" /><circle cx="79.4" cy="17.3" r="1" fill="#ffffff" opacity="0.46" class="twinkle" style="animation-delay:-0.1s" /><circle cx="547.5" cy="142" r="0.4" fill="#ffffff" opacity="0.32" /><circle cx="362.2" cy="28.4" r="1" fill="#ffffff" opacity="0.76" /><circle cx="357.1" cy="80.7" r="1.1" fill="#ffffff" opacity="0.34" /><circle cx="129.6" cy="47.6" r="1" fill="#ffffff" opacity="0.45" /><circle cx="451" cy="37.3" r="0.4" fill="#ffffff" opacity="0.39" /><circle cx="171.1" cy="55.3" r="0.6" fill="#ffffff" opacity="0.57" class="twinkle" style="animation-delay:-4.9s" /><circle cx="242.3" cy="180.8" r="0.5" fill="#ffffff" opacity="0.22" /><circle cx="421.2" cy="100.2" r="0.6" fill="#ffffff" opacity="0.68" /><circle cx="591.9" cy="47.6" r="0.7" fill="#ffffff" opacity="0.71" /><circle cx="527.8" cy="118.7" r="0.9" fill="#ffffff" opacity="0.26" /><circle cx="249.4" cy="123.1" r="0.8" fill="#ffffff" opacity="0.68" /><circle cx="132.5" cy="71.5" r="0.7" fill="#ffffff" opacity="0.21" class="twinkle" style="animation-delay:-3.7s" /><circle cx="289.9" cy="30.8" r="1" fill="#ffffff" opacity="0.80" /><circle cx="338.5" cy="106.1" r="0.6" fill="#ffffff" opacity="0.64" /><circle cx="822.5" cy="1" r="0.4" fill="#ffffff" opacity="0.34" /><circle cx="428.2" cy="57.7" r="0.3" fill="#ffffff" opacity="0.33" /><circle cx="572.8" cy="73.2" r="0.8" fill="#ffffff" opacity="0.21" /><circle cx="832.8" cy="0.7" r="0.5" fill="#ffffff" opacity="0.47" class="twinkle" style="animation-delay:-2.4s" /><circle cx="567.7" cy="5.8" r="1.1" fill="#ffffff" opacity="0.32" /><circle cx="300.7" cy="86" r="0.7" fill="#ffffff" opacity="0.60" /><circle cx="199.8" cy="80.3" r="0.3" fill="#ffffff" opacity="0.72" /><circle cx="502.6" cy="81.9" r="0.5" fill="#ffffff" opacity="0.74" /><circle cx="831.4" cy="59.8" r="0.5" fill="#ffffff" opacity="0.69" /><circle cx="532.4" cy="2.1" r="0.8" fill="#ffffff" opacity="0.45" class="twinkle" style="animation-delay:-3.9s" /><circle cx="802.6" cy="50.5" r="1" fill="#ffffff" opacity="0.60" /><circle cx="487" cy="42.3" r="0.7" fill="#ffffff" opacity="0.67" /><circle cx="95.8" cy="21.5" r="0.4" fill="#ffffff" opacity="0.79" /><circle cx="850.1" cy="151.1" r="0.5" fill="#ffffff" opacity="0.56" /><circle cx="863.5" cy="39.1" r="0.6" fill="#ffffff" opacity="0.63" /><circle cx="297.8" cy="90.5" r="0.9" fill="#ffffff" opacity="0.77" class="twinkle" style="animation-delay:-0.1s" /><circle cx="567.3" cy="25.3" r="0.7" fill="#ffffff" opacity="0.61" /><circle cx="370.7" cy="1.3" r="0.8" fill="#ffffff" opacity="0.42" /><circle cx="756.7" cy="65.7" r="1.1" fill="#ffffff" opacity="0.32" /><circle cx="23.3" cy="87.5" r="0.9" fill="#ffffff" opacity="0.60" /><circle cx="510.7" cy="40.3" r="0.5" fill="#ffffff" opacity="0.50" /><circle cx="631.4" cy="12.5" r="0.8" fill="#ffffff" opacity="0.77" class="twinkle" style="animation-delay:-4.4s" /><circle cx="118.6" cy="122.6" r="0.7" fill="#ffffff" opacity="0.42" /><circle cx="479.2" cy="14.4" r="1.1" fill="#ffffff" opacity="0.72" /><circle cx="631.6" cy="6" r="0.3" fill="#ffffff" opacity="0.63" /><circle cx="642.3" cy="4.1" r="0.8" fill="#ffffff" opacity="0.61" /><circle cx="415.2" cy="166.9" r="1" fill="#ffffff" opacity="0.48" /></g>
+    <g transform="translate(575.7, 26) rotate(-22)">
+      <g class="shooting" style="animation-delay:-0.4s"><rect x="-70" y="-0.6" width="70" height="1.2" rx="0.6" fill="url(#streak)" /></g>
+    </g>
+
+    <!-- MOON -->
+    <g class="moonlight">
+      <rect width="880" height="400" fill="url(#moon-wash)" />
+      <circle cx="440" cy="96" r="240" fill="url(#moon-halo)" />
+      <circle cx="440" cy="96" r="33" fill="url(#moon-disc)" />
+      <g fill="#285a87">
+        <circle cx="449" cy="88" r="5.5" opacity="0.2" />
+        <circle cx="430" cy="102" r="8" opacity="0.16" />
+        <circle cx="446" cy="110" r="4" opacity="0.14" />
+        <circle cx="436" cy="82" r="3" opacity="0.12" />
+      </g>
+    </g>
+
+    <!-- CLOUDS crossing the moon -->
+    <g filter="url(#soften)">
+      <g class="cloud-a" style="animation-delay:-32.6s">
+        <path d="M 345 108 Q 364 103.2 383 108 Q 402 94 421 108 Q 440 82.9 459 108 Q 478 93.8 497 108 Q 516 102.3 535 108 Q 440 115 345 108 Z" fill="url(#cloud-grad)" opacity="0.85" />
+      </g>
+      <g class="cloud-b" style="animation-delay:-26.5s">
+        <path d="M 365 78 Q 380 74.6 395 78 Q 410 65.7 425 78 Q 440 59 455 78 Q 470 63.4 485 78 Q 500 71.6 515 78 Q 440 83 365 78 Z" fill="url(#cloud-grad)" opacity="0.6" />
+      </g>
+    </g>
+
+    <!-- VOLUMETRIC MOONLIGHT -->
+    <g filter="url(#volumetric)" style="mix-blend-mode:screen"><polygon class="shaft shaft-0" points="414.6,122 433.2,122 228,360 148.7,360" fill="url(#shaft-grad)" /><polygon class="shaft shaft-1" points="416.2,122 449.8,122 382.5,360 272,360" fill="url(#shaft-grad)" /><polygon class="shaft shaft-2" points="431.8,122 452.4,122 516.5,360 440.7,360" fill="url(#shaft-grad)" /><polygon class="shaft shaft-0" points="441,122 460,122 644.7,360 566.1,360" fill="url(#shaft-grad)" /><polygon class="shaft shaft-1" points="448.4,122 468,122 786.5,360 667.4,360" fill="url(#shaft-grad)" /></g>
+
+    <!-- FAR RIDGE -->
+    <g class="cam-far">
+      <path d="M -40 410 L -40 240 Q -17.4 212.7 5.2 245 Q 33.2 200.5 61.2 238.6 Q 89.8 204.5 118.4 237.9 Q 148.3 207.5 178.2 240.2 Q 200.3 201.6 222.5 240.9 Q 235.9 216.9 249.3 244.4 Q 276.6 216.1 303.9 244.8 Q 325.1 203.5 346.4 239.6 Q 369.4 187.4 392.3 233.9 Q 419.3 203.1 446.2 244 Q 459.7 210.3 473.2 239.5 Q 496.5 212.1 519.7 237.6 Q 542.5 205.4 565.2 246.8 Q 592.8 215.8 620.3 237 Q 642.1 198.8 664 246.3 Q 679.8 211.8 695.5 242.3 Q 714.5 202.9 733.5 244.4 Q 750.3 215.8 767 243.5 Q 798.8 222.4 830.6 242.7 Q 854.7 196.2 878.8 243.3 Q 893.9 210.9 908.9 238.9 Q 933.1 198.5 957.3 239 L 957.3 410 Z" fill="#10283e" />
+      <g><path d="M 139.5 237.5 L 141.2 236.8 L 139.1 235.3 Z M 139.5 237.5 L 137.5 237.5 L 139.1 235.3 Z M 139.1 235.3 L 142.1 233.9 L 138.6 233.2 Z M 139.1 235.3 L 135.3 235.3 L 138.6 233.2 Z M 138.6 233.2 L 142.6 231.2 L 138.2 231.3 Z M 138.6 233.2 L 133.4 233.4 L 138.2 231.3 Z M 138.2 231.3 L 142.8 228.8 L 137.7 229.6 Z M 138.2 231.3 L 131.9 231.8 L 137.7 229.6 Z M 137.7 229.6 L 142.6 226.7 L 137.3 228.2 Z M 137.7 229.6 L 130.8 230.4 L 137.3 228.2 Z M 137.3 228.2 L 142 225 L 136.8 226.9 Z M 137.3 228.2 L 130.2 229.2 L 136.8 226.9 Z M 136.8 226.9 L 141.1 223.6 L 136.4 225.8 Z M 136.8 226.9 L 130 228.3 L 136.4 225.8 Z M 136.4 225.8 L 139.8 222.6 L 135.9 225 Z M 136.4 225.8 L 130.2 227.6 L 135.9 225 Z M 135.9 225 L 138.2 221.9 L 135.5 224.3 Z M 135.9 225 L 130.8 227.1 L 135.5 224.3 Z M 135.5 224.3 L 136.6 221.7 L 135 223.8 Z M 135.5 224.3 L 131.6 226.6 L 135 223.8 Z M 135 223.8 L 135.1 222 L 134.6 223.6 Z M 135 223.8 L 132.8 226 L 134.6 223.6 Z M 134.6 223.6 L 134.1 222.8 L 134.1 223.5 Z M 134.6 223.6 L 133.8 225 L 134.1 223.5 Z " fill="#10283e" /><path d="M 140 240 Q 137 225.5 134.1 223.5" fill="none" stroke="#10283e" stroke-width="1.2" stroke-linecap="round" /><path d="M 141.4 237.7 L 143.5 238.5 L 142.8 235.6 Z M 141.4 237.7 L 140.4 236.5 L 142.8 235.6 Z M 142.8 235.6 L 146.7 237.4 L 144.2 233.8 Z M 142.8 235.6 L 141.1 233.3 L 144.2 233.8 Z M 144.2 233.8 L 149.5 236.5 L 145.5 232.1 Z M 144.2 233.8 L 142.2 230.4 L 145.5 232.1 Z M 145.5 232.1 L 151.8 235.8 L 146.9 230.7 Z M 145.5 232.1 L 143.6 227.9 L 146.9 230.7 Z M 146.9 230.7 L 153.6 235.2 L 148.3 229.4 Z M 146.9 230.7 L 145.4 226 L 148.3 229.4 Z M 148.3 229.4 L 154.8 234.7 L 149.7 228.4 Z M 148.3 229.4 L 147.4 224.5 L 149.7 228.4 Z M 149.7 228.4 L 155.6 234.1 L 151.1 227.6 Z M 149.7 228.4 L 149.5 223.7 L 151.1 227.6 Z M 151.1 227.6 L 155.9 233.3 L 152.5 227 Z M 151.1 227.6 L 151.7 223.4 L 152.5 227 Z M 152.5 227 L 156.1 232.4 L 153.8 226.7 Z M 152.5 227 L 153.7 223.6 L 153.8 226.7 Z M 153.8 226.7 L 156.1 231.1 L 155.2 226.5 Z M 153.8 226.7 L 155.3 224.2 L 155.2 226.5 Z M 155.2 226.5 L 156.4 229.7 L 156.6 226.6 Z M 155.2 226.5 L 156.6 225.1 L 156.6 226.6 Z M 156.6 226.6 L 157 228.2 L 158 226.8 Z M 156.6 226.6 L 157.4 226 L 158 226.8 Z " fill="#10283e" /><path d="M 140 240 Q 149 226.8 158 226.8" fill="none" stroke="#10283e" stroke-width="1.2" stroke-linecap="round" /><path d="M 138.1 238.5 L 138.3 237.1 L 136.2 237.2 Z M 138.1 238.5 L 136.2 240.1 L 136.2 237.2 Z M 136.2 237.2 L 136.3 234.5 L 134.3 236.1 Z M 136.2 237.2 L 132.8 240.4 L 134.3 236.1 Z M 134.3 236.1 L 134.1 232.4 L 132.5 235.2 Z M 134.3 236.1 L 129.9 240.9 L 132.5 235.2 Z M 132.5 235.2 L 131.6 230.8 L 130.6 234.5 Z M 132.5 235.2 L 127.5 241.3 L 130.6 234.5 Z M 130.6 234.5 L 129 229.7 L 128.7 233.9 Z M 130.6 234.5 L 125.6 241.6 L 128.7 233.9 Z M 128.7 233.9 L 126.4 229.3 L 126.8 233.6 Z M 128.7 233.9 L 124.1 241.7 L 126.8 233.6 Z M 126.8 233.6 L 124 229.4 L 124.9 233.4 Z M 126.8 233.6 L 123 241.4 L 124.9 233.4 Z M 124.9 233.4 L 121.9 229.9 L 123 233.4 Z M 124.9 233.4 L 122 240.7 L 123 233.4 Z M 123 233.4 L 120 230.8 L 121.1 233.6 Z M 123 233.4 L 121.1 239.8 L 121.1 233.6 Z M 121.1 233.6 L 118.5 231.9 L 119.3 234.1 Z M 121.1 233.6 L 120 238.7 L 119.3 234.1 Z M 119.3 234.1 L 117.4 233 L 117.4 234.6 Z M 119.3 234.1 L 118.7 237.4 L 117.4 234.6 Z M 117.4 234.6 L 116.4 234.2 L 115.5 235.4 Z M 117.4 234.6 L 117.2 236.3 L 115.5 235.4 Z " fill="#10283e" /><path d="M 140 240 Q 127.7 231.8 115.5 235.4" fill="none" stroke="#10283e" stroke-width="1.2" stroke-linecap="round" /><path d="M 760.5 241.4 L 762.5 241.4 L 761 239 Z M 760.5 241.4 L 758.9 240.7 L 761 239 Z M 761 239 L 764.7 239.1 L 761.4 236.8 Z M 761 239 L 758 237.6 L 761.4 236.8 Z M 761.4 236.8 L 766.7 237 L 761.9 234.8 Z M 761.4 236.8 L 757.4 234.8 L 761.9 234.8 Z M 761.9 234.8 L 768.2 235.3 L 762.4 233 Z M 761.9 234.8 L 757.3 232.3 L 762.4 233 Z M 762.4 233 L 769.3 233.8 L 762.9 231.5 Z M 762.4 233 L 757.5 230.1 L 762.9 231.5 Z M 762.9 231.5 L 770 232.5 L 763.4 230.1 Z M 762.9 231.5 L 758.1 228.3 L 763.4 230.1 Z M 763.4 230.1 L 770.2 231.5 L 763.8 229 Z M 763.4 230.1 L 759.1 226.8 L 763.8 229 Z M 763.8 229 L 770 230.8 L 764.3 228.1 Z M 763.8 229 L 760.4 225.7 L 764.3 228.1 Z M 764.3 228.1 L 769.5 230.2 L 764.8 227.4 Z M 764.3 228.1 L 762 225.1 L 764.8 227.4 Z M 764.8 227.4 L 768.6 229.7 L 765.3 226.9 Z M 764.8 227.4 L 763.7 224.8 L 765.3 226.9 Z M 765.3 226.9 L 767.5 229.1 L 765.8 226.6 Z M 765.3 226.9 L 765.2 225.1 L 765.8 226.6 Z M 765.8 226.6 L 766.5 228 L 766.3 226.5 Z M 765.8 226.6 L 766.2 225.8 L 766.3 226.5 Z " fill="#10283e" /><path d="M 760 244 Q 763.1 228.6 766.3 226.5" fill="none" stroke="#10283e" stroke-width="1.2" stroke-linecap="round" /><path d="M 762 242.4 L 763.9 244 L 764 241 Z M 762 242.4 L 761.8 241 L 764 241 Z M 764 241 L 767.4 244.3 L 766 239.9 Z M 764 241 L 763.9 238.3 L 766 239.9 Z M 766 239.9 L 770.4 244.7 L 768 238.9 Z M 766 239.9 L 766.3 236.1 L 768 238.9 Z M 768 238.9 L 773 245 L 770 238.1 Z M 768 238.9 L 768.9 234.5 L 770 238.1 Z M 770 238.1 L 775 245.3 L 772 237.5 Z M 770 238.1 L 771.6 233.4 L 772 237.5 Z M 772 237.5 L 776.6 245.3 L 774 237.2 Z M 772 237.5 L 774.3 232.9 L 774 237.2 Z M 774 237.2 L 777.8 245 L 776 237 Z M 774 237.2 L 776.8 233 L 776 237 Z M 776 237 L 778.9 244.3 L 778 237 Z M 776 237 L 779.1 233.5 L 778 237 Z M 778 237 L 780 243.4 L 780 237.2 Z M 778 237 L 781 234.4 L 780 237.2 Z M 780 237.2 L 781.2 242.3 L 782 237.7 Z M 780 237.2 L 782.6 235.5 L 782 237.7 Z M 782 237.7 L 782.6 241.1 L 784 238.3 Z M 782 237.7 L 783.9 236.7 L 784 238.3 Z M 784 238.3 L 784.2 240 L 786 239.1 Z M 784 238.3 L 785 237.9 L 786 239.1 Z " fill="#10283e" /><path d="M 760 244 Q 773 235.3 786 239.1" fill="none" stroke="#10283e" stroke-width="1.2" stroke-linecap="round" /><path d="M 758.5 242 L 759.3 240.6 L 757 240.1 Z M 758.5 242 L 756.4 243 L 757 240.1 Z M 757 240.1 L 758.3 237.6 L 755.5 238.5 Z M 757 240.1 L 753.2 242.3 L 755.5 238.5 Z M 755.5 238.5 L 756.9 234.9 L 754 237 Z M 755.5 238.5 L 750.3 241.8 L 754 237 Z M 754 237 L 755.2 232.7 L 752.5 235.8 Z M 754 237 L 748 241.4 L 752.5 235.8 Z M 752.5 235.8 L 753.2 230.9 L 751 234.8 Z M 752.5 235.8 L 746.2 241.1 L 751 234.8 Z M 751 234.8 L 751 229.8 L 749.5 233.9 Z M 751 234.8 L 744.9 240.8 L 749.5 233.9 Z M 749.5 233.9 L 748.8 229.2 L 748 233.3 Z M 749.5 233.9 L 744.1 240.3 L 748 233.3 Z M 748 233.3 L 746.6 229.2 L 746.5 232.9 Z M 748 233.3 L 743.6 239.6 L 746.5 232.9 Z M 746.5 232.9 L 744.7 229.6 L 745 232.6 Z M 746.5 232.9 L 743.3 238.6 L 745 232.6 Z M 745 232.6 L 743.2 230.3 L 743.5 232.6 Z M 745 232.6 L 743 237.3 L 743.5 232.6 Z M 743.5 232.6 L 742 231.3 L 742 232.8 Z M 743.5 232.6 L 742.5 235.8 L 742 232.8 Z M 742 232.8 L 741.1 232.2 L 740.5 233.1 Z M 742 232.8 L 741.7 234.4 L 740.5 233.1 Z " fill="#10283e" /><path d="M 760 244 Q 750.2 232.3 740.5 233.1" fill="none" stroke="#10283e" stroke-width="1.2" stroke-linecap="round" /></g>
+      <rect x="-20" y="196" width="920" height="110" fill="url(#haze-band)" />
+      <g class="drift-l">
+        <ellipse cx="200" cy="256" rx="230" ry="22" fill="url(#puff)" opacity="0.9" />
+        <ellipse cx="690" cy="266" rx="260" ry="20" fill="url(#puff)" opacity="0.8" />
+      </g>
+    </g>
+
+    <!-- MID CANOPY -->
+    <g class="cam-mid">
+      <path d="M -40 410 L -40 304 Q 2.8 272 45.6 305.9 Q 90.2 259.8 134.9 303.4 Q 158.4 262.4 182 305.1 Q 223.2 252.3 264.5 306.6 Q 287.9 275.7 311.2 309 Q 337.9 249.8 364.5 300.9 Q 388.8 267.1 413.1 310.7 Q 435.5 267 457.9 304.8 Q 483.1 271.2 508.4 301.2 Q 540.7 258.4 573.1 308.9 Q 620.6 262.3 668 310.1 Q 693.6 262.9 719.2 303.7 Q 742.3 265.8 765.4 300.5 Q 793.4 260.5 821.4 298.7 Q 856.3 272.2 891.2 302 Q 920 260.4 948.7 306.6 L 948.7 410 Z" fill="#091c2c" />
+      
+    <g fill="#091c2c">
+      <path d="M 61.5 -10 C 69.5 140, 50 280, 58 410
+          L 74 410 C 66 280, 78.5 140, 70.5 -10 Z" />
+      <path d="M 814 -10 C 807 140, 817.5 280, 810.5 410
+          L 825.5 410 C 832.5 280, 815 140, 822 -10 Z" />
+    </g>
+    <g fill="#030c13" stroke="#4facfe" stroke-opacity="0.12" stroke-width="1">
+      <path d="M 2 -10 C 12 140, -18 280, -8 410
+          L 36 410 C 26 280, 36 140, 26 -10 Z" />
+      <path d="M 857 -10 C 845 140, 860 280, 848 410
+          L 888 410 C 900 280, 867 140, 879 -10 Z" />
+    </g>
+      <rect x="-20" y="292" width="920" height="76" fill="url(#haze-band)" opacity="0.55" />
+    </g>
+
+    <!-- FIREFLIES -->
+    <g style="mix-blend-mode:screen"><g class="ff ff-0" style="animation-duration:10.2s;animation-delay:-2.4s">
+      <circle cx="342.3" cy="143.1" r="7" fill="url(#ff-glow)" />
+      <circle cx="342.3" cy="143.1" r="1.1" fill="#ffffff" />
+    </g><g class="ff ff-1" style="animation-duration:7.2s;animation-delay:-2.9s">
+      <circle cx="434.5" cy="138.4" r="7" fill="url(#ff-glow)" />
+      <circle cx="434.5" cy="138.4" r="1.1" fill="#ffffff" />
+    </g><g class="ff ff-2" style="animation-duration:9s;animation-delay:-3s">
+      <circle cx="345.8" cy="345.1" r="7" fill="url(#ff-glow)" />
+      <circle cx="345.8" cy="345.1" r="1.1" fill="#ffffff" />
+    </g><g class="ff ff-0" style="animation-duration:6.3s;animation-delay:-0s">
+      <circle cx="514.5" cy="243" r="7" fill="url(#ff-glow)" />
+      <circle cx="514.5" cy="243" r="1.1" fill="#ffffff" />
+    </g><g class="ff ff-1" style="animation-duration:7.5s;animation-delay:-5.8s">
+      <circle cx="701.8" cy="356" r="7" fill="url(#ff-glow)" />
+      <circle cx="701.8" cy="356" r="1.1" fill="#ffffff" />
+    </g><g class="ff ff-2" style="animation-duration:7.3s;animation-delay:-6.5s">
+      <circle cx="455.1" cy="310.7" r="7" fill="url(#ff-glow)" />
+      <circle cx="455.1" cy="310.7" r="1.1" fill="#ffffff" />
+    </g><g class="ff ff-0" style="animation-duration:9.9s;animation-delay:-9.5s">
+      <circle cx="267.2" cy="149.9" r="7" fill="url(#ff-glow)" />
+      <circle cx="267.2" cy="149.9" r="1.1" fill="#ffffff" />
+    </g><g class="ff ff-1" style="animation-duration:7.8s;animation-delay:-0.7s">
+      <circle cx="298.7" cy="159.2" r="7" fill="url(#ff-glow)" />
+      <circle cx="298.7" cy="159.2" r="1.1" fill="#ffffff" />
+    </g><g class="ff ff-2" style="animation-duration:6.8s;animation-delay:-1.1s">
+      <circle cx="774.7" cy="144.6" r="7" fill="url(#ff-glow)" />
+      <circle cx="774.7" cy="144.6" r="1.1" fill="#ffffff" />
+    </g><g class="ff ff-0" style="animation-duration:10.7s;animation-delay:-6.6s">
+      <circle cx="145.8" cy="320.4" r="7" fill="url(#ff-glow)" />
+      <circle cx="145.8" cy="320.4" r="1.1" fill="#ffffff" />
+    </g><g class="ff ff-1" style="animation-duration:9.7s;animation-delay:-2.6s">
+      <circle cx="43.4" cy="129.9" r="7" fill="url(#ff-glow)" />
+      <circle cx="43.4" cy="129.9" r="1.1" fill="#ffffff" />
+    </g><g class="ff ff-2" style="animation-duration:9.9s;animation-delay:-0.1s">
+      <circle cx="483.5" cy="234" r="7" fill="url(#ff-glow)" />
+      <circle cx="483.5" cy="234" r="1.1" fill="#ffffff" />
+    </g><g class="ff ff-0" style="animation-duration:8.4s;animation-delay:-3.3s">
+      <circle cx="540.3" cy="182.5" r="7" fill="url(#ff-glow)" />
+      <circle cx="540.3" cy="182.5" r="1.1" fill="#ffffff" />
+    </g><g class="ff ff-1" style="animation-duration:5.1s;animation-delay:-1.2s">
+      <circle cx="330.6" cy="265.3" r="7" fill="url(#ff-glow)" />
+      <circle cx="330.6" cy="265.3" r="1.1" fill="#ffffff" />
+    </g><g class="ff ff-2" style="animation-duration:6.8s;animation-delay:-5.8s">
+      <circle cx="519.4" cy="152.3" r="7" fill="url(#ff-glow)" />
+      <circle cx="519.4" cy="152.3" r="1.1" fill="#ffffff" />
+    </g><g class="ff ff-0" style="animation-duration:6.2s;animation-delay:-4.6s">
+      <circle cx="479.2" cy="109.3" r="7" fill="url(#ff-glow)" />
+      <circle cx="479.2" cy="109.3" r="1.1" fill="#ffffff" />
+    </g><g class="ff ff-1" style="animation-duration:7.1s;animation-delay:-6s">
+      <circle cx="350.8" cy="210.1" r="7" fill="url(#ff-glow)" />
+      <circle cx="350.8" cy="210.1" r="1.1" fill="#ffffff" />
+    </g><g class="ff ff-2" style="animation-duration:10.3s;animation-delay:-6.9s">
+      <circle cx="172" cy="108.5" r="7" fill="url(#ff-glow)" />
+      <circle cx="172" cy="108.5" r="1.1" fill="#ffffff" />
+    </g></g>
+
+    <!-- SPIRITS -->
+    <g id="ghost-sanctuary" data-s0="0.894" data-ytop="124.4" data-ybot="294.9">
+  <defs>
+    <linearGradient id="gb-g0" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.97" />
+      <stop offset="45%" stop-color="#c1d7ee" stop-opacity="0.9" />
+      <stop offset="80%" stop-color="#3178c6" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#3178c6" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="gs-g0" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c1d7ee" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#3178c6" stop-opacity="0" />
+    </linearGradient>
+    <radialGradient id="soul-g0">
+      <stop offset="0%" stop-color="#3178c6" stop-opacity="0.95" />
+      <stop offset="45%" stop-color="#3178c6" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#3178c6" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="aura-g0">
+      <stop offset="0%" stop-color="#3178c6" stop-opacity="0.40" />
+      <stop offset="100%" stop-color="#3178c6" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="hood-g0" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0%" stop-color="#3c6798" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#193459" stop-opacity="0.95" />
+    </linearGradient>
+    <linearGradient id="antler-g0" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#c1d7ee" />
+      <stop offset="100%" stop-color="#3178c6" />
+    </linearGradient>
+    <path id="body-g0" d="M -21 0 C -21 -18.6 -12.6 -32 0 -32 C 12.6 -32 21 -18.6 21 0 C 20.1 16.7 18.9 29.6 15.2 37 Q 11 43.3 6.9 33.5 Q 2.8 46.1 -1.3 35.8 Q -5.4 41.5 -9.5 35.7 Q -13.7 41.7 -17.8 33.5 Q -21.9 46.1 -26 37 C -25.2 29.6 -21.9 16.7 -21 0 Z"><animate attributeName="d" dur="3.6s" begin="-0s" repeatCount="indefinite" calcMode="spline"
+      keyTimes="0;0.25;0.5;0.75;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" values="M -21 0 C -21 -18.6 -12.6 -32 0 -32 C 12.6 -32 21 -18.6 21 0 C 20.1 16.7 18.9 29.6 15.2 37 Q 11 43.3 6.9 33.5 Q 2.8 46.1 -1.3 35.8 Q -5.4 41.5 -9.5 35.7 Q -13.7 41.7 -17.8 33.5 Q -21.9 46.1 -26 37 C -25.2 29.6 -21.9 16.7 -21 0 Z;M -21 0 C -21 -18.6 -12.6 -32 0 -32 C 12.6 -32 21 -18.6 21 0 C 22.1 16.7 23.6 29.6 21.5 37 Q 17.4 46.2 13.3 35.4 Q 9.2 42.3 5.1 36.1 Q 0.9 41 -3.2 33.7 Q -7.3 45.8 -11.4 34.5 Q -15.5 44 -19.6 37 C -20.5 29.6 -19.9 16.7 -21 0 Z;M -21 0 C -21 -18.6 -12.6 -32 0 -32 C 12.6 -32 21 -18.6 21 0 C 21.9 16.7 25.2 29.6 26 37 Q 21.9 43.3 17.8 36.3 Q 13.7 40.5 9.5 34 Q 5.4 45.1 1.3 34.1 Q -2.8 44.9 -6.9 36.3 Q -11 40.5 -15.2 37 C -18.9 29.6 -20.1 16.7 -21 0 Z;M -21 0 C -21 -18.6 -12.6 -32 0 -32 C 12.6 -32 21 -18.6 21 0 C 19.9 16.7 20.5 29.6 19.6 37 Q 15.5 40.4 11.4 34.4 Q 7.3 44.3 3.2 33.7 Q -0.9 45.6 -5.1 36.1 Q -9.2 40.8 -13.3 35.3 Q -17.4 42.6 -21.5 37 C -23.6 29.6 -22.1 16.7 -21 0 Z;M -21 0 C -21 -18.6 -12.6 -32 0 -32 C 12.6 -32 21 -18.6 21 0 C 20.1 16.7 18.9 29.6 15.2 37 Q 11 43.3 6.9 33.5 Q 2.8 46.1 -1.3 35.8 Q -5.4 41.5 -9.5 35.7 Q -13.7 41.7 -17.8 33.5 Q -21.9 46.1 -26 37 C -25.2 29.6 -21.9 16.7 -21 0 Z" /></path>
+      <clipPath id="clip-g0"><use href="#body-g0" /></clipPath>
+  </defs>
+  <a href="https://github.com/AtlasRoX/kairos" target="_blank" rel="noopener noreferrer">
+  <g class="ghost" id="ghost-0" data-index="0" data-x="131.2" data-y="124.4" data-scale="0.716" data-tier="4" transform="translate(131.2, 124.4)"><animateMotion path="M 0 0 C -32.8 7.1 112.2 132.1 156.5 145.1 C 200.8 158.1 260.2 93.2 266 77.9 C 271.8 62.6 176.6 49.3 191.1 53.4 C 205.7 57.5 385.2 111.4 353.3 102.5 C 321.5 93.6 32.8 -7.1 0 0" keyPoints="0;0.227;0.363;0.45;0.45;0.628;1" keyTimes="0;0.215;0.345;0.426;0.478;0.648;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0.45 0 0.55 1" begin="-0s" dur="53s" repeatCount="indefinite" />
+    <title>kairos · Wraith Archon · 229 commits</title>
+   <g class="g-fade" opacity="0.62"><animate attributeName="opacity" values="0.62;0.943;0.794;0.739;0.739;0.848;0.62" keyTimes="0;0.215;0.345;0.426;0.478;0.648;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0.45 0 0.55 1" begin="-0s" dur="53s" repeatCount="indefinite" />
+    <g class="g-act">
+     <g class="g-scale" transform="scale(0.716)"><animateTransform attributeName="transform" type="scale" values="0.716;0.913;0.822;0.788;0.788;0.855;0.716" keyTimes="0;0.215;0.345;0.426;0.478;0.648;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0.45 0 0.55 1" begin="-0s" dur="53s" repeatCount="indefinite" />
+      <ellipse cx="0" cy="54" rx="46.2" ry="7" fill="url(#aura-g0)" />
+      <circle class="ecto" cx="-16.8" cy="37" r="1.4" fill="#c1d7ee"
+      style="--dx:-4px;animation-delay:-0s;animation-duration:3.2s" /><circle class="ecto" cx="3.4" cy="37" r="2" fill="#c1d7ee"
+      style="--dx:2px;animation-delay:-1.2s;animation-duration:3.9s" /><circle class="ecto" cx="18.5" cy="37" r="1.4" fill="#c1d7ee"
+      style="--dx:8px;animation-delay:-2.4s;animation-duration:4.6s" />
+      <g class="float" style="animation-duration:5.8s;animation-delay:-0s">
+        <g class="tilt" style="animation-duration:8.3s;animation-delay:-0s">
+          <circle cx="0" cy="0" r="63" fill="url(#aura-g0)" />
+          <path d="M -17.9 29 C -19 36 -21.8 42.9 -24.7 50.1 C -20 42.9 -15.4 36 -13.5 29 Z" fill="url(#gs-g0)"><animate attributeName="d" dur="3.2s" begin="-0s" repeatCount="indefinite" calcMode="spline"
+      keyTimes="0;0.25;0.5;0.75;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" values="M -17.9 29 C -19 36 -21.8 42.9 -24.7 50.1 C -20 42.9 -15.4 36 -13.5 29 Z;M -17.9 29 C -14.9 36 -13.7 42.9 -16 50.1 C -11.9 42.9 -11.4 36 -13.5 29 Z;M -17.9 29 C -16 36 -11.4 42.9 -6.7 50.1 C -9.6 42.9 -12.4 36 -13.5 29 Z;M -17.9 29 C -20 36 -19.5 42.9 -15.4 50.1 C -17.7 42.9 -16.5 36 -13.5 29 Z;M -17.9 29 C -19 36 -21.8 42.9 -24.7 50.1 C -20 42.9 -15.4 36 -13.5 29 Z" /></path><path d="M -7.4 29 C -9.9 34.2 -11.6 39.3 -10.6 44.6 C -9.8 39.3 -6.4 34.2 -3 29 Z" fill="url(#gs-g0)"><animate attributeName="d" dur="3.2s" begin="-0.3s" repeatCount="indefinite" calcMode="spline"
+      keyTimes="0;0.25;0.5;0.75;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" values="M -7.4 29 C -9.9 34.2 -11.6 39.3 -10.6 44.6 C -9.8 39.3 -6.4 34.2 -3 29 Z;M -7.4 29 C -6.5 34.2 -8.3 39.3 -12.4 44.6 C -6.6 39.3 -3 34.2 -3 29 Z;M -7.4 29 C -4 34.2 -0.6 39.3 0.2 44.6 C 1.2 39.3 -0.5 34.2 -3 29 Z;M -7.4 29 C -7.4 34.2 -3.8 39.3 2 44.6 C -2.1 39.3 -3.9 34.2 -3 29 Z;M -7.4 29 C -9.9 34.2 -11.6 39.3 -10.6 44.6 C -9.8 39.3 -6.4 34.2 -3 29 Z" /></path><path d="M 3.1 29 C 1.4 33.3 2.7 37.6 7.6 42 C 4.5 37.6 4.9 33.3 7.5 29 Z" fill="url(#gs-g0)"><animate attributeName="d" dur="3.2s" begin="-0.6s" repeatCount="indefinite" calcMode="spline"
+      keyTimes="0;0.25;0.5;0.75;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" values="M 3.1 29 C 1.4 33.3 2.7 37.6 7.6 42 C 4.5 37.6 4.9 33.3 7.5 29 Z;M 3.1 29 C 1.5 33.3 -1.3 37.6 -3.4 42 C 0.5 37.6 5 33.3 7.5 29 Z;M 3.1 29 C 5.7 33.3 6.1 37.6 3 42 C 7.9 37.6 9.2 33.3 7.5 29 Z;M 3.1 29 C 5.6 33.3 10.1 37.6 14 42 C 11.9 37.6 9.1 33.3 7.5 29 Z;M 3.1 29 C 1.4 33.3 2.7 37.6 7.6 42 C 4.5 37.6 4.9 33.3 7.5 29 Z" /></path><path d="M 13.6 29 C 14.3 36.3 18.3 43.5 24 51 C 20.1 43.5 17.8 36.3 18 29 Z" fill="url(#gs-g0)"><animate attributeName="d" dur="3.2s" begin="-0.9s" repeatCount="indefinite" calcMode="spline"
+      keyTimes="0;0.25;0.5;0.75;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" values="M 13.6 29 C 14.3 36.3 18.3 43.5 24 51 C 20.1 43.5 17.8 36.3 18 29 Z;M 13.6 29 C 11.1 36.3 10.1 43.5 12.2 51 C 11.8 43.5 14.6 36.3 18 29 Z;M 13.6 29 C 13.8 36.3 11.5 43.5 7.6 51 C 13.3 43.5 17.3 36.3 18 29 Z;M 13.6 29 C 17 36.3 19.8 43.5 19.4 51 C 21.5 43.5 20.5 36.3 18 29 Z;M 13.6 29 C 14.3 36.3 18.3 43.5 24 51 C 20.1 43.5 17.8 36.3 18 29 Z" /></path>
+      <path d="M -19 0 C -24 -1 -27 8.8 -29 15 C -28 18 -24 18.2 -22 16 C -23.5 10 -21 12 -19 14 Z" fill="url(#gb-g0)" opacity="0.8"><animate attributeName="d" dur="3.1s" begin="-0s" repeatCount="indefinite" calcMode="spline"
+      keyTimes="0;0.25;0.5;0.75;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" values="M -19 0 C -24 -1 -27 8.8 -29 15 C -28 18 -24 18.2 -22 16 C -23.5 10 -21 12 -19 14 Z;M -19 0 C -24 0.6 -27 14.9 -29 19 C -28 22 -24 23.6 -22 20 C -23.5 11.2 -21 12 -19 14 Z;M -19 0 C -24 -1 -27 11.2 -29 15 C -28 18 -24 19.8 -22 16 C -23.5 10 -21 12 -19 14 Z;M -19 0 C -24 -2.6 -27 5.1 -29 11 C -28 14 -24 14.4 -22 12 C -23.5 8.8 -21 12 -19 14 Z;M -19 0 C -24 -1 -27 8.8 -29 15 C -28 18 -24 18.2 -22 16 C -23.5 10 -21 12 -19 14 Z" /></path>
+      
+      <use href="#body-g0" fill="url(#gb-g0)" filter="url(#ghost-soft)" />
+      <g clip-path="url(#clip-g0)">
+        <ellipse class="soul" cx="0" cy="0.8" rx="18.9" ry="20" fill="url(#soul-g0)" />
+        <ellipse cx="-15.7" cy="22.2" rx="18.9" ry="33.3" fill="url(#shade)" />
+      </g>
+      <use href="#body-g0" fill="none" stroke="url(#rim)" stroke-width="1.1" />
+      
+      <path d="M -23.5 4 C -24 -19.2 -11.5 -35 11.6 -39
+               C 10.5 -34 24 -17.6 23.5 4
+               C 11.6 8 -11.5 8 -23.5 4 Z"
+            fill="url(#hood-g0)" />
+      <path d="M 11.6 -39 C 10.5 -34 24 -17.6 23.5 4"
+            fill="none" stroke="#ffffff" stroke-opacity="0.35" stroke-width="0.9" stroke-linecap="round" />
+      <path d="M -10.9 -4 C -11.8 -17.6 11.8 -17.6 10.9 -4
+               C 6.3 0 -6.3 0 -10.9 -4 Z" fill="#03050a" />
+      <path d="M -10.9 -4 C -11.8 -17.6 11.8 -17.6 10.9 -4"
+            fill="none" stroke="#3178c6" stroke-opacity="0.35" stroke-width="0.8" />
+      
+      <g class="look">
+        <g class="blink" fill="#3178c6" filter="url(#core-glow)"><path d="M -1.6 -10.6 Q -4.8 -14.6 -8 -12.6 Q -4.8 -10.4 -1.6 -10.6 Z" /><path d="M 1.6 -10.6 Q 4.8 -14.6 8 -12.6 Q 4.8 -10.4 1.6 -10.6 Z" /></g>
+        <g class="blink" fill="#ffffff" opacity="0.9">
+          <circle cx="-4.8" cy="-12.4" r="0.9" /><circle cx="4.8" cy="-12.4" r="0.9" />
+        </g>
+      </g>
+      <path d="M 19 -1 C 25.5 -1.4 30 1.8 32 7.6 C 31 10.6 27 11.1 25 8.6 C 24.9 9.5 21 11 19 13 Z" fill="url(#gb-g0)"><animate attributeName="d" dur="4.3s" begin="-0s" repeatCount="indefinite" calcMode="spline"
+      keyTimes="0;0.25;0.5;0.75;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" values="M 19 -1 C 25.5 -1.4 30 1.8 32 7.6 C 31 10.6 27 11.1 25 8.6 C 24.9 9.5 21 11 19 13 Z;M 19 -1 C 25.5 -0.4 30 5.5 32 9.9 C 31 12.9 27 14.3 25 10.9 C 24.9 10.2 21 11 19 13 Z;M 19 -1 C 25.5 -0.8 30 5.5 32 9 C 31 12 27 14 25 10 C 24.9 9.9 21 11 19 13 Z;M 19 -1 C 25.5 -2.1 30 1.7 32 5.7 C 31 8.7 27 10.4 25 6.7 C 24.9 8.9 21 11 19 13 Z;M 19 -1 C 25.5 -1.4 30 1.8 32 7.6 C 31 10.6 27 11.1 25 8.6 C 24.9 9.5 21 11 19 13 Z" /></path>
+      
+      <g transform="translate(31, 7)">
+        <g class="pendulum">
+          <circle cx="0" cy="17" r="20" fill="url(#lamp-glow)" class="flicker-soft" />
+          <line x1="0" y1="0" x2="0" y2="9" stroke="#cbd5e1" stroke-opacity="0.7" stroke-width="0.8" />
+          <path d="M -4 9 L 4 9 L 5.5 12 L 5.5 22 L 4 25 L -4 25 L -5.5 22 L -5.5 12 Z" fill="#0b1020" fill-opacity="0.55" stroke="#e2e8f0" stroke-opacity="0.75" stroke-width="0.9" />
+          <path d="M -5.5 12 H 5.5 M -5.5 22 H 5.5 M 0 9 V 25" stroke="#e2e8f0" stroke-opacity="0.35" stroke-width="0.6" />
+          <g transform="translate(0, 22)">
+            <path class="flame" d="M 0 -9 C 3.4 -5, 3.4 -1.4, 0 0 C -3.4 -1.4, -3.4 -5, 0 -9 Z" fill="#3178c6" filter="url(#core-glow)" />
+            <path class="flame" d="M 0 -5.6 C 1.6 -3.2, 1.6 -1, 0 0 C -1.6 -1, -1.6 -3.2, 0 -5.6 Z" fill="#ffffff" />
+          </g>
+          <path d="M -2.4 9 Q 0 5.6 2.4 9" fill="none" stroke="#e2e8f0" stroke-opacity="0.75" stroke-width="0.9" />
+        </g>
+      </g>
+        </g>
+      </g>
+     </g>
+    </g>
+    <g class="caption" data-gap="56" transform="translate(0, 54.1)"><animateTransform attributeName="transform" type="translate" values="0 54.1;0 65.1;0 60;0 58.1;0 58.1;0 61.9;0 54.1" keyTimes="0;0.215;0.345;0.426;0.478;0.648;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0.45 0 0.55 1" begin="-0s" dur="53s" repeatCount="indefinite" />
+      <text x="0" y="0" text-anchor="middle" class="t-name">kairos</text>
+      <text x="0" y="13" text-anchor="middle" class="t-meta" fill="#f9a8d4">WRAITH · 229</text>
+    </g>
+   </g>
+  </g>
+  </a>
+  <defs>
+    <linearGradient id="gb-g2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.97" />
+      <stop offset="45%" stop-color="#e3daec" stop-opacity="0.9" />
+      <stop offset="80%" stop-color="#a283c1" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#a283c1" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="gs-g2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e3daec" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#a283c1" stop-opacity="0" />
+    </linearGradient>
+    <radialGradient id="soul-g2">
+      <stop offset="0%" stop-color="#a283c1" stop-opacity="0.95" />
+      <stop offset="45%" stop-color="#a283c1" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#a283c1" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="aura-g2">
+      <stop offset="0%" stop-color="#a283c1" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#a283c1" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="hood-g2" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0%" stop-color="#756c95" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#3b3757" stop-opacity="0.95" />
+    </linearGradient>
+    <linearGradient id="antler-g2" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#e3daec" />
+      <stop offset="100%" stop-color="#a283c1" />
+    </linearGradient>
+    <path id="body-g2" d="M -19 0 C -19 -16.8 -11.4 -29 0 -29 C 11.4 -29 19 -16.8 19 0 C 18.3 14 17.4 24.8 14.2 31 Q 9.5 36.4 4.9 28 Q 0.2 38.8 -4.4 30 Q -9.1 34.9 -13.7 29.9 Q -18.4 35 -23.1 31 C -22.5 24.8 -19.7 14 -19 0 Z"><animate attributeName="d" dur="3.3s" begin="-2.7s" repeatCount="indefinite" calcMode="spline"
+      keyTimes="0;0.25;0.5;0.75;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" values="M -19 0 C -19 -16.8 -11.4 -29 0 -29 C 11.4 -29 19 -16.8 19 0 C 18.3 14 17.4 24.8 14.2 31 Q 9.5 36.4 4.9 28 Q 0.2 38.8 -4.4 30 Q -9.1 34.9 -13.7 29.9 Q -18.4 35 -23.1 31 C -22.5 24.8 -19.7 14 -19 0 Z;M -19 0 C -19 -16.8 -11.4 -29 0 -29 C 11.4 -29 19 -16.8 19 0 C 19.9 14 21.2 24.8 19.4 31 Q 14.7 38.9 10.1 29.6 Q 5.4 35.6 0.8 30.2 Q -3.9 34.4 -8.5 28.1 Q -13.2 38.5 -17.9 31 C -18.7 24.8 -18.1 14 -19 0 Z;M -19 0 C -19 -16.8 -11.4 -29 0 -29 C 11.4 -29 19 -16.8 19 0 C 19.7 14 22.5 24.8 23.1 31 Q 18.4 36.4 13.7 30.4 Q 9.1 34 4.4 28.4 Q -0.2 37.9 -4.9 28.5 Q -9.5 37.8 -14.2 31 C -17.4 24.8 -18.3 14 -19 0 Z;M -19 0 C -19 -16.8 -11.4 -29 0 -29 C 11.4 -29 19 -16.8 19 0 C 18.1 14 18.7 24.8 17.9 31 Q 13.2 33.9 8.5 28.8 Q 3.9 37.2 -0.8 28.2 Q -5.4 38.4 -10.1 30.3 Q -14.7 34.3 -19.4 31 C -21.2 24.8 -19.9 14 -19 0 Z;M -19 0 C -19 -16.8 -11.4 -29 0 -29 C 11.4 -29 19 -16.8 19 0 C 18.3 14 17.4 24.8 14.2 31 Q 9.5 36.4 4.9 28 Q 0.2 38.8 -4.4 30 Q -9.1 34.9 -13.7 29.9 Q -18.4 35 -23.1 31 C -22.5 24.8 -19.7 14 -19 0 Z" /></path>
+      <clipPath id="clip-g2"><use href="#body-g2" /></clipPath>
+  </defs>
+  <a href="https://github.com/AtlasRoX/super-fiesta" target="_blank" rel="noopener noreferrer">
+  <g class="ghost" id="ghost-2" data-index="2" data-x="274.8" data-y="124.4" data-scale="0.716" data-tier="3" transform="translate(274.8, 124.4)"><animateMotion path="M 0 0 C 33.2 2.8 173.7 68.5 228 68.8 C 282.3 69.2 257.2 2.9 325.9 1.8 C 394.7 0.8 708.3 61.9 640.4 62.5 C 572.5 63.1 20.6 7.3 -81.3 5.6 C -183.2 3.8 15.3 52.9 28.8 52 C 42.4 51.1 -33.2 -2.8 0 0" keyPoints="0;0.142;0.142;0.217;0.217;0.42;0.85;0.956;1" keyTimes="0;0.137;0.152;0.225;0.244;0.44;0.856;0.957;1" calcMode="spline" keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" begin="-0s" dur="91.9s" repeatCount="indefinite" />
+    <title>super-fiesta · Phantom Stalker · 57 commits</title>
+   <g class="g-fade" opacity="0.62"><animate attributeName="opacity" values="0.62;0.773;0.773;0.624;0.624;0.759;0.632;0.736;0.62" keyTimes="0;0.137;0.152;0.225;0.244;0.44;0.856;0.957;1" calcMode="spline" keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" begin="-0s" dur="91.9s" repeatCount="indefinite" />
+    <g class="g-act">
+     <g class="g-scale" transform="scale(0.716)"><animateTransform attributeName="transform" type="scale" values="0.716;0.809;0.809;0.718;0.718;0.801;0.723;0.786;0.716" keyTimes="0;0.137;0.152;0.225;0.244;0.44;0.856;0.957;1" calcMode="spline" keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" begin="-0s" dur="91.9s" repeatCount="indefinite" />
+      <ellipse cx="0" cy="54" rx="41.8" ry="7" fill="url(#aura-g2)" />
+      <circle class="ecto" cx="-15.2" cy="31" r="1.4" fill="#e3daec"
+      style="--dx:-4px;animation-delay:-2.7s;animation-duration:3.2s" /><circle class="ecto" cx="3" cy="31" r="2" fill="#e3daec"
+      style="--dx:2px;animation-delay:-3.9s;animation-duration:3.9s" /><circle class="ecto" cx="16.7" cy="31" r="1.4" fill="#e3daec"
+      style="--dx:8px;animation-delay:-5.1s;animation-duration:4.6s" />
+      <g class="float" style="animation-duration:5.3s;animation-delay:-2.7s">
+        <g class="tilt" style="animation-duration:7.6s;animation-delay:-2.7s">
+          <circle cx="0" cy="0" r="57" fill="url(#aura-g2)" />
+          <path d="M -17 0 C -23 -1 -27 5.8 -29 12 C -28 15 -24 15.2 -22 13 C -22.4 10 -19 12 -17 14 Z" fill="url(#gb-g2)" opacity="0.85"><animate attributeName="d" dur="2.6s" begin="-2.7s" repeatCount="indefinite" calcMode="spline"
+      keyTimes="0;0.25;0.5;0.75;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" values="M -17 0 C -23 -1 -27 5.8 -29 12 C -28 15 -24 15.2 -22 13 C -22.4 10 -19 12 -17 14 Z;M -17 0 C -23 0.6 -27 11.9 -29 16 C -28 19 -24 20.6 -22 17 C -22.4 11.2 -19 12 -17 14 Z;M -17 0 C -23 -1 -27 8.2 -29 12 C -28 15 -24 16.8 -22 13 C -22.4 10 -19 12 -17 14 Z;M -17 0 C -23 -2.6 -27 2.1 -29 8 C -28 11 -24 11.4 -22 9 C -22.4 8.8 -19 12 -17 14 Z;M -17 0 C -23 -1 -27 5.8 -29 12 C -28 15 -24 15.2 -22 13 C -22.4 10 -19 12 -17 14 Z" /></path><path d="M 17 0 C 23 0.1 27 9.7 29 14.9 C 28 17.9 24 18.8 22 15.9 C 22.4 10.9 19 12 17 14 Z" fill="url(#gb-g2)" opacity="0.85"><animate attributeName="d" dur="2.6s" begin="-2.7s" repeatCount="indefinite" calcMode="spline"
+      keyTimes="0;0.25;0.5;0.75;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" values="M 17 0 C 23 0.1 27 9.7 29 14.9 C 28 17.9 24 18.8 22 15.9 C 22.4 10.9 19 12 17 14 Z;M 17 0 C 23 0.1 27 11.3 29 14.8 C 28 17.8 24 19.8 22 15.8 C 22.4 10.8 19 12 17 14 Z;M 17 0 C 23 -2.1 27 4.3 29 9.1 C 28 12.1 24 13.2 22 10.1 C 22.4 9.1 19 12 17 14 Z;M 17 0 C 23 -2.1 27 2.7 29 9.2 C 28 12.2 24 12.2 22 10.2 C 22.4 9.2 19 12 17 14 Z;M 17 0 C 23 0.1 27 9.7 29 14.9 C 28 17.9 24 18.8 22 15.9 C 22.4 10.9 19 12 17 14 Z" /></path>
+      <use href="#body-g2" fill="url(#gb-g2)" filter="url(#ghost-soft)" />
+      <g clip-path="url(#clip-g2)">
+        <ellipse class="soul" cx="0" cy="1.1" rx="17.1" ry="18.1" fill="url(#soul-g2)" />
+        <ellipse cx="-14.2" cy="18.6" rx="17.1" ry="27.9" fill="url(#shade)" />
+      </g>
+      <use href="#body-g2" fill="none" stroke="url(#rim)" stroke-width="1.1" />
+      
+      <path d="M -21.5 4 C -22 -17.4 -10.5 -32 10.5 -36
+               C 9.5 -31 22 -15.9 21.5 4
+               C 10.5 8 -10.5 8 -21.5 4 Z"
+            fill="url(#hood-g2)" />
+      <path d="M 10.5 -36 C 9.5 -31 22 -15.9 21.5 4"
+            fill="none" stroke="#ffffff" stroke-opacity="0.35" stroke-width="0.9" stroke-linecap="round" />
+      <path d="M -9.9 -4 C -10.6 -15.9 10.6 -15.9 9.9 -4
+               C 5.7 0 -5.7 0 -9.9 -4 Z" fill="#04060c" />
+      <path d="M -9.9 -4 C -10.6 -15.9 10.6 -15.9 9.9 -4"
+            fill="none" stroke="#a283c1" stroke-opacity="0.35" stroke-width="0.8" />
+      
+      <g class="look">
+        <g class="blink" fill="#a283c1" filter="url(#core-glow)"><path d="M -1.4 -9.9 Q -4.4 -13.6 -7.4 -11.4 Q -4.4 -9.4 -1.4 -9.9 Z" /><path d="M 1.4 -9.9 Q 4.4 -13.6 7.4 -11.4 Q 4.4 -9.4 1.4 -9.9 Z" /></g>
+        <g class="blink" fill="#ffffff" opacity="0.9">
+          <circle cx="-4.4" cy="-11.4" r="0.9" /><circle cx="4.4" cy="-11.4" r="0.9" />
+        </g>
+      </g>
+        </g>
+      </g>
+     </g>
+    </g>
+    <g class="caption" data-gap="44" transform="translate(0, 45.5)"><animateTransform attributeName="transform" type="translate" values="0 45.5;0 49.6;0 49.6;0 45.6;0 45.6;0 49.2;0 45.8;0 48.6;0 45.5" keyTimes="0;0.137;0.152;0.225;0.244;0.44;0.856;0.957;1" calcMode="spline" keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" begin="-0s" dur="91.9s" repeatCount="indefinite" />
+      <text x="0" y="0" text-anchor="middle" class="t-name">super-fiesta</text>
+      <text x="0" y="13" text-anchor="middle" class="t-meta" fill="#c4b5fd">PHANTOM · 57</text>
+    </g>
+   </g>
+  </g>
+  </a>
+  <defs>
+    <linearGradient id="gb-g4" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.97" />
+      <stop offset="45%" stop-color="#c1d7ee" stop-opacity="0.9" />
+      <stop offset="80%" stop-color="#3178c6" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#3178c6" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="gs-g4" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c1d7ee" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#3178c6" stop-opacity="0" />
+    </linearGradient>
+    <radialGradient id="soul-g4">
+      <stop offset="0%" stop-color="#3178c6" stop-opacity="0.95" />
+      <stop offset="45%" stop-color="#3178c6" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#3178c6" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="aura-g4">
+      <stop offset="0%" stop-color="#3178c6" stop-opacity="0.30" />
+      <stop offset="100%" stop-color="#3178c6" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="hood-g4" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0%" stop-color="#3c6798" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#193459" stop-opacity="0.95" />
+    </linearGradient>
+    <linearGradient id="antler-g4" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#c1d7ee" />
+      <stop offset="100%" stop-color="#3178c6" />
+    </linearGradient>
+    <path id="body-g4" d="M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 16.4 11.3 15.8 20 13.2 25 Q 9 29.8 4.9 22.3 Q 0.7 31.9 -3.4 24.1 Q -7.6 28.4 -11.8 24 Q -15.9 28.6 -20.1 25 C -19.9 20 -17.6 11.3 -17 0 Z"><animate attributeName="d" dur="3s" begin="-0.6s" repeatCount="indefinite" calcMode="spline"
+      keyTimes="0;0.25;0.5;0.75;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" values="M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 16.4 11.3 15.8 20 13.2 25 Q 9 29.8 4.9 22.3 Q 0.7 31.9 -3.4 24.1 Q -7.6 28.4 -11.8 24 Q -15.9 28.6 -20.1 25 C -19.9 20 -17.6 11.3 -17 0 Z;M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 17.7 11.3 18.8 20 17.3 25 Q 13.1 32 8.9 23.8 Q 4.8 29.1 0.6 24.3 Q -3.6 28 -7.7 22.5 Q -11.9 31.7 -16.1 25 C -16.9 20 -16.3 11.3 -17 0 Z;M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 17.6 11.3 19.9 20 20.1 25 Q 15.9 29.8 11.8 24.5 Q 7.6 27.7 3.4 22.7 Q -0.7 31.2 -4.9 22.8 Q -9 31 -13.2 25 C -15.8 20 -16.4 11.3 -17 0 Z;M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 16.3 11.3 16.9 20 16.1 25 Q 11.9 27.6 7.7 23 Q 3.6 30.5 -0.6 22.5 Q -4.8 31.6 -8.9 24.3 Q -13.1 27.9 -17.3 25 C -18.8 20 -17.7 11.3 -17 0 Z;M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 16.4 11.3 15.8 20 13.2 25 Q 9 29.8 4.9 22.3 Q 0.7 31.9 -3.4 24.1 Q -7.6 28.4 -11.8 24 Q -15.9 28.6 -20.1 25 C -19.9 20 -17.6 11.3 -17 0 Z" /></path>
+      <clipPath id="clip-g4"><use href="#body-g4" /></clipPath>
+  </defs>
+  <a href="https://github.com/AtlasRoX/Drafo" target="_blank" rel="noopener noreferrer">
+  <g class="ghost" id="ghost-4" data-index="4" data-x="426.5" data-y="124.4" data-scale="0.716" data-tier="2" transform="translate(426.5, 124.4)"><animateMotion path="M 0 0 C 65.3 -12.7 -108 23.2 -104.5 50.1 C -101.1 77 82.1 143.9 20.7 161.5 C -40.8 179.1 -387 161.6 -473.2 155.7 C -559.4 149.9 -575.3 152.4 -496.5 126.4 C -417.6 100.4 -65.3 12.7 0 0" keyPoints="0;0.101;0.101;0.23;0.23;0.564;0.564;0.653;0.653;1;1" keyTimes="0;0.083;0.11;0.216;0.251;0.525;0.565;0.638;0.677;0.962;1" calcMode="spline" keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1" begin="-0s" dur="74s" repeatCount="indefinite" />
+    <title>Drafo · Forest Specter · 26 commits</title>
+   <g class="g-fade" opacity="0.62"><animate attributeName="opacity" values="0.62;0.732;0.732;0.98;0.98;0.967;0.967;0.902;0.902;0.62;0.62" keyTimes="0;0.083;0.11;0.216;0.251;0.525;0.565;0.638;0.677;0.962;1" calcMode="spline" keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1" begin="-0s" dur="74s" repeatCount="indefinite" />
+    <g class="g-act">
+     <g class="g-scale" transform="scale(0.716)"><animateTransform attributeName="transform" type="scale" values="0.716;0.784;0.784;0.936;0.936;0.928;0.928;0.888;0.888;0.716;0.716" keyTimes="0;0.083;0.11;0.216;0.251;0.525;0.565;0.638;0.677;0.962;1" calcMode="spline" keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1" begin="-0s" dur="74s" repeatCount="indefinite" />
+      <ellipse cx="0" cy="54" rx="37.4" ry="7" fill="url(#aura-g4)" />
+      <circle class="ecto" cx="-13.6" cy="25" r="1.4" fill="#c1d7ee"
+      style="--dx:-4px;animation-delay:-0.6s;animation-duration:3.2s" /><circle class="ecto" cx="2.7" cy="25" r="2" fill="#c1d7ee"
+      style="--dx:2px;animation-delay:-1.8s;animation-duration:3.9s" /><circle class="ecto" cx="15" cy="25" r="1.4" fill="#c1d7ee"
+      style="--dx:8px;animation-delay:-3s;animation-duration:4.6s" />
+      <g class="float" style="animation-duration:4.9s;animation-delay:-0.6s">
+        <g class="tilt" style="animation-duration:7s;animation-delay:-0.6s">
+          <circle cx="0" cy="0" r="51" fill="url(#aura-g4)" />
+          <path d="M -15 -2 C -21.5 -3 -26 -0.2 -28 6 C -27 9 -23 9.2 -21 7 C -20.8 8 -17 10 -15 12 Z" fill="url(#gb-g4)" opacity="0.92"><animate attributeName="d" dur="2.3s" begin="-0.6s" repeatCount="indefinite" calcMode="spline"
+      keyTimes="0;0.25;0.5;0.75;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" values="M -15 -2 C -21.5 -3 -26 -0.2 -28 6 C -27 9 -23 9.2 -21 7 C -20.8 8 -17 10 -15 12 Z;M -15 -2 C -21.5 -1.4 -26 5.9 -28 10 C -27 13 -23 14.6 -21 11 C -20.8 9.2 -17 10 -15 12 Z;M -15 -2 C -21.5 -3 -26 2.2 -28 6 C -27 9 -23 10.8 -21 7 C -20.8 8 -17 10 -15 12 Z;M -15 -2 C -21.5 -4.6 -26 -3.9 -28 2 C -27 5 -23 5.4 -21 3 C -20.8 6.8 -17 10 -15 12 Z;M -15 -2 C -21.5 -3 -26 -0.2 -28 6 C -27 9 -23 9.2 -21 7 C -20.8 8 -17 10 -15 12 Z" /></path><path d="M 15 -2 C 21.5 -2.1 26 2.8 28 8.3 C 27 11.3 23 12 21 9.3 C 20.9 8.7 17 10 15 12 Z" fill="url(#gb-g4)" opacity="0.92"><animate attributeName="d" dur="2.3s" begin="-0.6s" repeatCount="indefinite" calcMode="spline"
+      keyTimes="0;0.25;0.5;0.75;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" values="M 15 -2 C 21.5 -2.1 26 2.8 28 8.3 C 27 11.3 23 12 21 9.3 C 20.9 8.7 17 10 15 12 Z;M 15 -2 C 21.5 -1.7 26 5.7 28 9.3 C 27 12.3 23 14.3 21 10.3 C 20.9 9 17 10 15 12 Z;M 15 -2 C 21.5 -3.9 26 -0.8 28 3.7 C 27 6.7 23 8 21 4.7 C 20.9 7.3 17 10 15 12 Z;M 15 -2 C 21.5 -4.3 26 -3.7 28 2.7 C 27 5.7 23 5.7 21 3.7 C 20.9 7 17 10 15 12 Z;M 15 -2 C 21.5 -2.1 26 2.8 28 8.3 C 27 11.3 23 12 21 9.3 C 20.9 8.7 17 10 15 12 Z" /></path>
+      <use href="#body-g4" fill="url(#gb-g4)" filter="url(#ghost-soft)" />
+      <g clip-path="url(#clip-g4)">
+        <ellipse class="soul" cx="0" cy="1.5" rx="15.3" ry="16.2" fill="url(#soul-g4)" />
+        <ellipse cx="-12.7" cy="15" rx="15.3" ry="22.5" fill="url(#shade)" />
+      </g>
+      <use href="#body-g4" fill="none" stroke="url(#rim)" stroke-width="1.1" />
+      
+      <g class="look">
+        <g class="blink">
+          <ellipse cx="-6.2" cy="-8" rx="2.3" ry="3.1" fill="#0a0f1e" />
+          <ellipse cx="6.2" cy="-8" rx="2.3" ry="3.1" fill="#0a0f1e" />
+        </g>
+        <circle cx="-5.4" cy="-9.2" r="1" fill="#ffffff" />
+        <circle cx="7" cy="-9.2" r="1" fill="#ffffff" />
+        <circle cx="-6.9" cy="-6.6" r="0.5" fill="#3178c6" opacity="0.9" />
+        <circle cx="5.5" cy="-6.6" r="0.5" fill="#3178c6" opacity="0.9" />
+      </g>
+      <path d="M -2 -1 Q 0 1 2 -1" fill="none" stroke="#0a0f1e" stroke-width="1" stroke-linecap="round" />
+        </g>
+      </g>
+     </g>
+    </g>
+    <g class="caption" data-gap="38" transform="translate(0, 41.2)"><animateTransform attributeName="transform" type="translate" values="0 41.2;0 43.8;0 43.8;0 49.6;0 49.6;0 49.3;0 49.3;0 47.7;0 47.7;0 41.2;0 41.2" keyTimes="0;0.083;0.11;0.216;0.251;0.525;0.565;0.638;0.677;0.962;1" calcMode="spline" keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1" begin="-0s" dur="74s" repeatCount="indefinite" />
+      <text x="0" y="0" text-anchor="middle" class="t-name">Drafo</text>
+      <text x="0" y="13" text-anchor="middle" class="t-meta" fill="#6ee7b7">SPECTER · 26</text>
+    </g>
+   </g>
+  </g>
+  </a>
+  <defs>
+    <linearGradient id="gb-g6" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.97" />
+      <stop offset="45%" stop-color="#e7d5ba" stop-opacity="0.9" />
+      <stop offset="80%" stop-color="#b07219" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#b07219" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="gs-g6" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e7d5ba" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#b07219" stop-opacity="0" />
+    </linearGradient>
+    <radialGradient id="soul-g6">
+      <stop offset="0%" stop-color="#b07219" stop-opacity="0.95" />
+      <stop offset="45%" stop-color="#b07219" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#b07219" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="aura-g6">
+      <stop offset="0%" stop-color="#b07219" stop-opacity="0.30" />
+      <stop offset="100%" stop-color="#b07219" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="hood-g6" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0%" stop-color="#7c6441" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#3f3225" stop-opacity="0.95" />
+    </linearGradient>
+    <linearGradient id="antler-g6" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#e7d5ba" />
+      <stop offset="100%" stop-color="#b07219" />
+    </linearGradient>
+    <path id="body-g6" d="M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 16.4 11.3 15.8 20 13.2 25 Q 9 29.8 4.9 22.3 Q 0.7 31.9 -3.4 24.1 Q -7.6 28.4 -11.8 24 Q -15.9 28.6 -20.1 25 C -19.9 20 -17.6 11.3 -17 0 Z"><animate attributeName="d" dur="3s" begin="-3.3s" repeatCount="indefinite" calcMode="spline"
+      keyTimes="0;0.25;0.5;0.75;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" values="M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 16.4 11.3 15.8 20 13.2 25 Q 9 29.8 4.9 22.3 Q 0.7 31.9 -3.4 24.1 Q -7.6 28.4 -11.8 24 Q -15.9 28.6 -20.1 25 C -19.9 20 -17.6 11.3 -17 0 Z;M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 17.7 11.3 18.8 20 17.3 25 Q 13.1 32 8.9 23.8 Q 4.8 29.1 0.6 24.3 Q -3.6 28 -7.7 22.5 Q -11.9 31.7 -16.1 25 C -16.9 20 -16.3 11.3 -17 0 Z;M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 17.6 11.3 19.9 20 20.1 25 Q 15.9 29.8 11.8 24.5 Q 7.6 27.7 3.4 22.7 Q -0.7 31.2 -4.9 22.8 Q -9 31 -13.2 25 C -15.8 20 -16.4 11.3 -17 0 Z;M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 16.3 11.3 16.9 20 16.1 25 Q 11.9 27.6 7.7 23 Q 3.6 30.5 -0.6 22.5 Q -4.8 31.6 -8.9 24.3 Q -13.1 27.9 -17.3 25 C -18.8 20 -17.7 11.3 -17 0 Z;M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 16.4 11.3 15.8 20 13.2 25 Q 9 29.8 4.9 22.3 Q 0.7 31.9 -3.4 24.1 Q -7.6 28.4 -11.8 24 Q -15.9 28.6 -20.1 25 C -19.9 20 -17.6 11.3 -17 0 Z" /></path>
+      <clipPath id="clip-g6"><use href="#body-g6" /></clipPath>
+  </defs>
+  <a href="https://github.com/AtlasRoX/Bookstore-JAVA" target="_blank" rel="noopener noreferrer">
+  <g class="ghost" id="ghost-6" data-index="6" data-x="562.5" data-y="124.4" data-scale="0.716" data-tier="2" transform="translate(562.5, 124.4)"><animateMotion path="M 0 0 C 25.5 17.7 -510.4 99.4 -446.1 126.8 C -381.7 154.2 250 167 385.8 164.4 C 521.7 161.8 514.6 114.2 369.2 111.2 C 223.7 108.3 -412.8 149.4 -486.9 146.7 C -560.9 144.1 -56.2 116.4 -74.9 95.4 C -93.6 74.5 -611.6 36.8 -599.2 20.9 C -586.7 5 -25.5 -17.7 0 0" keyPoints="0;0.121;0.121;0.332;0.332;0.389;0.389;0.605;0.605;0.714;0.848;0.848;1;1" keyTimes="0;0.11;0.127;0.318;0.337;0.389;0.398;0.595;0.613;0.712;0.834;0.85;0.988;1" calcMode="spline" keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1" begin="-0s" dur="175.5s" repeatCount="indefinite" />
+    <title>Bookstore-JAVA · Forest Specter · 17 commits</title>
+   <g class="g-fade" opacity="0.62"><animate attributeName="opacity" values="0.62;0.903;0.903;0.986;0.986;0.868;0.868;0.947;0.947;0.833;0.667;0.667;0.62;0.62" keyTimes="0;0.11;0.127;0.318;0.337;0.389;0.398;0.595;0.613;0.712;0.834;0.85;0.988;1" calcMode="spline" keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1" begin="-0s" dur="175.5s" repeatCount="indefinite" />
+    <g class="g-act">
+     <g class="g-scale" transform="scale(0.716)"><animateTransform attributeName="transform" type="scale" values="0.716;0.889;0.889;0.94;0.94;0.867;0.867;0.916;0.916;0.846;0.744;0.744;0.716;0.716" keyTimes="0;0.11;0.127;0.318;0.337;0.389;0.398;0.595;0.613;0.712;0.834;0.85;0.988;1" calcMode="spline" keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1" begin="-0s" dur="175.5s" repeatCount="indefinite" />
+      <ellipse cx="0" cy="54" rx="37.4" ry="7" fill="url(#aura-g6)" />
+      <circle class="ecto" cx="-13.6" cy="25" r="1.4" fill="#e7d5ba"
+      style="--dx:-4px;animation-delay:-3.3s;animation-duration:3.2s" /><circle class="ecto" cx="2.7" cy="25" r="2" fill="#e7d5ba"
+      style="--dx:2px;animation-delay:-4.5s;animation-duration:3.9s" /><circle class="ecto" cx="15" cy="25" r="1.4" fill="#e7d5ba"
+      style="--dx:8px;animation-delay:-5.7s;animation-duration:4.6s" />
+      <g class="float" style="animation-duration:4.9s;animation-delay:-3.3s">
+        <g class="tilt" style="animation-duration:7s;animation-delay:-3.3s">
+          <circle cx="0" cy="0" r="51" fill="url(#aura-g6)" />
+          <path d="M -15 -2 C -21.5 -3 -26 -0.2 -28 6 C -27 9 -23 9.2 -21 7 C -20.8 8 -17 10 -15 12 Z" fill="url(#gb-g6)" opacity="0.92"><animate attributeName="d" dur="2.3s" begin="-3.3s" repeatCount="indefinite" calcMode="spline"
+      keyTimes="0;0.25;0.5;0.75;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" values="M -15 -2 C -21.5 -3 -26 -0.2 -28 6 C -27 9 -23 9.2 -21 7 C -20.8 8 -17 10 -15 12 Z;M -15 -2 C -21.5 -1.4 -26 5.9 -28 10 C -27 13 -23 14.6 -21 11 C -20.8 9.2 -17 10 -15 12 Z;M -15 -2 C -21.5 -3 -26 2.2 -28 6 C -27 9 -23 10.8 -21 7 C -20.8 8 -17 10 -15 12 Z;M -15 -2 C -21.5 -4.6 -26 -3.9 -28 2 C -27 5 -23 5.4 -21 3 C -20.8 6.8 -17 10 -15 12 Z;M -15 -2 C -21.5 -3 -26 -0.2 -28 6 C -27 9 -23 9.2 -21 7 C -20.8 8 -17 10 -15 12 Z" /></path><path d="M 15 -2 C 21.5 -2.1 26 2.8 28 8.3 C 27 11.3 23 12 21 9.3 C 20.9 8.7 17 10 15 12 Z" fill="url(#gb-g6)" opacity="0.92"><animate attributeName="d" dur="2.3s" begin="-3.3s" repeatCount="indefinite" calcMode="spline"
+      keyTimes="0;0.25;0.5;0.75;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" values="M 15 -2 C 21.5 -2.1 26 2.8 28 8.3 C 27 11.3 23 12 21 9.3 C 20.9 8.7 17 10 15 12 Z;M 15 -2 C 21.5 -1.7 26 5.7 28 9.3 C 27 12.3 23 14.3 21 10.3 C 20.9 9 17 10 15 12 Z;M 15 -2 C 21.5 -3.9 26 -0.8 28 3.7 C 27 6.7 23 8 21 4.7 C 20.9 7.3 17 10 15 12 Z;M 15 -2 C 21.5 -4.3 26 -3.7 28 2.7 C 27 5.7 23 5.7 21 3.7 C 20.9 7 17 10 15 12 Z;M 15 -2 C 21.5 -2.1 26 2.8 28 8.3 C 27 11.3 23 12 21 9.3 C 20.9 8.7 17 10 15 12 Z" /></path>
+      <use href="#body-g6" fill="url(#gb-g6)" filter="url(#ghost-soft)" />
+      <g clip-path="url(#clip-g6)">
+        <ellipse class="soul" cx="0" cy="1.5" rx="15.3" ry="16.2" fill="url(#soul-g6)" />
+        <ellipse cx="-12.7" cy="15" rx="15.3" ry="22.5" fill="url(#shade)" />
+      </g>
+      <use href="#body-g6" fill="none" stroke="url(#rim)" stroke-width="1.1" />
+      
+      <g class="look">
+        <g class="blink">
+          <ellipse cx="-6.2" cy="-8" rx="2.3" ry="3.1" fill="#0a0f1e" />
+          <ellipse cx="6.2" cy="-8" rx="2.3" ry="3.1" fill="#0a0f1e" />
+        </g>
+        <circle cx="-5.4" cy="-9.2" r="1" fill="#ffffff" />
+        <circle cx="7" cy="-9.2" r="1" fill="#ffffff" />
+        <circle cx="-6.9" cy="-6.6" r="0.5" fill="#b07219" opacity="0.9" />
+        <circle cx="5.5" cy="-6.6" r="0.5" fill="#b07219" opacity="0.9" />
+      </g>
+      <path d="M -2 -1 Q 0 1 2 -1" fill="none" stroke="#0a0f1e" stroke-width="1" stroke-linecap="round" />
+        </g>
+      </g>
+     </g>
+    </g>
+    <g class="caption" data-gap="38" transform="translate(0, 41.2)"><animateTransform attributeName="transform" type="translate" values="0 41.2;0 47.8;0 47.8;0 49.7;0 49.7;0 46.9;0 46.9;0 48.8;0 48.8;0 46.1;0 42.3;0 42.3;0 41.2;0 41.2" keyTimes="0;0.11;0.127;0.318;0.337;0.389;0.398;0.595;0.613;0.712;0.834;0.85;0.988;1" calcMode="spline" keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1" begin="-0s" dur="175.5s" repeatCount="indefinite" />
+      <text x="0" y="0" text-anchor="middle" class="t-name">Bookstore-JAVA</text>
+      <text x="0" y="13" text-anchor="middle" class="t-meta" fill="#6ee7b7">SPECTER · 17</text>
+    </g>
+   </g>
+  </g>
+  </a>
+  <defs>
+    <linearGradient id="gb-g8" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.97" />
+      <stop offset="45%" stop-color="#d0deea" stop-opacity="0.9" />
+      <stop offset="80%" stop-color="#6191b9" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#6191b9" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="gs-g8" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d0deea" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#6191b9" stop-opacity="0" />
+    </linearGradient>
+    <radialGradient id="soul-g8">
+      <stop offset="0%" stop-color="#6191b9" stop-opacity="0.95" />
+      <stop offset="45%" stop-color="#6191b9" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#6191b9" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="aura-g8">
+      <stop offset="0%" stop-color="#6191b9" stop-opacity="0.30" />
+      <stop offset="100%" stop-color="#6191b9" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="hood-g8" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0%" stop-color="#547391" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#283c55" stop-opacity="0.95" />
+    </linearGradient>
+    <linearGradient id="antler-g8" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#d0deea" />
+      <stop offset="100%" stop-color="#6191b9" />
+    </linearGradient>
+    <path id="body-g8" d="M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 16.4 11.3 15.8 20 13.2 25 Q 9 29.8 4.9 22.3 Q 0.7 31.9 -3.4 24.1 Q -7.6 28.4 -11.8 24 Q -15.9 28.6 -20.1 25 C -19.9 20 -17.6 11.3 -17 0 Z"><animate attributeName="d" dur="3s" begin="-1.2s" repeatCount="indefinite" calcMode="spline"
+      keyTimes="0;0.25;0.5;0.75;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" values="M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 16.4 11.3 15.8 20 13.2 25 Q 9 29.8 4.9 22.3 Q 0.7 31.9 -3.4 24.1 Q -7.6 28.4 -11.8 24 Q -15.9 28.6 -20.1 25 C -19.9 20 -17.6 11.3 -17 0 Z;M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 17.7 11.3 18.8 20 17.3 25 Q 13.1 32 8.9 23.8 Q 4.8 29.1 0.6 24.3 Q -3.6 28 -7.7 22.5 Q -11.9 31.7 -16.1 25 C -16.9 20 -16.3 11.3 -17 0 Z;M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 17.6 11.3 19.9 20 20.1 25 Q 15.9 29.8 11.8 24.5 Q 7.6 27.7 3.4 22.7 Q -0.7 31.2 -4.9 22.8 Q -9 31 -13.2 25 C -15.8 20 -16.4 11.3 -17 0 Z;M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 16.3 11.3 16.9 20 16.1 25 Q 11.9 27.6 7.7 23 Q 3.6 30.5 -0.6 22.5 Q -4.8 31.6 -8.9 24.3 Q -13.1 27.9 -17.3 25 C -18.8 20 -17.7 11.3 -17 0 Z;M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 16.4 11.3 15.8 20 13.2 25 Q 9 29.8 4.9 22.3 Q 0.7 31.9 -3.4 24.1 Q -7.6 28.4 -11.8 24 Q -15.9 28.6 -20.1 25 C -19.9 20 -17.6 11.3 -17 0 Z" /></path>
+      <clipPath id="clip-g8"><use href="#body-g8" /></clipPath>
+  </defs>
+  <a href="https://github.com/AtlasRoX/verbose-octo-system" target="_blank" rel="noopener noreferrer">
+  <g class="ghost" id="ghost-8" data-index="8" data-x="719.2" data-y="124.4" data-scale="0.716" data-tier="2" transform="translate(719.2, 124.4)"><animateMotion path="M 0 0 C 14.5 15.6 3.1 89.3 -24.1 99.2 C -51.3 109.2 -205.5 68.3 -163.3 59.9 C -121.1 51.5 220.4 57.8 229.1 48.8 C 237.8 39.8 -72.8 14.1 -110.9 5.9 C -149.1 -2.2 -14.5 -15.6 0 0" keyPoints="0;0.097;0.097;0.24;0.585;0.887;1" keyTimes="0;0.091;0.151;0.286;0.61;0.894;1" calcMode="spline" keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" begin="-0s" dur="45s" repeatCount="indefinite" />
+    <title>verbose-octo-system · Forest Specter · 13 commits</title>
+   <g class="g-fade" opacity="0.62"><animate attributeName="opacity" values="0.62;0.841;0.841;0.754;0.729;0.633;0.62" keyTimes="0;0.091;0.151;0.286;0.61;0.894;1" calcMode="spline" keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" begin="-0s" dur="45s" repeatCount="indefinite" />
+    <g class="g-act">
+     <g class="g-scale" transform="scale(0.716)"><animateTransform attributeName="transform" type="scale" values="0.716;0.851;0.851;0.797;0.782;0.724;0.716" keyTimes="0;0.091;0.151;0.286;0.61;0.894;1" calcMode="spline" keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" begin="-0s" dur="45s" repeatCount="indefinite" />
+      <ellipse cx="0" cy="54" rx="37.4" ry="7" fill="url(#aura-g8)" />
+      <circle class="ecto" cx="-13.6" cy="25" r="1.4" fill="#d0deea"
+      style="--dx:-4px;animation-delay:-1.2s;animation-duration:3.2s" /><circle class="ecto" cx="2.7" cy="25" r="2" fill="#d0deea"
+      style="--dx:2px;animation-delay:-2.4s;animation-duration:3.9s" /><circle class="ecto" cx="15" cy="25" r="1.4" fill="#d0deea"
+      style="--dx:8px;animation-delay:-3.6s;animation-duration:4.6s" />
+      <g class="float" style="animation-duration:4.9s;animation-delay:-1.2s">
+        <g class="tilt" style="animation-duration:7s;animation-delay:-1.2s">
+          <circle cx="0" cy="0" r="51" fill="url(#aura-g8)" />
+          <path d="M -15 -2 C -21.5 -3 -26 -0.2 -28 6 C -27 9 -23 9.2 -21 7 C -20.8 8 -17 10 -15 12 Z" fill="url(#gb-g8)" opacity="0.92"><animate attributeName="d" dur="2.3s" begin="-1.2s" repeatCount="indefinite" calcMode="spline"
+      keyTimes="0;0.25;0.5;0.75;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" values="M -15 -2 C -21.5 -3 -26 -0.2 -28 6 C -27 9 -23 9.2 -21 7 C -20.8 8 -17 10 -15 12 Z;M -15 -2 C -21.5 -1.4 -26 5.9 -28 10 C -27 13 -23 14.6 -21 11 C -20.8 9.2 -17 10 -15 12 Z;M -15 -2 C -21.5 -3 -26 2.2 -28 6 C -27 9 -23 10.8 -21 7 C -20.8 8 -17 10 -15 12 Z;M -15 -2 C -21.5 -4.6 -26 -3.9 -28 2 C -27 5 -23 5.4 -21 3 C -20.8 6.8 -17 10 -15 12 Z;M -15 -2 C -21.5 -3 -26 -0.2 -28 6 C -27 9 -23 9.2 -21 7 C -20.8 8 -17 10 -15 12 Z" /></path><path d="M 15 -2 C 21.5 -2.1 26 2.8 28 8.3 C 27 11.3 23 12 21 9.3 C 20.9 8.7 17 10 15 12 Z" fill="url(#gb-g8)" opacity="0.92"><animate attributeName="d" dur="2.3s" begin="-1.2s" repeatCount="indefinite" calcMode="spline"
+      keyTimes="0;0.25;0.5;0.75;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" values="M 15 -2 C 21.5 -2.1 26 2.8 28 8.3 C 27 11.3 23 12 21 9.3 C 20.9 8.7 17 10 15 12 Z;M 15 -2 C 21.5 -1.7 26 5.7 28 9.3 C 27 12.3 23 14.3 21 10.3 C 20.9 9 17 10 15 12 Z;M 15 -2 C 21.5 -3.9 26 -0.8 28 3.7 C 27 6.7 23 8 21 4.7 C 20.9 7.3 17 10 15 12 Z;M 15 -2 C 21.5 -4.3 26 -3.7 28 2.7 C 27 5.7 23 5.7 21 3.7 C 20.9 7 17 10 15 12 Z;M 15 -2 C 21.5 -2.1 26 2.8 28 8.3 C 27 11.3 23 12 21 9.3 C 20.9 8.7 17 10 15 12 Z" /></path>
+      <use href="#body-g8" fill="url(#gb-g8)" filter="url(#ghost-soft)" />
+      <g clip-path="url(#clip-g8)">
+        <ellipse class="soul" cx="0" cy="1.5" rx="15.3" ry="16.2" fill="url(#soul-g8)" />
+        <ellipse cx="-12.7" cy="15" rx="15.3" ry="22.5" fill="url(#shade)" />
+      </g>
+      <use href="#body-g8" fill="none" stroke="url(#rim)" stroke-width="1.1" />
+      
+      <g class="look">
+        <g class="blink">
+          <ellipse cx="-6.2" cy="-8" rx="2.3" ry="3.1" fill="#0a0f1e" />
+          <ellipse cx="6.2" cy="-8" rx="2.3" ry="3.1" fill="#0a0f1e" />
+        </g>
+        <circle cx="-5.4" cy="-9.2" r="1" fill="#ffffff" />
+        <circle cx="7" cy="-9.2" r="1" fill="#ffffff" />
+        <circle cx="-6.9" cy="-6.6" r="0.5" fill="#6191b9" opacity="0.9" />
+        <circle cx="5.5" cy="-6.6" r="0.5" fill="#6191b9" opacity="0.9" />
+      </g>
+      <path d="M -2 -1 Q 0 1 2 -1" fill="none" stroke="#0a0f1e" stroke-width="1" stroke-linecap="round" />
+        </g>
+      </g>
+     </g>
+    </g>
+    <g class="caption" data-gap="38" transform="translate(0, 41.2)"><animateTransform attributeName="transform" type="translate" values="0 41.2;0 46.3;0 46.3;0 44.3;0 43.7;0 41.5;0 41.2" keyTimes="0;0.091;0.151;0.286;0.61;0.894;1" calcMode="spline" keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" begin="-0s" dur="45s" repeatCount="indefinite" />
+      <text x="0" y="0" text-anchor="middle" class="t-name">verbose-octo-sy…</text>
+      <text x="0" y="13" text-anchor="middle" class="t-meta" fill="#6ee7b7">SPECTER · 13</text>
+    </g>
+   </g>
+  </g>
+  </a>
+  <defs>
+    <linearGradient id="gb-g1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.97" />
+      <stop offset="45%" stop-color="#d0deea" stop-opacity="0.9" />
+      <stop offset="80%" stop-color="#6191b9" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#6191b9" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="gs-g1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d0deea" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#6191b9" stop-opacity="0" />
+    </linearGradient>
+    <radialGradient id="soul-g1">
+      <stop offset="0%" stop-color="#6191b9" stop-opacity="0.95" />
+      <stop offset="45%" stop-color="#6191b9" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#6191b9" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="aura-g1">
+      <stop offset="0%" stop-color="#6191b9" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#6191b9" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="hood-g1" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0%" stop-color="#547391" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#283c55" stop-opacity="0.95" />
+    </linearGradient>
+    <linearGradient id="antler-g1" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#d0deea" />
+      <stop offset="100%" stop-color="#6191b9" />
+    </linearGradient>
+    <path id="body-g1" d="M -19 0 C -19 -16.8 -11.4 -29 0 -29 C 11.4 -29 19 -16.8 19 0 C 18.3 14 17.4 24.8 14.2 31 Q 9.5 36.4 4.9 28 Q 0.2 38.8 -4.4 30 Q -9.1 34.9 -13.7 29.9 Q -18.4 35 -23.1 31 C -22.5 24.8 -19.7 14 -19 0 Z"><animate attributeName="d" dur="3.3s" begin="-1.4s" repeatCount="indefinite" calcMode="spline"
+      keyTimes="0;0.25;0.5;0.75;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" values="M -19 0 C -19 -16.8 -11.4 -29 0 -29 C 11.4 -29 19 -16.8 19 0 C 18.3 14 17.4 24.8 14.2 31 Q 9.5 36.4 4.9 28 Q 0.2 38.8 -4.4 30 Q -9.1 34.9 -13.7 29.9 Q -18.4 35 -23.1 31 C -22.5 24.8 -19.7 14 -19 0 Z;M -19 0 C -19 -16.8 -11.4 -29 0 -29 C 11.4 -29 19 -16.8 19 0 C 19.9 14 21.2 24.8 19.4 31 Q 14.7 38.9 10.1 29.6 Q 5.4 35.6 0.8 30.2 Q -3.9 34.4 -8.5 28.1 Q -13.2 38.5 -17.9 31 C -18.7 24.8 -18.1 14 -19 0 Z;M -19 0 C -19 -16.8 -11.4 -29 0 -29 C 11.4 -29 19 -16.8 19 0 C 19.7 14 22.5 24.8 23.1 31 Q 18.4 36.4 13.7 30.4 Q 9.1 34 4.4 28.4 Q -0.2 37.9 -4.9 28.5 Q -9.5 37.8 -14.2 31 C -17.4 24.8 -18.3 14 -19 0 Z;M -19 0 C -19 -16.8 -11.4 -29 0 -29 C 11.4 -29 19 -16.8 19 0 C 18.1 14 18.7 24.8 17.9 31 Q 13.2 33.9 8.5 28.8 Q 3.9 37.2 -0.8 28.2 Q -5.4 38.4 -10.1 30.3 Q -14.7 34.3 -19.4 31 C -21.2 24.8 -19.9 14 -19 0 Z;M -19 0 C -19 -16.8 -11.4 -29 0 -29 C 11.4 -29 19 -16.8 19 0 C 18.3 14 17.4 24.8 14.2 31 Q 9.5 36.4 4.9 28 Q 0.2 38.8 -4.4 30 Q -9.1 34.9 -13.7 29.9 Q -18.4 35 -23.1 31 C -22.5 24.8 -19.7 14 -19 0 Z" /></path>
+      <clipPath id="clip-g1"><use href="#body-g1" /></clipPath>
+  </defs>
+  <a href="https://github.com/AtlasRoX/TribosAI" target="_blank" rel="noopener noreferrer">
+  <g class="ghost" id="ghost-1" data-index="1" data-x="202.2" data-y="294.9" data-scale="0.948" data-tier="3" transform="translate(202.2, 294.9)"><animateMotion path="M 0 0 C 59.9 -2 611.8 -8.5 614.8 -35.2 C 617.7 -61.8 21.2 -149.4 17.9 -159.8 C 14.6 -170.3 532.2 -122.5 594.7 -97.9 C 657.3 -73.2 462.2 -11.8 393.1 -11.9 C 324 -12 203.3 -96.6 180.3 -98.4 C 157.3 -100.3 285.3 -39.4 255.2 -23 C 225.2 -6.6 -59.9 2 0 0" keyPoints="0;0.23;0.458;0.674;0.767;0.854;0.898;0.898;1;1" keyTimes="0;0.225;0.447;0.658;0.749;0.833;0.877;0.885;0.985;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1" begin="-0s" dur="152.4s" repeatCount="indefinite" />
+    <title>TribosAI · Phantom Stalker · 113 commits</title>
+   <g class="g-fade" opacity="1"><animate attributeName="opacity" values="1;0.922;0.644;0.782;0.973;0.781;0.949;0.949;1;1" keyTimes="0;0.225;0.447;0.658;0.749;0.833;0.877;0.885;0.985;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1" begin="-0s" dur="152.4s" repeatCount="indefinite" />
+    <g class="g-act">
+     <g class="g-scale" transform="scale(0.948)"><animateTransform attributeName="transform" type="scale" values="0.948;0.9;0.73;0.815;0.932;0.814;0.917;0.917;0.948;0.948" keyTimes="0;0.225;0.447;0.658;0.749;0.833;0.877;0.885;0.985;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1" begin="-0s" dur="152.4s" repeatCount="indefinite" />
+      <ellipse cx="0" cy="54" rx="41.8" ry="7" fill="url(#aura-g1)" />
+      <circle class="ecto" cx="-15.2" cy="31" r="1.4" fill="#d0deea"
+      style="--dx:-4px;animation-delay:-1.4s;animation-duration:3.2s" /><circle class="ecto" cx="3" cy="31" r="2" fill="#d0deea"
+      style="--dx:2px;animation-delay:-2.6s;animation-duration:3.9s" /><circle class="ecto" cx="16.7" cy="31" r="1.4" fill="#d0deea"
+      style="--dx:8px;animation-delay:-3.8s;animation-duration:4.6s" />
+      <g class="float" style="animation-duration:5.3s;animation-delay:-1.4s">
+        <g class="tilt" style="animation-duration:7.6s;animation-delay:-1.4s">
+          <circle cx="0" cy="0" r="57" fill="url(#aura-g1)" />
+          <path d="M -17 0 C -23 -1 -27 5.8 -29 12 C -28 15 -24 15.2 -22 13 C -22.4 10 -19 12 -17 14 Z" fill="url(#gb-g1)" opacity="0.85"><animate attributeName="d" dur="2.6s" begin="-1.4s" repeatCount="indefinite" calcMode="spline"
+      keyTimes="0;0.25;0.5;0.75;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" values="M -17 0 C -23 -1 -27 5.8 -29 12 C -28 15 -24 15.2 -22 13 C -22.4 10 -19 12 -17 14 Z;M -17 0 C -23 0.6 -27 11.9 -29 16 C -28 19 -24 20.6 -22 17 C -22.4 11.2 -19 12 -17 14 Z;M -17 0 C -23 -1 -27 8.2 -29 12 C -28 15 -24 16.8 -22 13 C -22.4 10 -19 12 -17 14 Z;M -17 0 C -23 -2.6 -27 2.1 -29 8 C -28 11 -24 11.4 -22 9 C -22.4 8.8 -19 12 -17 14 Z;M -17 0 C -23 -1 -27 5.8 -29 12 C -28 15 -24 15.2 -22 13 C -22.4 10 -19 12 -17 14 Z" /></path><path d="M 17 0 C 23 0.1 27 9.7 29 14.9 C 28 17.9 24 18.8 22 15.9 C 22.4 10.9 19 12 17 14 Z" fill="url(#gb-g1)" opacity="0.85"><animate attributeName="d" dur="2.6s" begin="-1.4s" repeatCount="indefinite" calcMode="spline"
+      keyTimes="0;0.25;0.5;0.75;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" values="M 17 0 C 23 0.1 27 9.7 29 14.9 C 28 17.9 24 18.8 22 15.9 C 22.4 10.9 19 12 17 14 Z;M 17 0 C 23 0.1 27 11.3 29 14.8 C 28 17.8 24 19.8 22 15.8 C 22.4 10.8 19 12 17 14 Z;M 17 0 C 23 -2.1 27 4.3 29 9.1 C 28 12.1 24 13.2 22 10.1 C 22.4 9.1 19 12 17 14 Z;M 17 0 C 23 -2.1 27 2.7 29 9.2 C 28 12.2 24 12.2 22 10.2 C 22.4 9.2 19 12 17 14 Z;M 17 0 C 23 0.1 27 9.7 29 14.9 C 28 17.9 24 18.8 22 15.9 C 22.4 10.9 19 12 17 14 Z" /></path>
+      <use href="#body-g1" fill="url(#gb-g1)" filter="url(#ghost-soft)" />
+      <g clip-path="url(#clip-g1)">
+        <ellipse class="soul" cx="0" cy="1.1" rx="17.1" ry="18.1" fill="url(#soul-g1)" />
+        <ellipse cx="-14.2" cy="18.6" rx="17.1" ry="27.9" fill="url(#shade)" />
+      </g>
+      <use href="#body-g1" fill="none" stroke="url(#rim)" stroke-width="1.1" />
+      
+      <path d="M -21.5 4 C -22 -17.4 -10.5 -32 10.5 -36
+               C 9.5 -31 22 -15.9 21.5 4
+               C 10.5 8 -10.5 8 -21.5 4 Z"
+            fill="url(#hood-g1)" />
+      <path d="M 10.5 -36 C 9.5 -31 22 -15.9 21.5 4"
+            fill="none" stroke="#ffffff" stroke-opacity="0.35" stroke-width="0.9" stroke-linecap="round" />
+      <path d="M -9.9 -4 C -10.6 -15.9 10.6 -15.9 9.9 -4
+               C 5.7 0 -5.7 0 -9.9 -4 Z" fill="#04060c" />
+      <path d="M -9.9 -4 C -10.6 -15.9 10.6 -15.9 9.9 -4"
+            fill="none" stroke="#6191b9" stroke-opacity="0.35" stroke-width="0.8" />
+      
+      <g class="look">
+        <g class="blink" fill="#6191b9" filter="url(#core-glow)"><path d="M -1.4 -9.9 Q -4.4 -13.6 -7.4 -11.4 Q -4.4 -9.4 -1.4 -9.9 Z" /><path d="M 1.4 -9.9 Q 4.4 -13.6 7.4 -11.4 Q 4.4 -9.4 1.4 -9.9 Z" /></g>
+        <g class="blink" fill="#ffffff" opacity="0.9">
+          <circle cx="-4.4" cy="-11.4" r="0.9" /><circle cx="4.4" cy="-11.4" r="0.9" />
+        </g>
+      </g>
+        </g>
+      </g>
+     </g>
+    </g>
+    <g class="caption" data-gap="44" transform="translate(0, 55.7)"><animateTransform attributeName="transform" type="translate" values="0 55.7;0 53.6;0 46.1;0 49.9;0 55;0 49.8;0 54.3;0 54.3;0 55.7;0 55.7" keyTimes="0;0.225;0.447;0.658;0.749;0.833;0.877;0.885;0.985;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1" begin="-0s" dur="152.4s" repeatCount="indefinite" />
+      <text x="0" y="0" text-anchor="middle" class="t-name">TribosAI</text>
+      <text x="0" y="13" text-anchor="middle" class="t-meta" fill="#c4b5fd">PHANTOM · 113</text>
+    </g>
+   </g>
+  </g>
+  </a>
+  <defs>
+    <linearGradient id="gb-g3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.97" />
+      <stop offset="45%" stop-color="#f7c9be" stop-opacity="0.9" />
+      <stop offset="80%" stop-color="#e34c26" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#e34c26" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="gs-g3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f7c9be" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#e34c26" stop-opacity="0" />
+    </linearGradient>
+    <radialGradient id="soul-g3">
+      <stop offset="0%" stop-color="#e34c26" stop-opacity="0.95" />
+      <stop offset="45%" stop-color="#e34c26" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#e34c26" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="aura-g3">
+      <stop offset="0%" stop-color="#e34c26" stop-opacity="0.30" />
+      <stop offset="100%" stop-color="#e34c26" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="hood-g3" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0%" stop-color="#955148" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#4f2729" stop-opacity="0.95" />
+    </linearGradient>
+    <linearGradient id="antler-g3" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#f7c9be" />
+      <stop offset="100%" stop-color="#e34c26" />
+    </linearGradient>
+    <path id="body-g3" d="M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 16.4 11.3 15.8 20 13.2 25 Q 9 29.8 4.9 22.3 Q 0.7 31.9 -3.4 24.1 Q -7.6 28.4 -11.8 24 Q -15.9 28.6 -20.1 25 C -19.9 20 -17.6 11.3 -17 0 Z"><animate attributeName="d" dur="3s" begin="-4.1s" repeatCount="indefinite" calcMode="spline"
+      keyTimes="0;0.25;0.5;0.75;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" values="M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 16.4 11.3 15.8 20 13.2 25 Q 9 29.8 4.9 22.3 Q 0.7 31.9 -3.4 24.1 Q -7.6 28.4 -11.8 24 Q -15.9 28.6 -20.1 25 C -19.9 20 -17.6 11.3 -17 0 Z;M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 17.7 11.3 18.8 20 17.3 25 Q 13.1 32 8.9 23.8 Q 4.8 29.1 0.6 24.3 Q -3.6 28 -7.7 22.5 Q -11.9 31.7 -16.1 25 C -16.9 20 -16.3 11.3 -17 0 Z;M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 17.6 11.3 19.9 20 20.1 25 Q 15.9 29.8 11.8 24.5 Q 7.6 27.7 3.4 22.7 Q -0.7 31.2 -4.9 22.8 Q -9 31 -13.2 25 C -15.8 20 -16.4 11.3 -17 0 Z;M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 16.3 11.3 16.9 20 16.1 25 Q 11.9 27.6 7.7 23 Q 3.6 30.5 -0.6 22.5 Q -4.8 31.6 -8.9 24.3 Q -13.1 27.9 -17.3 25 C -18.8 20 -17.7 11.3 -17 0 Z;M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 16.4 11.3 15.8 20 13.2 25 Q 9 29.8 4.9 22.3 Q 0.7 31.9 -3.4 24.1 Q -7.6 28.4 -11.8 24 Q -15.9 28.6 -20.1 25 C -19.9 20 -17.6 11.3 -17 0 Z" /></path>
+      <clipPath id="clip-g3"><use href="#body-g3" /></clipPath>
+  </defs>
+  <a href="https://github.com/AtlasRoX/DarkFlags" target="_blank" rel="noopener noreferrer">
+  <g class="ghost" id="ghost-3" data-index="3" data-x="343.5" data-y="294.9" data-scale="0.948" data-tier="2" transform="translate(343.5, 294.9)"><animateMotion path="M 0 0 C -85.7 -6.9 -350 -119.6 -279.2 -133.9 C -208.3 -148.3 407 -84.2 425.1 -85.9 C 443.2 -87.7 -139.2 -143.4 -170.9 -144.4 C -202.5 -145.5 206.5 -116.4 234.9 -92.4 C 263.4 -68.3 85.7 6.9 0 0" keyPoints="0;0.145;0.145;0.449;0.449;0.707;0.885;1;1" keyTimes="0;0.135;0.152;0.435;0.456;0.696;0.861;0.968;1" calcMode="spline" keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1" begin="-0s" dur="88.6s" repeatCount="indefinite" />
+    <title>DarkFlags · Forest Specter · 30 commits</title>
+   <g class="g-fade" opacity="1"><animate attributeName="opacity" values="1;0.702;0.702;0.809;0.809;0.678;0.794;1;1" keyTimes="0;0.135;0.152;0.435;0.456;0.696;0.861;0.968;1" calcMode="spline" keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1" begin="-0s" dur="88.6s" repeatCount="indefinite" />
+    <g class="g-act">
+     <g class="g-scale" transform="scale(0.948)"><animateTransform attributeName="transform" type="scale" values="0.948;0.765;0.765;0.831;0.831;0.751;0.822;0.948;0.948" keyTimes="0;0.135;0.152;0.435;0.456;0.696;0.861;0.968;1" calcMode="spline" keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1" begin="-0s" dur="88.6s" repeatCount="indefinite" />
+      <ellipse cx="0" cy="54" rx="37.4" ry="7" fill="url(#aura-g3)" />
+      <circle class="ecto" cx="-13.6" cy="25" r="1.4" fill="#f7c9be"
+      style="--dx:-4px;animation-delay:-4.1s;animation-duration:3.2s" /><circle class="ecto" cx="2.7" cy="25" r="2" fill="#f7c9be"
+      style="--dx:2px;animation-delay:-5.3s;animation-duration:3.9s" /><circle class="ecto" cx="15" cy="25" r="1.4" fill="#f7c9be"
+      style="--dx:8px;animation-delay:-6.5s;animation-duration:4.6s" />
+      <g class="float" style="animation-duration:4.9s;animation-delay:-4.1s">
+        <g class="tilt" style="animation-duration:7s;animation-delay:-4.1s">
+          <circle cx="0" cy="0" r="51" fill="url(#aura-g3)" />
+          <path d="M -15 -2 C -21.5 -3 -26 -0.2 -28 6 C -27 9 -23 9.2 -21 7 C -20.8 8 -17 10 -15 12 Z" fill="url(#gb-g3)" opacity="0.92"><animate attributeName="d" dur="2.3s" begin="-4.1s" repeatCount="indefinite" calcMode="spline"
+      keyTimes="0;0.25;0.5;0.75;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" values="M -15 -2 C -21.5 -3 -26 -0.2 -28 6 C -27 9 -23 9.2 -21 7 C -20.8 8 -17 10 -15 12 Z;M -15 -2 C -21.5 -1.4 -26 5.9 -28 10 C -27 13 -23 14.6 -21 11 C -20.8 9.2 -17 10 -15 12 Z;M -15 -2 C -21.5 -3 -26 2.2 -28 6 C -27 9 -23 10.8 -21 7 C -20.8 8 -17 10 -15 12 Z;M -15 -2 C -21.5 -4.6 -26 -3.9 -28 2 C -27 5 -23 5.4 -21 3 C -20.8 6.8 -17 10 -15 12 Z;M -15 -2 C -21.5 -3 -26 -0.2 -28 6 C -27 9 -23 9.2 -21 7 C -20.8 8 -17 10 -15 12 Z" /></path><path d="M 15 -2 C 21.5 -2.1 26 2.8 28 8.3 C 27 11.3 23 12 21 9.3 C 20.9 8.7 17 10 15 12 Z" fill="url(#gb-g3)" opacity="0.92"><animate attributeName="d" dur="2.3s" begin="-4.1s" repeatCount="indefinite" calcMode="spline"
+      keyTimes="0;0.25;0.5;0.75;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" values="M 15 -2 C 21.5 -2.1 26 2.8 28 8.3 C 27 11.3 23 12 21 9.3 C 20.9 8.7 17 10 15 12 Z;M 15 -2 C 21.5 -1.7 26 5.7 28 9.3 C 27 12.3 23 14.3 21 10.3 C 20.9 9 17 10 15 12 Z;M 15 -2 C 21.5 -3.9 26 -0.8 28 3.7 C 27 6.7 23 8 21 4.7 C 20.9 7.3 17 10 15 12 Z;M 15 -2 C 21.5 -4.3 26 -3.7 28 2.7 C 27 5.7 23 5.7 21 3.7 C 20.9 7 17 10 15 12 Z;M 15 -2 C 21.5 -2.1 26 2.8 28 8.3 C 27 11.3 23 12 21 9.3 C 20.9 8.7 17 10 15 12 Z" /></path>
+      <use href="#body-g3" fill="url(#gb-g3)" filter="url(#ghost-soft)" />
+      <g clip-path="url(#clip-g3)">
+        <ellipse class="soul" cx="0" cy="1.5" rx="15.3" ry="16.2" fill="url(#soul-g3)" />
+        <ellipse cx="-12.7" cy="15" rx="15.3" ry="22.5" fill="url(#shade)" />
+      </g>
+      <use href="#body-g3" fill="none" stroke="url(#rim)" stroke-width="1.1" />
+      
+      <g class="look">
+        <g class="blink">
+          <ellipse cx="-6.2" cy="-8" rx="2.3" ry="3.1" fill="#0a0f1e" />
+          <ellipse cx="6.2" cy="-8" rx="2.3" ry="3.1" fill="#0a0f1e" />
+        </g>
+        <circle cx="-5.4" cy="-9.2" r="1" fill="#ffffff" />
+        <circle cx="7" cy="-9.2" r="1" fill="#ffffff" />
+        <circle cx="-6.9" cy="-6.6" r="0.5" fill="#e34c26" opacity="0.9" />
+        <circle cx="5.5" cy="-6.6" r="0.5" fill="#e34c26" opacity="0.9" />
+      </g>
+      <path d="M -2 -1 Q 0 1 2 -1" fill="none" stroke="#0a0f1e" stroke-width="1" stroke-linecap="round" />
+        </g>
+      </g>
+     </g>
+    </g>
+    <g class="caption" data-gap="38" transform="translate(0, 50)"><animateTransform attributeName="transform" type="translate" values="0 50;0 43.1;0 43.1;0 45.6;0 45.6;0 42.5;0 45.2;0 50;0 50" keyTimes="0;0.135;0.152;0.435;0.456;0.696;0.861;0.968;1" calcMode="spline" keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1" begin="-0s" dur="88.6s" repeatCount="indefinite" />
+      <text x="0" y="0" text-anchor="middle" class="t-name">DarkFlags</text>
+      <text x="0" y="13" text-anchor="middle" class="t-meta" fill="#6ee7b7">SPECTER · 30</text>
+    </g>
+   </g>
+  </g>
+  </a>
+  <defs>
+    <linearGradient id="gb-g5" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.97" />
+      <stop offset="45%" stop-color="#c3ebfd" stop-opacity="0.9" />
+      <stop offset="80%" stop-color="#38bdf8" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="gs-g5" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c3ebfd" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0" />
+    </linearGradient>
+    <radialGradient id="soul-g5">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.95" />
+      <stop offset="45%" stop-color="#38bdf8" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="aura-g5">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.30" />
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="hood-g5" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0%" stop-color="#4089b1" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#1b4968" stop-opacity="0.95" />
+    </linearGradient>
+    <linearGradient id="antler-g5" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#c3ebfd" />
+      <stop offset="100%" stop-color="#38bdf8" />
+    </linearGradient>
+    <path id="body-g5" d="M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 16.4 11.3 15.8 20 13.2 25 Q 9 29.8 4.9 22.3 Q 0.7 31.9 -3.4 24.1 Q -7.6 28.4 -11.8 24 Q -15.9 28.6 -20.1 25 C -19.9 20 -17.6 11.3 -17 0 Z"><animate attributeName="d" dur="3s" begin="-2s" repeatCount="indefinite" calcMode="spline"
+      keyTimes="0;0.25;0.5;0.75;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" values="M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 16.4 11.3 15.8 20 13.2 25 Q 9 29.8 4.9 22.3 Q 0.7 31.9 -3.4 24.1 Q -7.6 28.4 -11.8 24 Q -15.9 28.6 -20.1 25 C -19.9 20 -17.6 11.3 -17 0 Z;M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 17.7 11.3 18.8 20 17.3 25 Q 13.1 32 8.9 23.8 Q 4.8 29.1 0.6 24.3 Q -3.6 28 -7.7 22.5 Q -11.9 31.7 -16.1 25 C -16.9 20 -16.3 11.3 -17 0 Z;M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 17.6 11.3 19.9 20 20.1 25 Q 15.9 29.8 11.8 24.5 Q 7.6 27.7 3.4 22.7 Q -0.7 31.2 -4.9 22.8 Q -9 31 -13.2 25 C -15.8 20 -16.4 11.3 -17 0 Z;M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 16.3 11.3 16.9 20 16.1 25 Q 11.9 27.6 7.7 23 Q 3.6 30.5 -0.6 22.5 Q -4.8 31.6 -8.9 24.3 Q -13.1 27.9 -17.3 25 C -18.8 20 -17.7 11.3 -17 0 Z;M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 16.4 11.3 15.8 20 13.2 25 Q 9 29.8 4.9 22.3 Q 0.7 31.9 -3.4 24.1 Q -7.6 28.4 -11.8 24 Q -15.9 28.6 -20.1 25 C -19.9 20 -17.6 11.3 -17 0 Z" /></path>
+      <clipPath id="clip-g5"><use href="#body-g5" /></clipPath>
+  </defs>
+  <a href="https://github.com/AtlasRoX/everything101" target="_blank" rel="noopener noreferrer">
+  <g class="ghost" id="ghost-5" data-index="5" data-x="483.8" data-y="294.9" data-scale="0.948" data-tier="2" transform="translate(483.8, 294.9)"><animateMotion path="M 0 0 C -49.6 -2.1 59.7 -105.8 135.5 -128.3 C 211.2 -150.9 405.7 -142.9 454.6 -135.3 C 503.4 -127.7 533.9 -99.9 428.6 -82.6 C 323.3 -65.3 -178 -26 -177.2 -31.5 C -176.5 -37 403.5 -120.9 433 -115.6 C 462.6 -110.4 49.6 2.1 0 0" keyPoints="0;0.091;0.091;0.227;0.227;0.284;0.544;0.807;1;1" keyTimes="0;0.085;0.1;0.228;0.257;0.31;0.554;0.801;0.982;1" calcMode="spline" keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1" begin="-0s" dur="97.2s" repeatCount="indefinite" />
+    <title>everything101 · Forest Specter · 22 commits</title>
+   <g class="g-fade" opacity="1"><animate attributeName="opacity" values="1;0.714;0.714;0.698;0.698;0.816;0.93;0.742;1;1" keyTimes="0;0.085;0.1;0.228;0.257;0.31;0.554;0.801;0.982;1" calcMode="spline" keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1" begin="-0s" dur="97.2s" repeatCount="indefinite" />
+    <g class="g-act">
+     <g class="g-scale" transform="scale(0.948)"><animateTransform attributeName="transform" type="scale" values="0.948;0.773;0.773;0.764;0.764;0.835;0.905;0.79;0.948;0.948" keyTimes="0;0.085;0.1;0.228;0.257;0.31;0.554;0.801;0.982;1" calcMode="spline" keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1" begin="-0s" dur="97.2s" repeatCount="indefinite" />
+      <ellipse cx="0" cy="54" rx="37.4" ry="7" fill="url(#aura-g5)" />
+      <circle class="ecto" cx="-13.6" cy="25" r="1.4" fill="#c3ebfd"
+      style="--dx:-4px;animation-delay:-2s;animation-duration:3.2s" /><circle class="ecto" cx="2.7" cy="25" r="2" fill="#c3ebfd"
+      style="--dx:2px;animation-delay:-3.2s;animation-duration:3.9s" /><circle class="ecto" cx="15" cy="25" r="1.4" fill="#c3ebfd"
+      style="--dx:8px;animation-delay:-4.4s;animation-duration:4.6s" />
+      <g class="float" style="animation-duration:4.9s;animation-delay:-2s">
+        <g class="tilt" style="animation-duration:7s;animation-delay:-2s">
+          <circle cx="0" cy="0" r="51" fill="url(#aura-g5)" />
+          <path d="M -15 -2 C -21.5 -3 -26 -0.2 -28 6 C -27 9 -23 9.2 -21 7 C -20.8 8 -17 10 -15 12 Z" fill="url(#gb-g5)" opacity="0.92"><animate attributeName="d" dur="2.3s" begin="-2s" repeatCount="indefinite" calcMode="spline"
+      keyTimes="0;0.25;0.5;0.75;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" values="M -15 -2 C -21.5 -3 -26 -0.2 -28 6 C -27 9 -23 9.2 -21 7 C -20.8 8 -17 10 -15 12 Z;M -15 -2 C -21.5 -1.4 -26 5.9 -28 10 C -27 13 -23 14.6 -21 11 C -20.8 9.2 -17 10 -15 12 Z;M -15 -2 C -21.5 -3 -26 2.2 -28 6 C -27 9 -23 10.8 -21 7 C -20.8 8 -17 10 -15 12 Z;M -15 -2 C -21.5 -4.6 -26 -3.9 -28 2 C -27 5 -23 5.4 -21 3 C -20.8 6.8 -17 10 -15 12 Z;M -15 -2 C -21.5 -3 -26 -0.2 -28 6 C -27 9 -23 9.2 -21 7 C -20.8 8 -17 10 -15 12 Z" /></path><path d="M 15 -2 C 21.5 -2.1 26 2.8 28 8.3 C 27 11.3 23 12 21 9.3 C 20.9 8.7 17 10 15 12 Z" fill="url(#gb-g5)" opacity="0.92"><animate attributeName="d" dur="2.3s" begin="-2s" repeatCount="indefinite" calcMode="spline"
+      keyTimes="0;0.25;0.5;0.75;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" values="M 15 -2 C 21.5 -2.1 26 2.8 28 8.3 C 27 11.3 23 12 21 9.3 C 20.9 8.7 17 10 15 12 Z;M 15 -2 C 21.5 -1.7 26 5.7 28 9.3 C 27 12.3 23 14.3 21 10.3 C 20.9 9 17 10 15 12 Z;M 15 -2 C 21.5 -3.9 26 -0.8 28 3.7 C 27 6.7 23 8 21 4.7 C 20.9 7.3 17 10 15 12 Z;M 15 -2 C 21.5 -4.3 26 -3.7 28 2.7 C 27 5.7 23 5.7 21 3.7 C 20.9 7 17 10 15 12 Z;M 15 -2 C 21.5 -2.1 26 2.8 28 8.3 C 27 11.3 23 12 21 9.3 C 20.9 8.7 17 10 15 12 Z" /></path>
+      <use href="#body-g5" fill="url(#gb-g5)" filter="url(#ghost-soft)" />
+      <g clip-path="url(#clip-g5)">
+        <ellipse class="soul" cx="0" cy="1.5" rx="15.3" ry="16.2" fill="url(#soul-g5)" />
+        <ellipse cx="-12.7" cy="15" rx="15.3" ry="22.5" fill="url(#shade)" />
+      </g>
+      <use href="#body-g5" fill="none" stroke="url(#rim)" stroke-width="1.1" />
+      
+      <g class="look">
+        <g class="blink">
+          <ellipse cx="-6.2" cy="-8" rx="2.3" ry="3.1" fill="#0a0f1e" />
+          <ellipse cx="6.2" cy="-8" rx="2.3" ry="3.1" fill="#0a0f1e" />
+        </g>
+        <circle cx="-5.4" cy="-9.2" r="1" fill="#ffffff" />
+        <circle cx="7" cy="-9.2" r="1" fill="#ffffff" />
+        <circle cx="-6.9" cy="-6.6" r="0.5" fill="#38bdf8" opacity="0.9" />
+        <circle cx="5.5" cy="-6.6" r="0.5" fill="#38bdf8" opacity="0.9" />
+      </g>
+      <path d="M -2 -1 Q 0 1 2 -1" fill="none" stroke="#0a0f1e" stroke-width="1" stroke-linecap="round" />
+        </g>
+      </g>
+     </g>
+    </g>
+    <g class="caption" data-gap="38" transform="translate(0, 50)"><animateTransform attributeName="transform" type="translate" values="0 50;0 43.4;0 43.4;0 43;0 43;0 45.7;0 48.4;0 44;0 50;0 50" keyTimes="0;0.085;0.1;0.228;0.257;0.31;0.554;0.801;0.982;1" calcMode="spline" keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1" begin="-0s" dur="97.2s" repeatCount="indefinite" />
+      <text x="0" y="0" text-anchor="middle" class="t-name">everything101</text>
+      <text x="0" y="13" text-anchor="middle" class="t-meta" fill="#6ee7b7">SPECTER · 22</text>
+    </g>
+   </g>
+  </g>
+  </a>
+  <defs>
+    <linearGradient id="gb-g7" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.97" />
+      <stop offset="45%" stop-color="#c1d7ee" stop-opacity="0.9" />
+      <stop offset="80%" stop-color="#3178c6" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#3178c6" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="gs-g7" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c1d7ee" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#3178c6" stop-opacity="0" />
+    </linearGradient>
+    <radialGradient id="soul-g7">
+      <stop offset="0%" stop-color="#3178c6" stop-opacity="0.95" />
+      <stop offset="45%" stop-color="#3178c6" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#3178c6" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="aura-g7">
+      <stop offset="0%" stop-color="#3178c6" stop-opacity="0.30" />
+      <stop offset="100%" stop-color="#3178c6" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="hood-g7" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0%" stop-color="#3c6798" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#193459" stop-opacity="0.95" />
+    </linearGradient>
+    <linearGradient id="antler-g7" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#c1d7ee" />
+      <stop offset="100%" stop-color="#3178c6" />
+    </linearGradient>
+    <path id="body-g7" d="M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 16.4 11.3 15.8 20 13.2 25 Q 9 29.8 4.9 22.3 Q 0.7 31.9 -3.4 24.1 Q -7.6 28.4 -11.8 24 Q -15.9 28.6 -20.1 25 C -19.9 20 -17.6 11.3 -17 0 Z"><animate attributeName="d" dur="3s" begin="-4.7s" repeatCount="indefinite" calcMode="spline"
+      keyTimes="0;0.25;0.5;0.75;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" values="M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 16.4 11.3 15.8 20 13.2 25 Q 9 29.8 4.9 22.3 Q 0.7 31.9 -3.4 24.1 Q -7.6 28.4 -11.8 24 Q -15.9 28.6 -20.1 25 C -19.9 20 -17.6 11.3 -17 0 Z;M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 17.7 11.3 18.8 20 17.3 25 Q 13.1 32 8.9 23.8 Q 4.8 29.1 0.6 24.3 Q -3.6 28 -7.7 22.5 Q -11.9 31.7 -16.1 25 C -16.9 20 -16.3 11.3 -17 0 Z;M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 17.6 11.3 19.9 20 20.1 25 Q 15.9 29.8 11.8 24.5 Q 7.6 27.7 3.4 22.7 Q -0.7 31.2 -4.9 22.8 Q -9 31 -13.2 25 C -15.8 20 -16.4 11.3 -17 0 Z;M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 16.3 11.3 16.9 20 16.1 25 Q 11.9 27.6 7.7 23 Q 3.6 30.5 -0.6 22.5 Q -4.8 31.6 -8.9 24.3 Q -13.1 27.9 -17.3 25 C -18.8 20 -17.7 11.3 -17 0 Z;M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 16.4 11.3 15.8 20 13.2 25 Q 9 29.8 4.9 22.3 Q 0.7 31.9 -3.4 24.1 Q -7.6 28.4 -11.8 24 Q -15.9 28.6 -20.1 25 C -19.9 20 -17.6 11.3 -17 0 Z" /></path>
+      <clipPath id="clip-g7"><use href="#body-g7" /></clipPath>
+  </defs>
+  <a href="https://github.com/AtlasRoX/ovijaan" target="_blank" rel="noopener noreferrer">
+  <g class="ghost" id="ghost-7" data-index="7" data-x="632.1" data-y="294.9" data-scale="0.948" data-tier="2" transform="translate(632.1, 294.9)"><animateMotion path="M 0 0 C 1.6 -10.8 1 -133.8 22.8 -135.8 C 44.6 -137.8 142.3 -20.3 130.8 -12 C 119.2 -3.7 87.3 -80.7 -46.7 -86.2 C -180.7 -91.6 -565.4 -45.7 -673.2 -44.8 C -780.9 -43.9 -807.5 -76.3 -693.2 -80.7 C -578.8 -85.1 -102.4 -84.6 13.1 -71.2 C 128.6 -57.7 -1.6 10.8 0 0" keyPoints="0;0.065;0.144;0.144;0.235;0.526;0.608;0.608;0.935;0.935;1" keyTimes="0;0.061;0.135;0.163;0.249;0.522;0.599;0.617;0.924;0.939;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1" begin="-0s" dur="84s" repeatCount="indefinite" />
+    <title>ovijaan · Forest Specter · 13 commits</title>
+   <g class="g-fade" opacity="1"><animate attributeName="opacity" values="1;0.697;0.973;0.973;0.808;0.9;0.82;0.82;0.841;0.841;1" keyTimes="0;0.061;0.135;0.163;0.249;0.522;0.599;0.617;0.924;0.939;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1" begin="-0s" dur="84s" repeatCount="indefinite" />
+    <g class="g-act">
+     <g class="g-scale" transform="scale(0.948)"><animateTransform attributeName="transform" type="scale" values="0.948;0.763;0.932;0.932;0.831;0.887;0.838;0.838;0.851;0.851;0.948" keyTimes="0;0.061;0.135;0.163;0.249;0.522;0.599;0.617;0.924;0.939;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1" begin="-0s" dur="84s" repeatCount="indefinite" />
+      <ellipse cx="0" cy="54" rx="37.4" ry="7" fill="url(#aura-g7)" />
+      <circle class="ecto" cx="-13.6" cy="25" r="1.4" fill="#c1d7ee"
+      style="--dx:-4px;animation-delay:-4.7s;animation-duration:3.2s" /><circle class="ecto" cx="2.7" cy="25" r="2" fill="#c1d7ee"
+      style="--dx:2px;animation-delay:-5.9s;animation-duration:3.9s" /><circle class="ecto" cx="15" cy="25" r="1.4" fill="#c1d7ee"
+      style="--dx:8px;animation-delay:-7.1s;animation-duration:4.6s" />
+      <g class="float" style="animation-duration:4.9s;animation-delay:-4.7s">
+        <g class="tilt" style="animation-duration:7s;animation-delay:-4.7s">
+          <circle cx="0" cy="0" r="51" fill="url(#aura-g7)" />
+          <path d="M -15 -2 C -21.5 -3 -26 -0.2 -28 6 C -27 9 -23 9.2 -21 7 C -20.8 8 -17 10 -15 12 Z" fill="url(#gb-g7)" opacity="0.92"><animate attributeName="d" dur="2.3s" begin="-4.7s" repeatCount="indefinite" calcMode="spline"
+      keyTimes="0;0.25;0.5;0.75;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" values="M -15 -2 C -21.5 -3 -26 -0.2 -28 6 C -27 9 -23 9.2 -21 7 C -20.8 8 -17 10 -15 12 Z;M -15 -2 C -21.5 -1.4 -26 5.9 -28 10 C -27 13 -23 14.6 -21 11 C -20.8 9.2 -17 10 -15 12 Z;M -15 -2 C -21.5 -3 -26 2.2 -28 6 C -27 9 -23 10.8 -21 7 C -20.8 8 -17 10 -15 12 Z;M -15 -2 C -21.5 -4.6 -26 -3.9 -28 2 C -27 5 -23 5.4 -21 3 C -20.8 6.8 -17 10 -15 12 Z;M -15 -2 C -21.5 -3 -26 -0.2 -28 6 C -27 9 -23 9.2 -21 7 C -20.8 8 -17 10 -15 12 Z" /></path><path d="M 15 -2 C 21.5 -2.1 26 2.8 28 8.3 C 27 11.3 23 12 21 9.3 C 20.9 8.7 17 10 15 12 Z" fill="url(#gb-g7)" opacity="0.92"><animate attributeName="d" dur="2.3s" begin="-4.7s" repeatCount="indefinite" calcMode="spline"
+      keyTimes="0;0.25;0.5;0.75;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" values="M 15 -2 C 21.5 -2.1 26 2.8 28 8.3 C 27 11.3 23 12 21 9.3 C 20.9 8.7 17 10 15 12 Z;M 15 -2 C 21.5 -1.7 26 5.7 28 9.3 C 27 12.3 23 14.3 21 10.3 C 20.9 9 17 10 15 12 Z;M 15 -2 C 21.5 -3.9 26 -0.8 28 3.7 C 27 6.7 23 8 21 4.7 C 20.9 7.3 17 10 15 12 Z;M 15 -2 C 21.5 -4.3 26 -3.7 28 2.7 C 27 5.7 23 5.7 21 3.7 C 20.9 7 17 10 15 12 Z;M 15 -2 C 21.5 -2.1 26 2.8 28 8.3 C 27 11.3 23 12 21 9.3 C 20.9 8.7 17 10 15 12 Z" /></path>
+      <use href="#body-g7" fill="url(#gb-g7)" filter="url(#ghost-soft)" />
+      <g clip-path="url(#clip-g7)">
+        <ellipse class="soul" cx="0" cy="1.5" rx="15.3" ry="16.2" fill="url(#soul-g7)" />
+        <ellipse cx="-12.7" cy="15" rx="15.3" ry="22.5" fill="url(#shade)" />
+      </g>
+      <use href="#body-g7" fill="none" stroke="url(#rim)" stroke-width="1.1" />
+      
+      <g class="look">
+        <g class="blink">
+          <ellipse cx="-6.2" cy="-8" rx="2.3" ry="3.1" fill="#0a0f1e" />
+          <ellipse cx="6.2" cy="-8" rx="2.3" ry="3.1" fill="#0a0f1e" />
+        </g>
+        <circle cx="-5.4" cy="-9.2" r="1" fill="#ffffff" />
+        <circle cx="7" cy="-9.2" r="1" fill="#ffffff" />
+        <circle cx="-6.9" cy="-6.6" r="0.5" fill="#3178c6" opacity="0.9" />
+        <circle cx="5.5" cy="-6.6" r="0.5" fill="#3178c6" opacity="0.9" />
+      </g>
+      <path d="M -2 -1 Q 0 1 2 -1" fill="none" stroke="#0a0f1e" stroke-width="1" stroke-linecap="round" />
+        </g>
+      </g>
+     </g>
+    </g>
+    <g class="caption" data-gap="38" transform="translate(0, 50)"><animateTransform attributeName="transform" type="translate" values="0 50;0 43;0 49.4;0 49.4;0 45.6;0 47.7;0 45.8;0 45.8;0 46.3;0 46.3;0 50" keyTimes="0;0.061;0.135;0.163;0.249;0.522;0.599;0.617;0.924;0.939;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1" begin="-0s" dur="84s" repeatCount="indefinite" />
+      <text x="0" y="0" text-anchor="middle" class="t-name">ovijaan</text>
+      <text x="0" y="13" text-anchor="middle" class="t-meta" fill="#6ee7b7">SPECTER · 13</text>
+    </g>
+   </g>
+  </g>
+  </a>
+  <defs>
+    <linearGradient id="gb-g9" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.97" />
+      <stop offset="45%" stop-color="#d0deea" stop-opacity="0.9" />
+      <stop offset="80%" stop-color="#6191b9" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#6191b9" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="gs-g9" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d0deea" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#6191b9" stop-opacity="0" />
+    </linearGradient>
+    <radialGradient id="soul-g9">
+      <stop offset="0%" stop-color="#6191b9" stop-opacity="0.95" />
+      <stop offset="45%" stop-color="#6191b9" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#6191b9" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="aura-g9">
+      <stop offset="0%" stop-color="#6191b9" stop-opacity="0.30" />
+      <stop offset="100%" stop-color="#6191b9" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="hood-g9" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0%" stop-color="#547391" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#283c55" stop-opacity="0.95" />
+    </linearGradient>
+    <linearGradient id="antler-g9" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#d0deea" />
+      <stop offset="100%" stop-color="#6191b9" />
+    </linearGradient>
+    <path id="body-g9" d="M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 16.4 11.3 15.8 20 13.2 25 Q 9 29.8 4.9 22.3 Q 0.7 31.9 -3.4 24.1 Q -7.6 28.4 -11.8 24 Q -15.9 28.6 -20.1 25 C -19.9 20 -17.6 11.3 -17 0 Z"><animate attributeName="d" dur="3s" begin="-2.5s" repeatCount="indefinite" calcMode="spline"
+      keyTimes="0;0.25;0.5;0.75;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" values="M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 16.4 11.3 15.8 20 13.2 25 Q 9 29.8 4.9 22.3 Q 0.7 31.9 -3.4 24.1 Q -7.6 28.4 -11.8 24 Q -15.9 28.6 -20.1 25 C -19.9 20 -17.6 11.3 -17 0 Z;M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 17.7 11.3 18.8 20 17.3 25 Q 13.1 32 8.9 23.8 Q 4.8 29.1 0.6 24.3 Q -3.6 28 -7.7 22.5 Q -11.9 31.7 -16.1 25 C -16.9 20 -16.3 11.3 -17 0 Z;M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 17.6 11.3 19.9 20 20.1 25 Q 15.9 29.8 11.8 24.5 Q 7.6 27.7 3.4 22.7 Q -0.7 31.2 -4.9 22.8 Q -9 31 -13.2 25 C -15.8 20 -16.4 11.3 -17 0 Z;M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 16.3 11.3 16.9 20 16.1 25 Q 11.9 27.6 7.7 23 Q 3.6 30.5 -0.6 22.5 Q -4.8 31.6 -8.9 24.3 Q -13.1 27.9 -17.3 25 C -18.8 20 -17.7 11.3 -17 0 Z;M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 16.4 11.3 15.8 20 13.2 25 Q 9 29.8 4.9 22.3 Q 0.7 31.9 -3.4 24.1 Q -7.6 28.4 -11.8 24 Q -15.9 28.6 -20.1 25 C -19.9 20 -17.6 11.3 -17 0 Z" /></path>
+      <clipPath id="clip-g9"><use href="#body-g9" /></clipPath>
+  </defs>
+  <a href="https://github.com/AtlasRoX/BUP-GridWise" target="_blank" rel="noopener noreferrer">
+  <g class="ghost" id="ghost-9" data-index="9" data-x="776.1" data-y="294.9" data-scale="0.948" data-tier="2" transform="translate(776.1, 294.9)"><animateMotion path="M 0 0 C -131.4 -2.5 -585.5 -46.7 -653.8 -60.8 C -722.1 -75 -443.5 -78.4 -409.8 -84.9 C -376.1 -91.4 -542.2 -106.3 -451.4 -99.8 C -360.6 -93.4 59.7 -62.7 134.9 -46.1 C 210.1 -29.5 131.4 2.5 0 0" keyPoints="0;0.359;0.506;0.565;0.565;0.887;1;1" keyTimes="0;0.347;0.488;0.546;0.56;0.871;0.98;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1" begin="-0s" dur="94.5s" repeatCount="indefinite" />
+    <title>BUP-GridWise · Forest Specter · 12 commits</title>
+   <g class="g-fade" opacity="1"><animate attributeName="opacity" values="1;0.864;0.811;0.778;0.778;0.897;1;1" keyTimes="0;0.347;0.488;0.546;0.56;0.871;0.98;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1" begin="-0s" dur="94.5s" repeatCount="indefinite" />
+    <g class="g-act">
+     <g class="g-scale" transform="scale(0.948)"><animateTransform attributeName="transform" type="scale" values="0.948;0.865;0.832;0.812;0.812;0.885;0.948;0.948" keyTimes="0;0.347;0.488;0.546;0.56;0.871;0.98;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1" begin="-0s" dur="94.5s" repeatCount="indefinite" />
+      <ellipse cx="0" cy="54" rx="37.4" ry="7" fill="url(#aura-g9)" />
+      <circle class="ecto" cx="-13.6" cy="25" r="1.4" fill="#d0deea"
+      style="--dx:-4px;animation-delay:-2.5s;animation-duration:3.2s" /><circle class="ecto" cx="2.7" cy="25" r="2" fill="#d0deea"
+      style="--dx:2px;animation-delay:-3.7s;animation-duration:3.9s" /><circle class="ecto" cx="15" cy="25" r="1.4" fill="#d0deea"
+      style="--dx:8px;animation-delay:-4.9s;animation-duration:4.6s" />
+      <g class="float" style="animation-duration:4.9s;animation-delay:-2.5s">
+        <g class="tilt" style="animation-duration:7s;animation-delay:-2.5s">
+          <circle cx="0" cy="0" r="51" fill="url(#aura-g9)" />
+          <path d="M -15 -2 C -21.5 -3 -26 -0.2 -28 6 C -27 9 -23 9.2 -21 7 C -20.8 8 -17 10 -15 12 Z" fill="url(#gb-g9)" opacity="0.92"><animate attributeName="d" dur="2.3s" begin="-2.5s" repeatCount="indefinite" calcMode="spline"
+      keyTimes="0;0.25;0.5;0.75;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" values="M -15 -2 C -21.5 -3 -26 -0.2 -28 6 C -27 9 -23 9.2 -21 7 C -20.8 8 -17 10 -15 12 Z;M -15 -2 C -21.5 -1.4 -26 5.9 -28 10 C -27 13 -23 14.6 -21 11 C -20.8 9.2 -17 10 -15 12 Z;M -15 -2 C -21.5 -3 -26 2.2 -28 6 C -27 9 -23 10.8 -21 7 C -20.8 8 -17 10 -15 12 Z;M -15 -2 C -21.5 -4.6 -26 -3.9 -28 2 C -27 5 -23 5.4 -21 3 C -20.8 6.8 -17 10 -15 12 Z;M -15 -2 C -21.5 -3 -26 -0.2 -28 6 C -27 9 -23 9.2 -21 7 C -20.8 8 -17 10 -15 12 Z" /></path><path d="M 15 -2 C 21.5 -2.1 26 2.8 28 8.3 C 27 11.3 23 12 21 9.3 C 20.9 8.7 17 10 15 12 Z" fill="url(#gb-g9)" opacity="0.92"><animate attributeName="d" dur="2.3s" begin="-2.5s" repeatCount="indefinite" calcMode="spline"
+      keyTimes="0;0.25;0.5;0.75;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" values="M 15 -2 C 21.5 -2.1 26 2.8 28 8.3 C 27 11.3 23 12 21 9.3 C 20.9 8.7 17 10 15 12 Z;M 15 -2 C 21.5 -1.7 26 5.7 28 9.3 C 27 12.3 23 14.3 21 10.3 C 20.9 9 17 10 15 12 Z;M 15 -2 C 21.5 -3.9 26 -0.8 28 3.7 C 27 6.7 23 8 21 4.7 C 20.9 7.3 17 10 15 12 Z;M 15 -2 C 21.5 -4.3 26 -3.7 28 2.7 C 27 5.7 23 5.7 21 3.7 C 20.9 7 17 10 15 12 Z;M 15 -2 C 21.5 -2.1 26 2.8 28 8.3 C 27 11.3 23 12 21 9.3 C 20.9 8.7 17 10 15 12 Z" /></path>
+      <use href="#body-g9" fill="url(#gb-g9)" filter="url(#ghost-soft)" />
+      <g clip-path="url(#clip-g9)">
+        <ellipse class="soul" cx="0" cy="1.5" rx="15.3" ry="16.2" fill="url(#soul-g9)" />
+        <ellipse cx="-12.7" cy="15" rx="15.3" ry="22.5" fill="url(#shade)" />
+      </g>
+      <use href="#body-g9" fill="none" stroke="url(#rim)" stroke-width="1.1" />
+      
+      <g class="look">
+        <g class="blink">
+          <ellipse cx="-6.2" cy="-8" rx="2.3" ry="3.1" fill="#0a0f1e" />
+          <ellipse cx="6.2" cy="-8" rx="2.3" ry="3.1" fill="#0a0f1e" />
+        </g>
+        <circle cx="-5.4" cy="-9.2" r="1" fill="#ffffff" />
+        <circle cx="7" cy="-9.2" r="1" fill="#ffffff" />
+        <circle cx="-6.9" cy="-6.6" r="0.5" fill="#6191b9" opacity="0.9" />
+        <circle cx="5.5" cy="-6.6" r="0.5" fill="#6191b9" opacity="0.9" />
+      </g>
+      <path d="M -2 -1 Q 0 1 2 -1" fill="none" stroke="#0a0f1e" stroke-width="1" stroke-linecap="round" />
+        </g>
+      </g>
+     </g>
+    </g>
+    <g class="caption" data-gap="38" transform="translate(0, 50)"><animateTransform attributeName="transform" type="translate" values="0 50;0 46.9;0 45.6;0 44.9;0 44.9;0 47.6;0 50;0 50" keyTimes="0;0.347;0.488;0.546;0.56;0.871;0.98;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1" begin="-0s" dur="94.5s" repeatCount="indefinite" />
+      <text x="0" y="0" text-anchor="middle" class="t-name">BUP-GridWise</text>
+      <text x="0" y="13" text-anchor="middle" class="t-meta" fill="#6ee7b7">SPECTER · 12</text>
+    </g>
+   </g>
+  </g>
+  </a>
+    </g>
+
+    <!-- FOREST FLOOR -->
+    <g class="cam-near">
+      <path d="M -40 410 L -40 376 Q -18 367.7 4 377.4 Q 15 359.1 26.1 373.6 Q 40.2 359.5 54.2 382.5 Q 74.7 360 95.2 371.3 Q 104.5 364.5 113.8 374.1 Q 131 358.3 148.3 376 Q 157.6 362.1 166.9 374.6 Q 188.8 360.1 210.7 381.1 Q 225.7 368.5 240.7 377.3 Q 256.4 359.8 272 370.7 Q 291.9 358.7 311.7 380.8 Q 332.6 368.6 353.4 376.7 Q 368 368.8 382.5 382.6 Q 404.2 373.1 425.9 379.3 Q 445.9 361.3 466 375.2 Q 485.7 363.8 505.3 376.2 Q 525 366.2 544.6 375.3 Q 567.5 363.9 590.3 370.5 Q 604.9 363.8 619.5 379.4 Q 628.9 365.9 638.3 374.4 Q 652.1 365.4 665.9 372.1 Q 688.2 365.8 710.4 381.7 Q 722.7 353.9 735.1 369.4 Q 745.7 359.6 756.3 382.9 Q 770.7 365 785.2 380.6 Q 799.9 366.7 814.7 377.8 Q 834 367 853.4 381.6 Q 875.2 360.5 897 370.7 Q 908.9 362.3 920.7 373 L 920.7 410 Z" fill="#010407" />
+      
+    <g transform="translate(54, 382) scale(1.3, 1.3)">
+      <ellipse cx="0" cy="0" rx="34" ry="7" fill="url(#pool-glow)" />
+      <path d="M -1.6 0 Q -1 -10 0 -14 Q 1 -10 1.6 0 Z" fill="#0072b2" />
+      <path d="M -10 -13 C -10 -22 10 -22 10 -13 C 6 -11.5 -6 -11.5 -10 -13 Z" fill="#00f2fe" />
+      <path d="M -8 -15 C -6 -19 4 -20 7 -16" fill="none" stroke="#ffffff" stroke-width="0.8" opacity="0.5" />
+      <path d="M 8 0 Q 9 -5 10 -8" fill="none" stroke="#0072b2" stroke-width="1.4" stroke-linecap="round" />
+      <path d="M 5.5 -7.5 C 5.5 -12 14.5 -12 14.5 -7.5 Z" fill="#00f2fe" opacity="0.9" />
+    </g>
+    <g transform="translate(826, 380) scale(-1.4, 1.4)">
+      <ellipse cx="0" cy="0" rx="34" ry="7" fill="url(#pool-glow)" />
+      <path d="M -1.6 0 Q -1 -10 0 -14 Q 1 -10 1.6 0 Z" fill="#0072b2" />
+      <path d="M -10 -13 C -10 -22 10 -22 10 -13 C 6 -11.5 -6 -11.5 -10 -13 Z" fill="#00f2fe" />
+      <path d="M -8 -15 C -6 -19 4 -20 7 -16" fill="none" stroke="#ffffff" stroke-width="0.8" opacity="0.5" />
+      <path d="M 8 0 Q 9 -5 10 -8" fill="none" stroke="#0072b2" stroke-width="1.4" stroke-linecap="round" />
+      <path d="M 5.5 -7.5 C 5.5 -12 14.5 -12 14.5 -7.5 Z" fill="#00f2fe" opacity="0.9" />
+    </g>
+      <g><path d="M -12.1 414.2 L -8.9 417 L -4.2 409 Z M -12.1 414.2 L -12.4 411.6 L -4.2 409 Z M -4.2 409 L 1.7 414.7 L 3.6 404.4 Z M -4.2 409 L -4.4 404.2 L 3.6 404.4 Z M 3.6 404.4 L 11.4 412.8 L 11.5 400.5 Z M 3.6 404.4 L 4.1 397.9 L 11.5 400.5 Z M 11.5 400.5 L 20.4 411.1 L 19.4 397.3 Z M 11.5 400.5 L 12.8 392.8 L 19.4 397.3 Z M 19.4 397.3 L 28.4 409.5 L 27.3 394.7 Z M 19.4 397.3 L 21.7 388.9 L 27.3 394.7 Z M 27.3 394.7 L 35.8 407.8 L 35.2 392.7 Z M 27.3 394.7 L 30.5 386.4 L 35.2 392.7 Z M 35.2 392.7 L 42.6 405.9 L 43 391.4 Z M 35.2 392.7 L 39.1 385.1 L 43 391.4 Z M 43 391.4 L 49 403.7 L 50.9 390.8 Z M 43 391.4 L 47.4 384.9 L 50.9 390.8 Z M 50.9 390.8 L 55.3 401.5 L 58.8 390.7 Z M 50.9 390.8 L 55.3 385.6 L 58.8 390.7 Z M 58.8 390.7 L 61.6 399.2 L 66.7 391.4 Z M 58.8 390.7 L 62.6 387.1 L 66.7 391.4 Z M 66.7 391.4 L 68.2 397.1 L 74.6 392.6 Z M 66.7 391.4 L 69.5 389.2 L 74.6 392.6 Z M 74.6 392.6 L 75.1 395.5 L 82.4 394.6 Z M 74.6 392.6 L 76.1 391.7 L 82.4 394.6 Z " fill="#010407" /><path d="M -20 420 Q 31.2 387.1 82.4 394.6" fill="none" stroke="#010407" stroke-width="1.8" stroke-linecap="round" /><path d="M -16 412.7 L -12.8 413.7 L -11.9 405.8 Z M -16 412.7 L -17.6 410.9 L -11.9 405.8 Z M -11.9 405.8 L -6 408.1 L -7.9 399.6 Z M -11.9 405.8 L -14.7 402.5 L -7.9 399.6 Z M -7.9 399.6 L 0.2 403 L -3.8 393.8 Z M -7.9 399.6 L -11.4 394.8 L -3.8 393.8 Z M -3.8 393.8 L 5.8 398.3 L 0.2 388.6 Z M -3.8 393.8 L -7.7 387.9 L 0.2 388.6 Z M 0.2 388.6 L 10.6 394 L 4.3 383.9 Z M 0.2 388.6 L -3.5 381.9 L 4.3 383.9 Z M 4.3 383.9 L 14.7 390.1 L 8.3 379.7 Z M 4.3 383.9 L 1.1 376.9 L 8.3 379.7 Z M 8.3 379.7 L 18 386.3 L 12.4 376.1 Z M 8.3 379.7 L 6 372.9 L 12.4 376.1 Z M 12.4 376.1 L 20.8 382.7 L 16.4 373 Z M 12.4 376.1 L 11 369.8 L 16.4 373 Z M 16.4 373 L 23.2 379.1 L 20.4 370.4 Z M 16.4 373 L 15.9 367.6 L 20.4 370.4 Z M 20.4 370.4 L 25.3 375.6 L 24.5 368.4 Z M 20.4 370.4 L 20.7 366.3 L 24.5 368.4 Z M 24.5 368.4 L 27.5 372.2 L 28.5 366.9 Z M 24.5 368.4 L 25.1 365.7 L 28.5 366.9 Z M 28.5 366.9 L 29.8 368.9 L 32.6 365.9 Z M 28.5 366.9 L 29 365.6 L 32.6 365.9 Z " fill="#010407" /><path d="M -20 420 Q 6.3 376.4 32.6 365.9" fill="none" stroke="#010407" stroke-width="1.8" stroke-linecap="round" /><path d="M 41.2 423.2 L 44 423.2 L 42.5 416.8 Z M 41.2 423.2 L 39 422.3 L 42.5 416.8 Z M 42.5 416.8 L 47.6 416.9 L 43.7 410.8 Z M 42.5 416.8 L 38.3 415 L 43.7 410.8 Z M 43.7 410.8 L 50.8 411 L 44.9 405.2 Z M 43.7 410.8 L 38.1 408.2 L 44.9 405.2 Z M 44.9 405.2 L 53.5 405.5 L 46.1 399.9 Z M 44.9 405.2 L 38.3 401.9 L 46.1 399.9 Z M 46.1 399.9 L 55.5 400.4 L 47.4 395 Z M 46.1 399.9 L 39 396.3 L 47.4 395 Z M 47.4 395 L 57 395.8 L 48.6 390.6 Z M 47.4 395 L 40.3 391.2 L 48.6 390.6 Z M 48.6 390.6 L 57.8 391.5 L 49.8 386.4 Z M 48.6 390.6 L 42 386.7 L 49.8 386.4 Z M 49.8 386.4 L 58.2 387.5 L 51.1 382.7 Z M 49.8 386.4 L 44 382.8 L 51.1 382.7 Z M 51.1 382.7 L 58.1 383.8 L 52.3 379.4 Z M 51.1 382.7 L 46.4 379.5 L 52.3 379.4 Z M 52.3 379.4 L 57.7 380.4 L 53.5 376.4 Z M 52.3 379.4 L 48.9 376.8 L 53.5 376.4 Z M 53.5 376.4 L 57.1 377.3 L 54.7 373.8 Z M 53.5 376.4 L 51.4 374.6 L 54.7 373.8 Z M 54.7 373.8 L 56.5 374.4 L 56 371.6 Z M 54.7 373.8 L 53.8 372.9 L 56 371.6 Z " fill="#010407" /><path d="M 40 430 Q 48 388.9 56 371.6" fill="none" stroke="#010407" stroke-width="1.8" stroke-linecap="round" /><path d="M 892.1 414.2 L 892.4 411.6 L 884.2 409 Z M 892.1 414.2 L 888.9 417 L 884.2 409 Z M 884.2 409 L 884.4 404.2 L 876.4 404.4 Z M 884.2 409 L 878.3 414.7 L 876.4 404.4 Z M 876.4 404.4 L 875.9 397.9 L 868.5 400.5 Z M 876.4 404.4 L 868.6 412.8 L 868.5 400.5 Z M 868.5 400.5 L 867.2 392.8 L 860.6 397.3 Z M 868.5 400.5 L 859.6 411.1 L 860.6 397.3 Z M 860.6 397.3 L 858.3 388.9 L 852.7 394.7 Z M 860.6 397.3 L 851.6 409.5 L 852.7 394.7 Z M 852.7 394.7 L 849.5 386.4 L 844.8 392.7 Z M 852.7 394.7 L 844.2 407.8 L 844.8 392.7 Z M 844.8 392.7 L 840.9 385.1 L 837 391.4 Z M 844.8 392.7 L 837.4 405.9 L 837 391.4 Z M 837 391.4 L 832.6 384.9 L 829.1 390.8 Z M 837 391.4 L 831 403.7 L 829.1 390.8 Z M 829.1 390.8 L 824.7 385.6 L 821.2 390.7 Z M 829.1 390.8 L 824.7 401.5 L 821.2 390.7 Z M 821.2 390.7 L 817.4 387.1 L 813.3 391.4 Z M 821.2 390.7 L 818.4 399.2 L 813.3 391.4 Z M 813.3 391.4 L 810.5 389.2 L 805.4 392.6 Z M 813.3 391.4 L 811.8 397.1 L 805.4 392.6 Z M 805.4 392.6 L 803.9 391.7 L 797.6 394.6 Z M 805.4 392.6 L 804.9 395.5 L 797.6 394.6 Z " fill="#010407" /><path d="M 900 420 Q 848.8 387.1 797.6 394.6" fill="none" stroke="#010407" stroke-width="1.8" stroke-linecap="round" /><path d="M 896 412.7 L 897.6 410.9 L 891.9 405.8 Z M 896 412.7 L 892.8 413.7 L 891.9 405.8 Z M 891.9 405.8 L 894.7 402.5 L 887.9 399.6 Z M 891.9 405.8 L 886 408.1 L 887.9 399.6 Z M 887.9 399.6 L 891.4 394.8 L 883.8 393.8 Z M 887.9 399.6 L 879.8 403 L 883.8 393.8 Z M 883.8 393.8 L 887.7 387.9 L 879.8 388.6 Z M 883.8 393.8 L 874.2 398.3 L 879.8 388.6 Z M 879.8 388.6 L 883.5 381.9 L 875.7 383.9 Z M 879.8 388.6 L 869.4 394 L 875.7 383.9 Z M 875.7 383.9 L 878.9 376.9 L 871.7 379.7 Z M 875.7 383.9 L 865.3 390.1 L 871.7 379.7 Z M 871.7 379.7 L 874 372.9 L 867.6 376.1 Z M 871.7 379.7 L 862 386.3 L 867.6 376.1 Z M 867.6 376.1 L 869 369.8 L 863.6 373 Z M 867.6 376.1 L 859.2 382.7 L 863.6 373 Z M 863.6 373 L 864.1 367.6 L 859.6 370.4 Z M 863.6 373 L 856.8 379.1 L 859.6 370.4 Z M 859.6 370.4 L 859.3 366.3 L 855.5 368.4 Z M 859.6 370.4 L 854.7 375.6 L 855.5 368.4 Z M 855.5 368.4 L 854.9 365.7 L 851.5 366.9 Z M 855.5 368.4 L 852.5 372.2 L 851.5 366.9 Z M 851.5 366.9 L 851 365.6 L 847.4 365.9 Z M 851.5 366.9 L 850.2 368.9 L 847.4 365.9 Z " fill="#010407" /><path d="M 900 420 Q 873.7 376.4 847.4 365.9" fill="none" stroke="#010407" stroke-width="1.8" stroke-linecap="round" /><path d="M 838.8 423.2 L 841 422.3 L 837.5 416.8 Z M 838.8 423.2 L 836 423.2 L 837.5 416.8 Z M 837.5 416.8 L 841.7 415 L 836.3 410.8 Z M 837.5 416.8 L 832.4 416.9 L 836.3 410.8 Z M 836.3 410.8 L 841.9 408.2 L 835.1 405.2 Z M 836.3 410.8 L 829.2 411 L 835.1 405.2 Z M 835.1 405.2 L 841.7 401.9 L 833.9 399.9 Z M 835.1 405.2 L 826.5 405.5 L 833.9 399.9 Z M 833.9 399.9 L 841 396.3 L 832.6 395 Z M 833.9 399.9 L 824.5 400.4 L 832.6 395 Z M 832.6 395 L 839.7 391.2 L 831.4 390.6 Z M 832.6 395 L 823 395.8 L 831.4 390.6 Z M 831.4 390.6 L 838 386.7 L 830.2 386.4 Z M 831.4 390.6 L 822.2 391.5 L 830.2 386.4 Z M 830.2 386.4 L 836 382.8 L 828.9 382.7 Z M 830.2 386.4 L 821.8 387.5 L 828.9 382.7 Z M 828.9 382.7 L 833.6 379.5 L 827.7 379.4 Z M 828.9 382.7 L 821.9 383.8 L 827.7 379.4 Z M 827.7 379.4 L 831.1 376.8 L 826.5 376.4 Z M 827.7 379.4 L 822.3 380.4 L 826.5 376.4 Z M 826.5 376.4 L 828.6 374.6 L 825.3 373.8 Z M 826.5 376.4 L 822.9 377.3 L 825.3 373.8 Z M 825.3 373.8 L 826.2 372.9 L 824 371.6 Z M 825.3 373.8 L 823.5 374.4 L 824 371.6 Z " fill="#010407" /><path d="M 840 430 Q 832 388.9 824 371.6" fill="none" stroke="#010407" stroke-width="1.8" stroke-linecap="round" /></g>
+      <g class="drift-r">
+        <ellipse cx="160" cy="378" rx="260" ry="26" fill="url(#puff)" opacity="0.75" />
+        <ellipse cx="640" cy="384" rx="300" ry="24" fill="url(#puff)" opacity="0.7" />
+      </g>
+    </g>
+
+    <!-- FALLING LEAVES -->
+    <g><g transform="translate(202.5, -16)"><g class="leaf" style="animation-duration:26.7s;animation-delay:-18.4s">
+      <path d="M 0 -5 C 4 -3 4 3 0 5 C -4 3 -4 -3 0 -5 Z M 0 -5 L 0 5" fill="#074352" stroke="#074352" stroke-width="0.4" /></g></g><g transform="translate(627.3, -16)"><g class="leaf" style="animation-duration:18.9s;animation-delay:-11.9s">
+      <path d="M 0 -5 C 4 -3 4 3 0 5 C -4 3 -4 -3 0 -5 Z M 0 -5 L 0 5" fill="#074352" stroke="#074352" stroke-width="0.4" /></g></g><g transform="translate(344.6, -16)"><g class="leaf" style="animation-duration:25.8s;animation-delay:-17.6s">
+      <path d="M 0 -5 C 4 -3 4 3 0 5 C -4 3 -4 -3 0 -5 Z M 0 -5 L 0 5" fill="#074352" stroke="#074352" stroke-width="0.4" /></g></g><g transform="translate(643.7, -16)"><g class="leaf" style="animation-duration:18.7s;animation-delay:-14.4s">
+      <path d="M 0 -5 C 4 -3 4 3 0 5 C -4 3 -4 -3 0 -5 Z M 0 -5 L 0 5" fill="#074352" stroke="#074352" stroke-width="0.4" /></g></g></g>
+
+    <!-- OVERHEAD CANOPY -->
+    <g class="cam-top">
+      <g><path d="M -7.2 -21 L -6.1 -14.9 L 5.6 -17.4 Z M -7.2 -21 L -3.9 -22.9 L 5.6 -17.4 Z M 5.6 -17.4 L 7.3 -6 L 18.4 -13.3 Z M 5.6 -17.4 L 12 -20.8 L 18.4 -13.3 Z M 18.4 -13.3 L 20.2 2.5 L 31.2 -8.6 Z M 18.4 -13.3 L 27.6 -17.6 L 31.2 -8.6 Z M 31.2 -8.6 L 32.8 10.3 L 44 -3.4 Z M 31.2 -8.6 L 42.5 -13.3 L 44 -3.4 Z M 44 -3.4 L 45.2 17.3 L 56.7 2.5 Z M 44 -3.4 L 56.7 -8 L 56.7 2.5 Z M 56.7 2.5 L 57.4 23.6 L 69.5 8.8 Z M 56.7 2.5 L 70 -1.8 L 69.5 8.8 Z M 69.5 8.8 L 69.6 29 L 82.3 15.8 Z M 69.5 8.8 L 82.5 5.2 L 82.3 15.8 Z M 82.3 15.8 L 81.9 33.9 L 95.1 23.3 Z M 82.3 15.8 L 94.3 12.9 L 95.1 23.3 Z M 95.1 23.3 L 94.4 38.5 L 107.9 31.4 Z M 95.1 23.3 L 105.3 21.2 L 107.9 31.4 Z M 107.9 31.4 L 107.1 43 L 120.7 40 Z M 107.9 31.4 L 115.8 30 L 120.7 40 Z M 120.7 40 L 120 47.7 L 133.5 49.2 Z M 120.7 40 L 126 39.3 L 133.5 49.2 Z M 133.5 49.2 L 133.1 52.9 L 146.3 58.9 Z M 133.5 49.2 L 136.1 48.9 L 146.3 58.9 Z " fill="#071725" /><path d="M -20 -24 Q 63.1 -0.1 146.3 58.9" fill="none" stroke="#071725" stroke-width="1.6" stroke-linecap="round" /><path d="M -11.4 -18 L -12 -12.5 L -2.8 -11.4 Z M -11.4 -18 L -7.5 -18.4 L -2.8 -11.4 Z M -2.8 -11.4 L -4.2 -1.2 L 5.8 -4.4 Z M -2.8 -11.4 L 4.5 -12 L 5.8 -4.4 Z M 5.8 -4.4 L 3.5 9.5 L 14.4 3.1 Z M 5.8 -4.4 L 16 -4.8 L 14.4 3.1 Z M 14.4 3.1 L 11.3 19.6 L 23 11 Z M 14.4 3.1 L 26.7 2.9 L 23 11 Z M 23 11 L 19.2 29 L 31.7 19.5 Z M 23 11 L 36.6 11.3 L 31.7 19.5 Z M 31.7 19.5 L 27.4 37.6 L 40.3 28.4 Z M 31.7 19.5 L 45.5 20.1 L 40.3 28.4 Z M 40.3 28.4 L 35.9 45.6 L 48.9 37.8 Z M 40.3 28.4 L 53.6 29.4 L 48.9 37.8 Z M 48.9 37.8 L 44.6 53.2 L 57.5 47.7 Z M 48.9 37.8 L 60.9 39 L 57.5 47.7 Z M 57.5 47.7 L 53.7 60.5 L 66.1 58 Z M 57.5 47.7 L 67.6 48.9 L 66.1 58 Z M 66.1 58 L 63 67.8 L 74.7 68.9 Z M 66.1 58 L 73.9 59.1 L 74.7 68.9 Z M 74.7 68.9 L 72.6 75.3 L 83.3 80.2 Z M 74.7 68.9 L 79.9 69.7 L 83.3 80.2 Z M 83.3 80.2 L 82.2 83.3 L 91.9 92 Z M 83.3 80.2 L 85.8 80.7 L 91.9 92 Z " fill="#071725" /><path d="M -20 -24 Q 36 19 91.9 92" fill="none" stroke="#071725" stroke-width="1.6" stroke-linecap="round" /><path d="M 43.4 -23.4 L 41.5 -19.5 L 46.9 -16.4 Z M 43.4 -23.4 L 46.9 -22.2 L 46.9 -16.4 Z M 46.9 -16.4 L 43.1 -9.3 L 50.3 -9.1 Z M 46.9 -16.4 L 53.3 -14 L 50.3 -9.1 Z M 50.3 -9.1 L 45 0.6 L 53.7 -1.5 Z M 50.3 -9.1 L 59.1 -5.7 L 53.7 -1.5 Z M 53.7 -1.5 L 47.3 10 L 57.2 6.5 Z M 53.7 -1.5 L 64.2 2.7 L 57.2 6.5 Z M 57.2 6.5 L 50 18.9 L 60.6 14.8 Z M 57.2 6.5 L 68.6 11.3 L 60.6 14.8 Z M 60.6 14.8 L 53.2 27.4 L 64 23.4 Z M 60.6 14.8 L 72.2 19.8 L 64 23.4 Z M 64 23.4 L 56.8 35.4 L 67.4 32.4 Z M 64 23.4 L 75.1 28.4 L 67.4 32.4 Z M 67.4 32.4 L 60.9 43.1 L 70.9 41.7 Z M 67.4 32.4 L 77.4 37 L 70.9 41.7 Z M 70.9 41.7 L 65.3 50.6 L 74.3 51.4 Z M 70.9 41.7 L 79.2 45.7 L 74.3 51.4 Z M 74.3 51.4 L 70 58.1 L 77.7 61.4 Z M 74.3 51.4 L 80.6 54.5 L 77.7 61.4 Z M 77.7 61.4 L 74.8 65.8 L 81.2 71.7 Z M 77.7 61.4 L 81.9 63.5 L 81.2 71.7 Z M 81.2 71.7 L 79.7 73.9 L 84.6 82.4 Z M 81.2 71.7 L 83.2 72.7 L 84.6 82.4 Z " fill="#071725" /><path d="M 40 -30 Q 62.3 15.6 84.6 82.4" fill="none" stroke="#071725" stroke-width="1.6" stroke-linecap="round" /><path d="M 887.2 -21 L 883.9 -22.9 L 874.4 -17.4 Z M 887.2 -21 L 886.1 -14.9 L 874.4 -17.4 Z M 874.4 -17.4 L 868 -20.8 L 861.6 -13.3 Z M 874.4 -17.4 L 872.7 -6 L 861.6 -13.3 Z M 861.6 -13.3 L 852.4 -17.6 L 848.8 -8.6 Z M 861.6 -13.3 L 859.8 2.5 L 848.8 -8.6 Z M 848.8 -8.6 L 837.5 -13.3 L 836 -3.4 Z M 848.8 -8.6 L 847.2 10.3 L 836 -3.4 Z M 836 -3.4 L 823.3 -8 L 823.3 2.5 Z M 836 -3.4 L 834.8 17.3 L 823.3 2.5 Z M 823.3 2.5 L 810 -1.8 L 810.5 8.8 Z M 823.3 2.5 L 822.6 23.6 L 810.5 8.8 Z M 810.5 8.8 L 797.5 5.2 L 797.7 15.8 Z M 810.5 8.8 L 810.4 29 L 797.7 15.8 Z M 797.7 15.8 L 785.7 12.9 L 784.9 23.3 Z M 797.7 15.8 L 798.1 33.9 L 784.9 23.3 Z M 784.9 23.3 L 774.7 21.2 L 772.1 31.4 Z M 784.9 23.3 L 785.6 38.5 L 772.1 31.4 Z M 772.1 31.4 L 764.2 30 L 759.3 40 Z M 772.1 31.4 L 772.9 43 L 759.3 40 Z M 759.3 40 L 754 39.3 L 746.5 49.2 Z M 759.3 40 L 760 47.7 L 746.5 49.2 Z M 746.5 49.2 L 743.9 48.9 L 733.7 58.9 Z M 746.5 49.2 L 746.9 52.9 L 733.7 58.9 Z " fill="#071725" /><path d="M 900 -24 Q 816.9 -0.1 733.7 58.9" fill="none" stroke="#071725" stroke-width="1.6" stroke-linecap="round" /><path d="M 891.4 -18 L 887.5 -18.4 L 882.8 -11.4 Z M 891.4 -18 L 892 -12.5 L 882.8 -11.4 Z M 882.8 -11.4 L 875.5 -12 L 874.2 -4.4 Z M 882.8 -11.4 L 884.2 -1.2 L 874.2 -4.4 Z M 874.2 -4.4 L 864 -4.8 L 865.6 3.1 Z M 874.2 -4.4 L 876.5 9.5 L 865.6 3.1 Z M 865.6 3.1 L 853.3 2.9 L 857 11 Z M 865.6 3.1 L 868.7 19.6 L 857 11 Z M 857 11 L 843.4 11.3 L 848.3 19.5 Z M 857 11 L 860.8 29 L 848.3 19.5 Z M 848.3 19.5 L 834.5 20.1 L 839.7 28.4 Z M 848.3 19.5 L 852.6 37.6 L 839.7 28.4 Z M 839.7 28.4 L 826.4 29.4 L 831.1 37.8 Z M 839.7 28.4 L 844.1 45.6 L 831.1 37.8 Z M 831.1 37.8 L 819.1 39 L 822.5 47.7 Z M 831.1 37.8 L 835.4 53.2 L 822.5 47.7 Z M 822.5 47.7 L 812.4 48.9 L 813.9 58 Z M 822.5 47.7 L 826.3 60.5 L 813.9 58 Z M 813.9 58 L 806.1 59.1 L 805.3 68.9 Z M 813.9 58 L 817 67.8 L 805.3 68.9 Z M 805.3 68.9 L 800.1 69.7 L 796.7 80.2 Z M 805.3 68.9 L 807.4 75.3 L 796.7 80.2 Z M 796.7 80.2 L 794.2 80.7 L 788.1 92 Z M 796.7 80.2 L 797.8 83.3 L 788.1 92 Z " fill="#071725" /><path d="M 900 -24 Q 844 19 788.1 92" fill="none" stroke="#071725" stroke-width="1.6" stroke-linecap="round" /><path d="M 836.6 -23.4 L 833.1 -22.2 L 833.1 -16.4 Z M 836.6 -23.4 L 838.5 -19.5 L 833.1 -16.4 Z M 833.1 -16.4 L 826.7 -14 L 829.7 -9.1 Z M 833.1 -16.4 L 836.9 -9.3 L 829.7 -9.1 Z M 829.7 -9.1 L 820.9 -5.7 L 826.3 -1.5 Z M 829.7 -9.1 L 835 0.6 L 826.3 -1.5 Z M 826.3 -1.5 L 815.8 2.7 L 822.8 6.5 Z M 826.3 -1.5 L 832.7 10 L 822.8 6.5 Z M 822.8 6.5 L 811.4 11.3 L 819.4 14.8 Z M 822.8 6.5 L 830 18.9 L 819.4 14.8 Z M 819.4 14.8 L 807.8 19.8 L 816 23.4 Z M 819.4 14.8 L 826.8 27.4 L 816 23.4 Z M 816 23.4 L 804.9 28.4 L 812.6 32.4 Z M 816 23.4 L 823.2 35.4 L 812.6 32.4 Z M 812.6 32.4 L 802.6 37 L 809.1 41.7 Z M 812.6 32.4 L 819.1 43.1 L 809.1 41.7 Z M 809.1 41.7 L 800.8 45.7 L 805.7 51.4 Z M 809.1 41.7 L 814.7 50.6 L 805.7 51.4 Z M 805.7 51.4 L 799.4 54.5 L 802.3 61.4 Z M 805.7 51.4 L 810 58.1 L 802.3 61.4 Z M 802.3 61.4 L 798.1 63.5 L 798.8 71.7 Z M 802.3 61.4 L 805.2 65.8 L 798.8 71.7 Z M 798.8 71.7 L 796.8 72.7 L 795.4 82.4 Z M 798.8 71.7 L 800.3 73.9 L 795.4 82.4 Z " fill="#071725" /><path d="M 840 -30 Q 817.7 15.6 795.4 82.4" fill="none" stroke="#071725" stroke-width="1.6" stroke-linecap="round" /></g>
+      <g><g transform="translate(92, 0)"><g class="vine vine-a" style="animation-delay:-1.2s">
+      <path d="M 0 -5 Q 23.4 56 0 112" fill="none" stroke="#030c13" stroke-width="1.6" stroke-linecap="round" />
+      <path d="M 10.4 39.2 q 6 -4 9 1 q -4 4 -9 -1 Z" fill="#030c13" /><path d="M 11.1 67.2 q -6 -4 -9 1 q 4 4 9 -1 Z" fill="#030c13" /><path d="M 6.3 91.8 q 6 -4 9 1 q -4 4 -9 -1 Z" fill="#030c13" />
+      <circle cx="0" cy="114" r="7" fill="url(#bud-glow)" />
+      <circle cx="0" cy="114" r="1.7" fill="#00f2fe" />
+    </g></g><g transform="translate(138, 0)"><g class="vine vine-b" style="animation-delay:-0.9s">
+      <path d="M 0 -5 Q -21.4 37 0 74" fill="none" stroke="#030c13" stroke-width="1.6" stroke-linecap="round" />
+      <path d="M -9.5 25.9 q 6 -4 9 1 q -4 4 -9 -1 Z" fill="#030c13" /><path d="M -10.2 44.4 q -6 -4 -9 1 q 4 4 9 -1 Z" fill="#030c13" /><path d="M -5.7 60.7 q 6 -4 9 1 q -4 4 -9 -1 Z" fill="#030c13" />
+      <circle cx="0" cy="76" r="7" fill="url(#bud-glow)" />
+      <circle cx="0" cy="76" r="1.7" fill="#00f2fe" />
+    </g></g><g transform="translate(196, 0)"><g class="vine vine-a" style="animation-delay:-3.6s">
+      <path d="M 0 -5 Q 18.4 22 0 44" fill="none" stroke="#030c13" stroke-width="1.6" stroke-linecap="round" />
+      <path d="M 8.2 15.4 q 6 -4 9 1 q -4 4 -9 -1 Z" fill="#030c13" /><path d="M 8.7 26.4 q -6 -4 -9 1 q 4 4 9 -1 Z" fill="#030c13" /><path d="M 4.9 36.1 q 6 -4 9 1 q -4 4 -9 -1 Z" fill="#030c13" />
+      <circle cx="0" cy="46" r="7" fill="url(#bud-glow)" />
+      <circle cx="0" cy="46" r="1.7" fill="#00f2fe" />
+    </g></g><g transform="translate(788, 0)"><g class="vine vine-b" style="animation-delay:-0.2s">
+      <path d="M 0 -5 Q -23.1 52 0 104" fill="none" stroke="#030c13" stroke-width="1.6" stroke-linecap="round" />
+      <path d="M -10.3 36.4 q 6 -4 9 1 q -4 4 -9 -1 Z" fill="#030c13" /><path d="M -11 62.4 q -6 -4 -9 1 q 4 4 9 -1 Z" fill="#030c13" /><path d="M -6.2 85.3 q 6 -4 9 1 q -4 4 -9 -1 Z" fill="#030c13" />
+      <circle cx="0" cy="106" r="7" fill="url(#bud-glow)" />
+      <circle cx="0" cy="106" r="1.7" fill="#00f2fe" />
+    </g></g><g transform="translate(742, 0)"><g class="vine vine-a" style="animation-delay:-4.1s">
+      <path d="M 0 -5 Q 23.6 33 0 66" fill="none" stroke="#030c13" stroke-width="1.6" stroke-linecap="round" />
+      <path d="M 10.5 23.1 q 6 -4 9 1 q -4 4 -9 -1 Z" fill="#030c13" /><path d="M 11.2 39.6 q -6 -4 -9 1 q 4 4 9 -1 Z" fill="#030c13" /><path d="M 6.3 54.1 q 6 -4 9 1 q -4 4 -9 -1 Z" fill="#030c13" />
+      <circle cx="0" cy="68" r="7" fill="url(#bud-glow)" />
+      <circle cx="0" cy="68" r="1.7" fill="#00f2fe" />
+    </g></g><g transform="translate(690, 0)"><g class="vine vine-b" style="animation-delay:-5.7s">
+      <path d="M 0 -5 Q -18.4 20 0 40" fill="none" stroke="#030c13" stroke-width="1.6" stroke-linecap="round" />
+      <path d="M -8.2 14 q 6 -4 9 1 q -4 4 -9 -1 Z" fill="#030c13" /><path d="M -8.7 24 q -6 -4 -9 1 q 4 4 9 -1 Z" fill="#030c13" /><path d="M -4.9 32.8 q 6 -4 9 1 q -4 4 -9 -1 Z" fill="#030c13" />
+      <circle cx="0" cy="42" r="7" fill="url(#bud-glow)" />
+      <circle cx="0" cy="42" r="1.7" fill="#00f2fe" />
+    </g></g></g>
+      <g><path d="M -21.6 -26 L -21.5 -20.5 L -13.1 -21.6 Z M -21.6 -26 L -18 -27 L -13.1 -21.6 Z M -13.1 -21.6 L -13.3 -11.3 L -4.7 -16.7 Z M -13.1 -21.6 L -6.4 -23.2 L -4.7 -16.7 Z M -4.7 -16.7 L -5.4 -2.5 L 3.7 -11.3 Z M -4.7 -16.7 L 4.8 -18.6 L 3.7 -11.3 Z M 3.7 -11.3 L 2.4 5.5 L 12.2 -5.5 Z M 3.7 -11.3 L 15.3 -13.2 L 12.2 -5.5 Z M 12.2 -5.5 L 10.3 12.8 L 20.6 0.7 Z M 12.2 -5.5 L 25 -7.1 L 20.6 0.7 Z M 20.6 0.7 L 18.2 19.3 L 29 7.4 Z M 20.6 0.7 L 33.8 -0.4 L 29 7.4 Z M 29 7.4 L 26.3 25.1 L 37.5 14.6 Z M 29 7.4 L 41.9 6.7 L 37.5 14.6 Z M 37.5 14.6 L 34.6 30.4 L 45.9 22.2 Z M 37.5 14.6 L 49.1 14.3 L 45.9 22.2 Z M 45.9 22.2 L 43.2 35.4 L 54.3 30.3 Z M 45.9 22.2 L 55.8 22.3 L 54.3 30.3 Z M 54.3 30.3 L 52.1 40.3 L 62.8 38.8 Z M 54.3 30.3 L 61.9 30.5 L 62.8 38.8 Z M 62.8 38.8 L 61.1 45.4 L 71.2 47.8 Z M 62.8 38.8 L 67.8 39.1 L 71.2 47.8 Z M 71.2 47.8 L 70.3 51 L 79.6 57.2 Z M 71.2 47.8 L 73.7 48 L 79.6 57.2 Z " fill="#030c13" /><path d="M -30 -30 Q 24.8 -0.6 79.6 57.2" fill="none" stroke="#030c13" stroke-width="2.2" stroke-linecap="round" /><path d="M -25.5 -24.1 L -27.1 -19.6 L -21 -17.8 Z M -25.5 -24.1 L -21.8 -23.4 L -21 -17.8 Z M -21 -17.8 L -24.2 -9.5 L -16.5 -11.1 Z M -21 -17.8 L -14.1 -16.3 L -16.5 -11.1 Z M -16.5 -11.1 L -21 0.1 L -12 -4.1 Z M -16.5 -11.1 L -7 -8.8 L -12 -4.1 Z M -12 -4.1 L -17.6 9.2 L -7.5 3.3 Z M -12 -4.1 L -0.7 -1.1 L -7.5 3.3 Z M -7.5 3.3 L -13.9 17.7 L -3 11 Z M -7.5 3.3 L 4.8 6.8 L -3 11 Z M -3 11 L -9.7 25.5 L 1.5 19.1 Z M -3 11 L 9.6 14.8 L 1.5 19.1 Z M 1.5 19.1 L -5.1 32.9 L 6 27.6 Z M 1.5 19.1 L 13.5 23 L 6 27.6 Z M 6 27.6 L -0.1 39.8 L 10.5 36.4 Z M 6 27.6 L 16.8 31.2 L 10.5 36.4 Z M 10.5 36.4 L 5.3 46.6 L 15 45.6 Z M 10.5 36.4 L 19.5 39.6 L 15 45.6 Z M 15 45.6 L 10.9 53.3 L 19.5 55.1 Z M 15 45.6 L 21.9 48.1 L 19.5 55.1 Z M 19.5 55.1 L 16.7 60.2 L 24 65 Z M 19.5 55.1 L 24.1 56.9 L 24 65 Z M 24 65 L 22.6 67.5 L 28.5 75.3 Z M 24 65 L 26.2 65.9 L 28.5 75.3 Z " fill="#030c13" /><path d="M -30 -30 Q -0.8 11.4 28.5 75.3" fill="none" stroke="#030c13" stroke-width="2.2" stroke-linecap="round" /><path d="M -22.7 30.7 L -21.6 35 L -15.4 31.9 Z M -22.7 30.7 L -20.6 29.1 L -15.4 31.9 Z M -15.4 31.9 L -13.6 40.1 L -8.1 33.6 Z M -15.4 31.9 L -11.2 29.1 L -8.1 33.6 Z M -8.1 33.6 L -6.2 44.9 L -0.8 35.6 Z M -8.1 33.6 L -1.9 30 L -0.8 35.6 Z M -0.8 35.6 L 0.9 49.2 L 6.4 38.2 Z M -0.8 35.6 L 7 31.8 L 6.4 38.2 Z M 6.4 38.2 L 7.8 53.1 L 13.7 41.2 Z M 6.4 38.2 L 15.4 34.5 L 13.7 41.2 Z M 13.7 41.2 L 14.5 56.4 L 21 44.6 Z M 13.7 41.2 L 23.2 37.9 L 21 44.6 Z M 21 44.6 L 21.2 59.2 L 28.3 48.5 Z M 21 44.6 L 30.4 41.9 L 28.3 48.5 Z M 28.3 48.5 L 28 61.6 L 35.6 52.8 Z M 28.3 48.5 L 37 46.5 L 35.6 52.8 Z M 35.6 52.8 L 35 63.8 L 42.9 57.6 Z M 35.6 52.8 L 43 51.4 L 42.9 57.6 Z M 42.9 57.6 L 42.1 65.9 L 50.2 62.8 Z M 42.9 57.6 L 48.7 56.8 L 50.2 62.8 Z M 50.2 62.8 L 49.5 68.3 L 57.5 68.5 Z M 50.2 62.8 L 54.1 62.4 L 57.5 68.5 Z M 57.5 68.5 L 57.1 71.2 L 64.8 74.6 Z M 57.5 68.5 L 59.4 68.4 L 64.8 74.6 Z " fill="#030c13" /><path d="M -30 30 Q 17.4 38.3 64.8 74.6" fill="none" stroke="#030c13" stroke-width="2.2" stroke-linecap="round" /><path d="M 901.6 -26 L 898 -27 L 893.1 -21.6 Z M 901.6 -26 L 901.5 -20.5 L 893.1 -21.6 Z M 893.1 -21.6 L 886.4 -23.2 L 884.7 -16.7 Z M 893.1 -21.6 L 893.3 -11.3 L 884.7 -16.7 Z M 884.7 -16.7 L 875.2 -18.6 L 876.3 -11.3 Z M 884.7 -16.7 L 885.4 -2.5 L 876.3 -11.3 Z M 876.3 -11.3 L 864.7 -13.2 L 867.8 -5.5 Z M 876.3 -11.3 L 877.6 5.5 L 867.8 -5.5 Z M 867.8 -5.5 L 855 -7.1 L 859.4 0.7 Z M 867.8 -5.5 L 869.7 12.8 L 859.4 0.7 Z M 859.4 0.7 L 846.2 -0.4 L 851 7.4 Z M 859.4 0.7 L 861.8 19.3 L 851 7.4 Z M 851 7.4 L 838.1 6.7 L 842.5 14.6 Z M 851 7.4 L 853.7 25.1 L 842.5 14.6 Z M 842.5 14.6 L 830.9 14.3 L 834.1 22.2 Z M 842.5 14.6 L 845.4 30.4 L 834.1 22.2 Z M 834.1 22.2 L 824.2 22.3 L 825.7 30.3 Z M 834.1 22.2 L 836.8 35.4 L 825.7 30.3 Z M 825.7 30.3 L 818.1 30.5 L 817.2 38.8 Z M 825.7 30.3 L 827.9 40.3 L 817.2 38.8 Z M 817.2 38.8 L 812.2 39.1 L 808.8 47.8 Z M 817.2 38.8 L 818.9 45.4 L 808.8 47.8 Z M 808.8 47.8 L 806.3 48 L 800.4 57.2 Z M 808.8 47.8 L 809.7 51 L 800.4 57.2 Z " fill="#030c13" /><path d="M 910 -30 Q 855.2 -0.6 800.4 57.2" fill="none" stroke="#030c13" stroke-width="2.2" stroke-linecap="round" /><path d="M 905.5 -24.1 L 901.8 -23.4 L 901 -17.8 Z M 905.5 -24.1 L 907.1 -19.6 L 901 -17.8 Z M 901 -17.8 L 894.1 -16.3 L 896.5 -11.1 Z M 901 -17.8 L 904.2 -9.5 L 896.5 -11.1 Z M 896.5 -11.1 L 887 -8.8 L 892 -4.1 Z M 896.5 -11.1 L 901 0.1 L 892 -4.1 Z M 892 -4.1 L 880.7 -1.1 L 887.5 3.3 Z M 892 -4.1 L 897.6 9.2 L 887.5 3.3 Z M 887.5 3.3 L 875.2 6.8 L 883 11 Z M 887.5 3.3 L 893.9 17.7 L 883 11 Z M 883 11 L 870.4 14.8 L 878.5 19.1 Z M 883 11 L 889.7 25.5 L 878.5 19.1 Z M 878.5 19.1 L 866.5 23 L 874 27.6 Z M 878.5 19.1 L 885.1 32.9 L 874 27.6 Z M 874 27.6 L 863.2 31.2 L 869.5 36.4 Z M 874 27.6 L 880.1 39.8 L 869.5 36.4 Z M 869.5 36.4 L 860.5 39.6 L 865 45.6 Z M 869.5 36.4 L 874.7 46.6 L 865 45.6 Z M 865 45.6 L 858.1 48.1 L 860.5 55.1 Z M 865 45.6 L 869.1 53.3 L 860.5 55.1 Z M 860.5 55.1 L 855.9 56.9 L 856 65 Z M 860.5 55.1 L 863.3 60.2 L 856 65 Z M 856 65 L 853.8 65.9 L 851.5 75.3 Z M 856 65 L 857.4 67.5 L 851.5 75.3 Z " fill="#030c13" /><path d="M 910 -30 Q 880.8 11.4 851.5 75.3" fill="none" stroke="#030c13" stroke-width="2.2" stroke-linecap="round" /><path d="M 902.7 30.7 L 900.6 29.1 L 895.4 31.9 Z M 902.7 30.7 L 901.6 35 L 895.4 31.9 Z M 895.4 31.9 L 891.2 29.1 L 888.1 33.6 Z M 895.4 31.9 L 893.6 40.1 L 888.1 33.6 Z M 888.1 33.6 L 881.9 30 L 880.8 35.6 Z M 888.1 33.6 L 886.2 44.9 L 880.8 35.6 Z M 880.8 35.6 L 873 31.8 L 873.6 38.2 Z M 880.8 35.6 L 879.1 49.2 L 873.6 38.2 Z M 873.6 38.2 L 864.6 34.5 L 866.3 41.2 Z M 873.6 38.2 L 872.2 53.1 L 866.3 41.2 Z M 866.3 41.2 L 856.8 37.9 L 859 44.6 Z M 866.3 41.2 L 865.5 56.4 L 859 44.6 Z M 859 44.6 L 849.6 41.9 L 851.7 48.5 Z M 859 44.6 L 858.8 59.2 L 851.7 48.5 Z M 851.7 48.5 L 843 46.5 L 844.4 52.8 Z M 851.7 48.5 L 852 61.6 L 844.4 52.8 Z M 844.4 52.8 L 837 51.4 L 837.1 57.6 Z M 844.4 52.8 L 845 63.8 L 837.1 57.6 Z M 837.1 57.6 L 831.3 56.8 L 829.8 62.8 Z M 837.1 57.6 L 837.9 65.9 L 829.8 62.8 Z M 829.8 62.8 L 825.9 62.4 L 822.5 68.5 Z M 829.8 62.8 L 830.5 68.3 L 822.5 68.5 Z M 822.5 68.5 L 820.6 68.4 L 815.2 74.6 Z M 822.5 68.5 L 822.9 71.2 L 815.2 74.6 Z " fill="#030c13" /><path d="M 910 30 Q 862.6 38.3 815.2 74.6" fill="none" stroke="#030c13" stroke-width="2.2" stroke-linecap="round" /></g>
+    </g>
+
+    <!-- COLOR GRADE -->
+    <rect width="880" height="400" fill="url(#vignette)" />
+    <rect width="880" height="400" fill="url(#letterbox)" />
+    <rect width="880" height="400" filter="url(#grain)" opacity="0.045" />
+
+    <!-- HUD -->
+    <g display="inline">
+    <g transform="translate(34, 0)">
+      <text x="0" y="36" class="t-eyebrow">THE GHOST JUNGLE</text>
+      <text x="0" y="60" class="t-title">AtlasRoX</text>
+    </g>
+    <g>
+      <text x="642" y="36" text-anchor="end" class="t-label">FOLLOWERS</text>
+      <text x="642" y="56" text-anchor="end" class="t-stat">6</text>
+      <line x1="656" y1="28" x2="656" y2="57" stroke="#e0f2fe" stroke-opacity="0.14" />
+      <text x="552.6" y="36" text-anchor="end" class="t-label">STARS</text>
+      <text x="552.6" y="56" text-anchor="end" class="t-stat">0</text>
+      <line x1="566.6" y1="28" x2="566.6" y2="57" stroke="#e0f2fe" stroke-opacity="0.14" />
+      <text x="491.2" y="36" text-anchor="end" class="t-label">COMMITS</text>
+      <text x="491.2" y="56" text-anchor="end" class="t-stat">705</text>
+      <line x1="505.2" y1="28" x2="505.2" y2="57" stroke="#e0f2fe" stroke-opacity="0.14" />
+      <text x="415.8" y="36" text-anchor="end" class="t-label">SPIRITS</text>
+      <text x="415.8" y="56" text-anchor="end" class="t-stat">63</text>
+      <line x1="429.8" y1="28" x2="429.8" y2="57" stroke="#e0f2fe" stroke-opacity="0.14" /></g>
+
+    <!-- RANK -->
+    <g>
+      <text x="789" y="40" text-anchor="end" class="t-rank" fill="#cbd5e1">Whispering Sprout</text>
+      <text x="789" y="55" text-anchor="end" class="t-label">TOP 62%</text>
+      <g transform="translate(824, 44)">
+        <circle r="27" fill="#cbd5e1" opacity="0.08" />
+        <circle r="21" fill="none" stroke="#e0f2fe" stroke-opacity="0.12" stroke-width="2.5" />
+        <circle r="21" fill="none" stroke="#cbd5e1" stroke-width="2.5" stroke-linecap="round"
+                stroke-dasharray="50.6 131.9" transform="rotate(-90)" filter="url(#core-glow)"
+                style="animation: dial 2.4s cubic-bezier(.16,1,.3,1) both" />
+        <text x="0" y="5" text-anchor="middle" class="t-grade" fill="#cbd5e1">C</text>
+      </g>
+    </g>
+
+    <!-- CREDIT -->
+    <text x="864" y="389" text-anchor="end" class="t-mark">@AtlasRoX</text>
+    </g>
+  </g>
+
+  <rect x="0.5" y="0.5" width="879" height="399" rx="17.5" fill="none" stroke="#e0f2fe" stroke-opacity="0.12" />
+</svg>
