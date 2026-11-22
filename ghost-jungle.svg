@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="gj-title gj-desc">
   <title id="gj-title">AtlasRoX's Ghost Jungle</title>
-  <desc id="gj-desc">65 repository spirits: kairos (229 commits), TribosAI (113 commits), super-fiesta (57 commits), DarkFlags (30 commits), Drafo (26 commits), everything101 (22 commits), Bookstore-JAVA (17 commits), Ghost-Jungle (16 commits), ovijaan (13 commits), verbose-octo-system (13 commits). Showing 10 of 65. 726 commits, 0 stars, 6 followers. Canopy rank C Whispering Sprout, top 61%.</desc>
+  <desc id="gj-desc">65 repository spirits: kairos (229 commits), TribosAI (113 commits), super-fiesta (57 commits), DarkFlags (30 commits), Drafo (26 commits), everything101 (22 commits), Ghost-Jungle (17 commits), Bookstore-JAVA (17 commits), ovijaan (13 commits), verbose-octo-system (13 commits). Showing 10 of 65. 727 commits, 0 stars, 6 followers. Canopy rank C Whispering Sprout, top 61%.</desc>
   <defs>
     <clipPath id="frame"><rect width="880" height="400" rx="18" /></clipPath>
 
@@ -570,45 +570,45 @@
   <defs>
     <linearGradient id="gb-g6" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#ffffff" stop-opacity="0.97" />
-      <stop offset="45%" stop-color="#e7d5ba" stop-opacity="0.9" />
-      <stop offset="80%" stop-color="#b07219" stop-opacity="0.45" />
-      <stop offset="100%" stop-color="#b07219" stop-opacity="0" />
+      <stop offset="45%" stop-color="#fbf6ce" stop-opacity="0.9" />
+      <stop offset="80%" stop-color="#f1e05a" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#f1e05a" stop-opacity="0" />
     </linearGradient>
     <linearGradient id="gs-g6" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#e7d5ba" stop-opacity="0.5" />
-      <stop offset="100%" stop-color="#b07219" stop-opacity="0" />
+      <stop offset="0%" stop-color="#fbf6ce" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#f1e05a" stop-opacity="0" />
     </linearGradient>
     <radialGradient id="soul-g6">
-      <stop offset="0%" stop-color="#b07219" stop-opacity="0.95" />
-      <stop offset="45%" stop-color="#b07219" stop-opacity="0.35" />
-      <stop offset="100%" stop-color="#b07219" stop-opacity="0" />
+      <stop offset="0%" stop-color="#f1e05a" stop-opacity="0.95" />
+      <stop offset="45%" stop-color="#f1e05a" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#f1e05a" stop-opacity="0" />
     </radialGradient>
     <radialGradient id="aura-g6">
-      <stop offset="0%" stop-color="#b07219" stop-opacity="0.30" />
-      <stop offset="100%" stop-color="#b07219" stop-opacity="0" />
+      <stop offset="0%" stop-color="#f1e05a" stop-opacity="0.30" />
+      <stop offset="100%" stop-color="#f1e05a" stop-opacity="0" />
     </radialGradient>
     <linearGradient id="hood-g6" x1="0.2" y1="0" x2="0.8" y2="1">
-      <stop offset="0%" stop-color="#7c6441" stop-opacity="0.95" />
-      <stop offset="100%" stop-color="#3f3225" stop-opacity="0.95" />
+      <stop offset="0%" stop-color="#9c9b62" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#535338" stop-opacity="0.95" />
     </linearGradient>
     <linearGradient id="antler-g6" x1="0" y1="1" x2="0" y2="0">
-      <stop offset="0%" stop-color="#e7d5ba" />
-      <stop offset="100%" stop-color="#b07219" />
+      <stop offset="0%" stop-color="#fbf6ce" />
+      <stop offset="100%" stop-color="#f1e05a" />
     </linearGradient>
     <path id="body-g6" d="M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 16.4 11.3 15.8 20 13.2 25 Q 9 29.8 4.9 22.3 Q 0.7 31.9 -3.4 24.1 Q -7.6 28.4 -11.8 24 Q -15.9 28.6 -20.1 25 C -19.9 20 -17.6 11.3 -17 0 Z"><animate attributeName="d" dur="3s" begin="-3.3s" repeatCount="indefinite" calcMode="spline"
       keyTimes="0;0.25;0.5;0.75;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" values="M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 16.4 11.3 15.8 20 13.2 25 Q 9 29.8 4.9 22.3 Q 0.7 31.9 -3.4 24.1 Q -7.6 28.4 -11.8 24 Q -15.9 28.6 -20.1 25 C -19.9 20 -17.6 11.3 -17 0 Z;M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 17.7 11.3 18.8 20 17.3 25 Q 13.1 32 8.9 23.8 Q 4.8 29.1 0.6 24.3 Q -3.6 28 -7.7 22.5 Q -11.9 31.7 -16.1 25 C -16.9 20 -16.3 11.3 -17 0 Z;M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 17.6 11.3 19.9 20 20.1 25 Q 15.9 29.8 11.8 24.5 Q 7.6 27.7 3.4 22.7 Q -0.7 31.2 -4.9 22.8 Q -9 31 -13.2 25 C -15.8 20 -16.4 11.3 -17 0 Z;M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 16.3 11.3 16.9 20 16.1 25 Q 11.9 27.6 7.7 23 Q 3.6 30.5 -0.6 22.5 Q -4.8 31.6 -8.9 24.3 Q -13.1 27.9 -17.3 25 C -18.8 20 -17.7 11.3 -17 0 Z;M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 16.4 11.3 15.8 20 13.2 25 Q 9 29.8 4.9 22.3 Q 0.7 31.9 -3.4 24.1 Q -7.6 28.4 -11.8 24 Q -15.9 28.6 -20.1 25 C -19.9 20 -17.6 11.3 -17 0 Z" /></path>
       <clipPath id="clip-g6"><use href="#body-g6" /></clipPath>
   </defs>
-  <a href="https://github.com/AtlasRoX/Bookstore-JAVA" target="_blank" rel="noopener noreferrer">
+  <a href="https://github.com/AtlasRoX/Ghost-Jungle" target="_blank" rel="noopener noreferrer">
   <g class="ghost" id="ghost-6" data-index="6" data-x="562.5" data-y="124.4" data-scale="0.716" data-tier="2" transform="translate(562.5, 124.4)"><animateMotion path="M 0 0 C 25.5 17.7 -510.4 99.4 -446.1 126.8 C -381.7 154.2 250 167 385.8 164.4 C 521.7 161.8 514.6 114.2 369.2 111.2 C 223.7 108.3 -412.8 149.4 -486.9 146.7 C -560.9 144.1 -56.2 116.4 -74.9 95.4 C -93.6 74.5 -611.6 36.8 -599.2 20.9 C -586.7 5 -25.5 -17.7 0 0" keyPoints="0;0.121;0.121;0.332;0.332;0.389;0.389;0.605;0.605;0.714;0.848;0.848;1;1" keyTimes="0;0.11;0.127;0.318;0.337;0.389;0.398;0.595;0.613;0.712;0.834;0.85;0.988;1" calcMode="spline" keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1" begin="-0s" dur="175.5s" repeatCount="indefinite" />
-    <title>Bookstore-JAVA · Forest Specter · 17 commits</title>
+    <title>Ghost-Jungle · Forest Specter · 17 commits</title>
    <g class="g-fade" opacity="0.62"><animate attributeName="opacity" values="0.62;0.903;0.903;0.986;0.986;0.868;0.868;0.947;0.947;0.833;0.667;0.667;0.62;0.62" keyTimes="0;0.11;0.127;0.318;0.337;0.389;0.398;0.595;0.613;0.712;0.834;0.85;0.988;1" calcMode="spline" keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1" begin="-0s" dur="175.5s" repeatCount="indefinite" />
     <g class="g-act">
      <g class="g-scale" transform="scale(0.716)"><animateTransform attributeName="transform" type="scale" values="0.716;0.889;0.889;0.94;0.94;0.867;0.867;0.916;0.916;0.846;0.744;0.744;0.716;0.716" keyTimes="0;0.11;0.127;0.318;0.337;0.389;0.398;0.595;0.613;0.712;0.834;0.85;0.988;1" calcMode="spline" keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1" begin="-0s" dur="175.5s" repeatCount="indefinite" />
       <ellipse cx="0" cy="54" rx="37.4" ry="7" fill="url(#aura-g6)" />
-      <circle class="ecto" cx="-13.6" cy="25" r="1.4" fill="#e7d5ba"
-      style="--dx:-4px;animation-delay:-3.3s;animation-duration:3.2s" /><circle class="ecto" cx="2.7" cy="25" r="2" fill="#e7d5ba"
-      style="--dx:2px;animation-delay:-4.5s;animation-duration:3.9s" /><circle class="ecto" cx="15" cy="25" r="1.4" fill="#e7d5ba"
+      <circle class="ecto" cx="-13.6" cy="25" r="1.4" fill="#fbf6ce"
+      style="--dx:-4px;animation-delay:-3.3s;animation-duration:3.2s" /><circle class="ecto" cx="2.7" cy="25" r="2" fill="#fbf6ce"
+      style="--dx:2px;animation-delay:-4.5s;animation-duration:3.9s" /><circle class="ecto" cx="15" cy="25" r="1.4" fill="#fbf6ce"
       style="--dx:8px;animation-delay:-5.7s;animation-duration:4.6s" />
       <g class="float" style="animation-duration:4.9s;animation-delay:-3.3s">
         <g class="tilt" style="animation-duration:7s;animation-delay:-3.3s">
@@ -630,8 +630,8 @@
         </g>
         <circle cx="-5.4" cy="-9.2" r="1" fill="#ffffff" />
         <circle cx="7" cy="-9.2" r="1" fill="#ffffff" />
-        <circle cx="-6.9" cy="-6.6" r="0.5" fill="#b07219" opacity="0.9" />
-        <circle cx="5.5" cy="-6.6" r="0.5" fill="#b07219" opacity="0.9" />
+        <circle cx="-6.9" cy="-6.6" r="0.5" fill="#f1e05a" opacity="0.9" />
+        <circle cx="5.5" cy="-6.6" r="0.5" fill="#f1e05a" opacity="0.9" />
       </g>
       <path d="M -2 -1 Q 0 1 2 -1" fill="none" stroke="#0a0f1e" stroke-width="1" stroke-linecap="round" />
         </g>
@@ -639,7 +639,7 @@
      </g>
     </g>
     <g class="caption" data-gap="38" transform="translate(0, 41.2)"><animateTransform attributeName="transform" type="translate" values="0 41.2;0 47.8;0 47.8;0 49.7;0 49.7;0 46.9;0 46.9;0 48.8;0 48.8;0 46.1;0 42.3;0 42.3;0 41.2;0 41.2" keyTimes="0;0.11;0.127;0.318;0.337;0.389;0.398;0.595;0.613;0.712;0.834;0.85;0.988;1" calcMode="spline" keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1" begin="-0s" dur="175.5s" repeatCount="indefinite" />
-      <text x="0" y="0" text-anchor="middle" class="t-name">Bookstore-JAVA</text>
+      <text x="0" y="0" text-anchor="middle" class="t-name">Ghost-Jungle</text>
       <text x="0" y="13" text-anchor="middle" class="t-meta" fill="#6ee7b7">SPECTER · 17</text>
     </g>
    </g>
@@ -966,45 +966,45 @@
   <defs>
     <linearGradient id="gb-g7" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#ffffff" stop-opacity="0.97" />
-      <stop offset="45%" stop-color="#fbf6ce" stop-opacity="0.9" />
-      <stop offset="80%" stop-color="#f1e05a" stop-opacity="0.45" />
-      <stop offset="100%" stop-color="#f1e05a" stop-opacity="0" />
+      <stop offset="45%" stop-color="#e7d5ba" stop-opacity="0.9" />
+      <stop offset="80%" stop-color="#b07219" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#b07219" stop-opacity="0" />
     </linearGradient>
     <linearGradient id="gs-g7" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#fbf6ce" stop-opacity="0.5" />
-      <stop offset="100%" stop-color="#f1e05a" stop-opacity="0" />
+      <stop offset="0%" stop-color="#e7d5ba" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#b07219" stop-opacity="0" />
     </linearGradient>
     <radialGradient id="soul-g7">
-      <stop offset="0%" stop-color="#f1e05a" stop-opacity="0.95" />
-      <stop offset="45%" stop-color="#f1e05a" stop-opacity="0.35" />
-      <stop offset="100%" stop-color="#f1e05a" stop-opacity="0" />
+      <stop offset="0%" stop-color="#b07219" stop-opacity="0.95" />
+      <stop offset="45%" stop-color="#b07219" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#b07219" stop-opacity="0" />
     </radialGradient>
     <radialGradient id="aura-g7">
-      <stop offset="0%" stop-color="#f1e05a" stop-opacity="0.30" />
-      <stop offset="100%" stop-color="#f1e05a" stop-opacity="0" />
+      <stop offset="0%" stop-color="#b07219" stop-opacity="0.30" />
+      <stop offset="100%" stop-color="#b07219" stop-opacity="0" />
     </radialGradient>
     <linearGradient id="hood-g7" x1="0.2" y1="0" x2="0.8" y2="1">
-      <stop offset="0%" stop-color="#9c9b62" stop-opacity="0.95" />
-      <stop offset="100%" stop-color="#535338" stop-opacity="0.95" />
+      <stop offset="0%" stop-color="#7c6441" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#3f3225" stop-opacity="0.95" />
     </linearGradient>
     <linearGradient id="antler-g7" x1="0" y1="1" x2="0" y2="0">
-      <stop offset="0%" stop-color="#fbf6ce" />
-      <stop offset="100%" stop-color="#f1e05a" />
+      <stop offset="0%" stop-color="#e7d5ba" />
+      <stop offset="100%" stop-color="#b07219" />
     </linearGradient>
     <path id="body-g7" d="M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 16.4 11.3 15.8 20 13.2 25 Q 9 29.8 4.9 22.3 Q 0.7 31.9 -3.4 24.1 Q -7.6 28.4 -11.8 24 Q -15.9 28.6 -20.1 25 C -19.9 20 -17.6 11.3 -17 0 Z"><animate attributeName="d" dur="3s" begin="-4.7s" repeatCount="indefinite" calcMode="spline"
       keyTimes="0;0.25;0.5;0.75;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" values="M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 16.4 11.3 15.8 20 13.2 25 Q 9 29.8 4.9 22.3 Q 0.7 31.9 -3.4 24.1 Q -7.6 28.4 -11.8 24 Q -15.9 28.6 -20.1 25 C -19.9 20 -17.6 11.3 -17 0 Z;M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 17.7 11.3 18.8 20 17.3 25 Q 13.1 32 8.9 23.8 Q 4.8 29.1 0.6 24.3 Q -3.6 28 -7.7 22.5 Q -11.9 31.7 -16.1 25 C -16.9 20 -16.3 11.3 -17 0 Z;M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 17.6 11.3 19.9 20 20.1 25 Q 15.9 29.8 11.8 24.5 Q 7.6 27.7 3.4 22.7 Q -0.7 31.2 -4.9 22.8 Q -9 31 -13.2 25 C -15.8 20 -16.4 11.3 -17 0 Z;M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 16.3 11.3 16.9 20 16.1 25 Q 11.9 27.6 7.7 23 Q 3.6 30.5 -0.6 22.5 Q -4.8 31.6 -8.9 24.3 Q -13.1 27.9 -17.3 25 C -18.8 20 -17.7 11.3 -17 0 Z;M -17 0 C -17 -14.5 -10.2 -25 0 -25 C 10.2 -25 17 -14.5 17 0 C 16.4 11.3 15.8 20 13.2 25 Q 9 29.8 4.9 22.3 Q 0.7 31.9 -3.4 24.1 Q -7.6 28.4 -11.8 24 Q -15.9 28.6 -20.1 25 C -19.9 20 -17.6 11.3 -17 0 Z" /></path>
       <clipPath id="clip-g7"><use href="#body-g7" /></clipPath>
   </defs>
-  <a href="https://github.com/AtlasRoX/Ghost-Jungle" target="_blank" rel="noopener noreferrer">
+  <a href="https://github.com/AtlasRoX/Bookstore-JAVA" target="_blank" rel="noopener noreferrer">
   <g class="ghost" id="ghost-7" data-index="7" data-x="632.1" data-y="294.9" data-scale="0.948" data-tier="2" transform="translate(632.1, 294.9)"><animateMotion path="M 0 0 C 1.6 -10.8 1 -133.8 22.8 -135.8 C 44.6 -137.8 142.3 -20.3 130.8 -12 C 119.2 -3.7 87.3 -80.7 -46.7 -86.2 C -180.7 -91.6 -565.4 -45.7 -673.2 -44.8 C -780.9 -43.9 -807.5 -76.3 -693.2 -80.7 C -578.8 -85.1 -102.4 -84.6 13.1 -71.2 C 128.6 -57.7 -1.6 10.8 0 0" keyPoints="0;0.065;0.144;0.144;0.235;0.526;0.608;0.608;0.935;0.935;1" keyTimes="0;0.061;0.135;0.163;0.249;0.522;0.599;0.617;0.924;0.939;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1" begin="-0s" dur="84s" repeatCount="indefinite" />
-    <title>Ghost-Jungle · Forest Specter · 16 commits</title>
+    <title>Bookstore-JAVA · Forest Specter · 17 commits</title>
    <g class="g-fade" opacity="1"><animate attributeName="opacity" values="1;0.697;0.973;0.973;0.808;0.9;0.82;0.82;0.841;0.841;1" keyTimes="0;0.061;0.135;0.163;0.249;0.522;0.599;0.617;0.924;0.939;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1" begin="-0s" dur="84s" repeatCount="indefinite" />
     <g class="g-act">
      <g class="g-scale" transform="scale(0.948)"><animateTransform attributeName="transform" type="scale" values="0.948;0.763;0.932;0.932;0.831;0.887;0.838;0.838;0.851;0.851;0.948" keyTimes="0;0.061;0.135;0.163;0.249;0.522;0.599;0.617;0.924;0.939;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1" begin="-0s" dur="84s" repeatCount="indefinite" />
       <ellipse cx="0" cy="54" rx="37.4" ry="7" fill="url(#aura-g7)" />
-      <circle class="ecto" cx="-13.6" cy="25" r="1.4" fill="#fbf6ce"
-      style="--dx:-4px;animation-delay:-4.7s;animation-duration:3.2s" /><circle class="ecto" cx="2.7" cy="25" r="2" fill="#fbf6ce"
-      style="--dx:2px;animation-delay:-5.9s;animation-duration:3.9s" /><circle class="ecto" cx="15" cy="25" r="1.4" fill="#fbf6ce"
+      <circle class="ecto" cx="-13.6" cy="25" r="1.4" fill="#e7d5ba"
+      style="--dx:-4px;animation-delay:-4.7s;animation-duration:3.2s" /><circle class="ecto" cx="2.7" cy="25" r="2" fill="#e7d5ba"
+      style="--dx:2px;animation-delay:-5.9s;animation-duration:3.9s" /><circle class="ecto" cx="15" cy="25" r="1.4" fill="#e7d5ba"
       style="--dx:8px;animation-delay:-7.1s;animation-duration:4.6s" />
       <g class="float" style="animation-duration:4.9s;animation-delay:-4.7s">
         <g class="tilt" style="animation-duration:7s;animation-delay:-4.7s">
@@ -1026,8 +1026,8 @@
         </g>
         <circle cx="-5.4" cy="-9.2" r="1" fill="#ffffff" />
         <circle cx="7" cy="-9.2" r="1" fill="#ffffff" />
-        <circle cx="-6.9" cy="-6.6" r="0.5" fill="#f1e05a" opacity="0.9" />
-        <circle cx="5.5" cy="-6.6" r="0.5" fill="#f1e05a" opacity="0.9" />
+        <circle cx="-6.9" cy="-6.6" r="0.5" fill="#b07219" opacity="0.9" />
+        <circle cx="5.5" cy="-6.6" r="0.5" fill="#b07219" opacity="0.9" />
       </g>
       <path d="M -2 -1 Q 0 1 2 -1" fill="none" stroke="#0a0f1e" stroke-width="1" stroke-linecap="round" />
         </g>
@@ -1035,8 +1035,8 @@
      </g>
     </g>
     <g class="caption" data-gap="38" transform="translate(0, 50)"><animateTransform attributeName="transform" type="translate" values="0 50;0 43;0 49.4;0 49.4;0 45.6;0 47.7;0 45.8;0 45.8;0 46.3;0 46.3;0 50" keyTimes="0;0.061;0.135;0.163;0.249;0.522;0.599;0.617;0.924;0.939;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1" begin="-0s" dur="84s" repeatCount="indefinite" />
-      <text x="0" y="0" text-anchor="middle" class="t-name">Ghost-Jungle</text>
-      <text x="0" y="13" text-anchor="middle" class="t-meta" fill="#6ee7b7">SPECTER · 16</text>
+      <text x="0" y="0" text-anchor="middle" class="t-name">Bookstore-JAVA</text>
+      <text x="0" y="13" text-anchor="middle" class="t-meta" fill="#6ee7b7">SPECTER · 17</text>
     </g>
    </g>
   </g>
@@ -1211,7 +1211,7 @@
       <text x="552.6" y="56" text-anchor="end" class="t-stat">0</text>
       <line x1="566.6" y1="28" x2="566.6" y2="57" stroke="#e0f2fe" stroke-opacity="0.14" />
       <text x="491.2" y="36" text-anchor="end" class="t-label">COMMITS</text>
-      <text x="491.2" y="56" text-anchor="end" class="t-stat">726</text>
+      <text x="491.2" y="56" text-anchor="end" class="t-stat">727</text>
       <line x1="505.2" y1="28" x2="505.2" y2="57" stroke="#e0f2fe" stroke-opacity="0.14" />
       <text x="415.8" y="36" text-anchor="end" class="t-label">SPIRITS</text>
       <text x="415.8" y="56" text-anchor="end" class="t-stat">65</text>
