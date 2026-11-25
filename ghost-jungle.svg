@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="gj-title gj-desc">
   <title id="gj-title">AtlasRoX's Ghost Jungle</title>
-  <desc id="gj-desc">66 repository spirits: kairos (229 commits), TribosAI (113 commits), super-fiesta (57 commits), DarkFlags (30 commits), Drafo (26 commits), everything101 (22 commits), Ghost-Jungle (19 commits), Bookstore-JAVA (17 commits), ovijaan (13 commits), verbose-octo-system (13 commits). Showing 10 of 66. 730 commits, 0 stars, 6 followers. Canopy rank C Whispering Sprout, top 61%.</desc>
+  <desc id="gj-desc">66 repository spirits: kairos (229 commits), TribosAI (113 commits), super-fiesta (57 commits), DarkFlags (30 commits), Drafo (26 commits), everything101 (22 commits), Ghost-Jungle (20 commits), Bookstore-JAVA (17 commits), ovijaan (13 commits), verbose-octo-system (13 commits). Showing 10 of 66. 731 commits, 0 stars, 6 followers. Canopy rank C Whispering Sprout, top 61%.</desc>
   <defs>
     <clipPath id="frame"><rect width="880" height="400" rx="18" /></clipPath>
 
@@ -601,7 +601,7 @@
   </defs>
   <a href="https://github.com/AtlasRoX/Ghost-Jungle" target="_blank" rel="noopener noreferrer">
   <g class="ghost" id="ghost-6" data-index="6" data-x="562.5" data-y="124.4" data-scale="0.716" data-tier="2" transform="translate(562.5, 124.4)"><animateMotion path="M 0 0 C 25.5 17.7 -510.4 99.4 -446.1 126.8 C -381.7 154.2 250 167 385.8 164.4 C 521.7 161.8 514.6 114.2 369.2 111.2 C 223.7 108.3 -412.8 149.4 -486.9 146.7 C -560.9 144.1 -56.2 116.4 -74.9 95.4 C -93.6 74.5 -611.6 36.8 -599.2 20.9 C -586.7 5 -25.5 -17.7 0 0" keyPoints="0;0.121;0.121;0.332;0.332;0.389;0.389;0.605;0.605;0.714;0.848;0.848;1;1" keyTimes="0;0.11;0.127;0.318;0.337;0.389;0.398;0.595;0.613;0.712;0.834;0.85;0.988;1" calcMode="spline" keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1" begin="-0s" dur="175.5s" repeatCount="indefinite" />
-    <title>Ghost-Jungle · Forest Specter · 19 commits</title>
+    <title>Ghost-Jungle · Forest Specter · 20 commits</title>
    <g class="g-fade" opacity="0.62"><animate attributeName="opacity" values="0.62;0.903;0.903;0.986;0.986;0.868;0.868;0.947;0.947;0.833;0.667;0.667;0.62;0.62" keyTimes="0;0.11;0.127;0.318;0.337;0.389;0.398;0.595;0.613;0.712;0.834;0.85;0.988;1" calcMode="spline" keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1" begin="-0s" dur="175.5s" repeatCount="indefinite" />
     <g class="g-act">
      <g class="g-scale" transform="scale(0.716)"><animateTransform attributeName="transform" type="scale" values="0.716;0.889;0.889;0.94;0.94;0.867;0.867;0.916;0.916;0.846;0.744;0.744;0.716;0.716" keyTimes="0;0.11;0.127;0.318;0.337;0.389;0.398;0.595;0.613;0.712;0.834;0.85;0.988;1" calcMode="spline" keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1" begin="-0s" dur="175.5s" repeatCount="indefinite" />
@@ -640,7 +640,7 @@
     </g>
     <g class="caption" data-gap="38" transform="translate(0, 41.2)"><animateTransform attributeName="transform" type="translate" values="0 41.2;0 47.8;0 47.8;0 49.7;0 49.7;0 46.9;0 46.9;0 48.8;0 48.8;0 46.1;0 42.3;0 42.3;0 41.2;0 41.2" keyTimes="0;0.11;0.127;0.318;0.337;0.389;0.398;0.595;0.613;0.712;0.834;0.85;0.988;1" calcMode="spline" keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1" begin="-0s" dur="175.5s" repeatCount="indefinite" />
       <text x="0" y="0" text-anchor="middle" class="t-name">Ghost-Jungle</text>
-      <text x="0" y="13" text-anchor="middle" class="t-meta" fill="#6ee7b7">SPECTER · 19</text>
+      <text x="0" y="13" text-anchor="middle" class="t-meta" fill="#6ee7b7">SPECTER · 20</text>
     </g>
    </g>
   </g>
@@ -1211,7 +1211,7 @@
       <text x="552.6" y="56" text-anchor="end" class="t-stat">0</text>
       <line x1="566.6" y1="28" x2="566.6" y2="57" stroke="#e0f2fe" stroke-opacity="0.14" />
       <text x="491.2" y="36" text-anchor="end" class="t-label">COMMITS</text>
-      <text x="491.2" y="56" text-anchor="end" class="t-stat">730</text>
+      <text x="491.2" y="56" text-anchor="end" class="t-stat">731</text>
       <line x1="505.2" y1="28" x2="505.2" y2="57" stroke="#e0f2fe" stroke-opacity="0.14" />
       <text x="415.8" y="36" text-anchor="end" class="t-label">SPIRITS</text>
       <text x="415.8" y="56" text-anchor="end" class="t-stat">66</text>
@@ -1225,7 +1225,7 @@
         <circle r="27" fill="#cbd5e1" opacity="0.08" />
         <circle r="21" fill="none" stroke="#e0f2fe" stroke-opacity="0.12" stroke-width="2.5" />
         <circle r="21" fill="none" stroke="#cbd5e1" stroke-width="2.5" stroke-linecap="round"
-                stroke-dasharray="50.9 131.9" transform="rotate(-90)" filter="url(#core-glow)"
+                stroke-dasharray="51 131.9" transform="rotate(-90)" filter="url(#core-glow)"
                 style="animation: dial 2.4s cubic-bezier(.16,1,.3,1) both" />
         <text x="0" y="5" text-anchor="middle" class="t-grade" fill="#cbd5e1">C</text>
       </g>
